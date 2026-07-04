@@ -19,7 +19,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; }
 
-        /* 🏛️ 1. संस्थान परिचय सेक्शन (एलीट कार्ड लुक) */
+        /* 🏛️ 1. संस्थान परिचय सेक्शन */
         .intro-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
         .intro-card { 
             background: #ffffff; 
@@ -109,12 +109,12 @@
             transform: scale(1.03); 
         }
 
-        /* 📺 4. वीडियो सेक्शन (सिनेमाई फ्रेम) */
+        /* 📺 4. वीडियो सेक्शन */
         .video-section { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
         .video-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--brand-dark-green); }
         .video-wrapper { 
             position: relative; 
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; 
             height: 0; 
             overflow: hidden; 
             border-radius: 20px; 
@@ -146,7 +146,7 @@
         .social-icon.x { background: #000000; }
         .social-icon:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 
-        /* 🏢 6. एलीट कॉर्पोरेट फुटर (संपर्क सूत्र) */
+        /* 🏢 6. एलीट कॉर्पोरेट फुटर */
         .footer-section { 
             background: #0b3a20; 
             color: #ffffff; 
@@ -208,13 +208,11 @@
     <!-- 2. मॉडर्न इमेज गैलरी सेक्शन -->
     <div class="gallery-section">
         <div class="gallery-grid">
-            <!-- पहली फोटो -->
             <div class="gallery-item" onclick="openLightbox('https://images.squarespace-cdn.com/content/v1/6407ae862f90a61d6bc0b98f/fb0b6fe9-8260-4966-bd5e-0cc53ee92248/1000292786.png')">
                 <div class="gallery-img-box">
                     <img src="https://images.squarespace-cdn.com/content/v1/6407ae862f90a61d6bc0b98f/fb0b6fe9-8260-4966-bd5e-0cc53ee92248/1000292786.png" alt="जाट समाज जनसभा भादरा">
                 </div>
             </div>
-            <!-- दूसरी फोटो -->
             <div class="gallery-item" onclick="openLightbox('https://images.squarespace-cdn.com/content/v1/6407ae862f90a61d6bc0b98f/fb0b6fe9-8260-4966-bd5e-0cc53ee92248/1000292786.png')">
                 <div class="gallery-img-box">
                     <img src="https://images.squarespace-cdn.com/content/v1/6407ae862f90a61d6bc0b98f/fb0b6fe9-8260-4966-bd5e-0cc53ee92248/1000292786.png" alt="अंतरराष्ट्रीय जाट दिवस समारोह">
@@ -289,7 +287,6 @@
     </div>
 
     <script>
-        // इमेज पॉपअप फंक्शन
         function openLightbox(imgUrl) {
             document.getElementById('lightboxTarget').src = imgUrl;
             document.getElementById('imageLightbox').style.display = 'flex';
