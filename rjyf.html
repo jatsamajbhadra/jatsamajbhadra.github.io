@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJYF - राइजिंग जाट यूथ फाउंडेशन</title>
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --brand-green: #11532e;
+            --brand-dark-green: #0b3a20;
+            --brand-gold: #d4af37;
+            --light-bg: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        body { 
+            background-color: var(--light-bg); 
+            color: var(--text-main); 
+            -webkit-font-smoothing: antialiased; 
+            animation: pageFadeIn 0.8s cubic-bezier(0.15, 0.85, 0.45, 1) forwards;
+        }
+        @keyframes pageFadeIn {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 🗂️ 3-in-1 टैब नेविगेशन बार स्टाइल */
+        .tabs-container {
+            max-width: 1140px;
+            margin: 20px auto 10px auto;
+            padding: 0 20px;
+        }
+        .tabs-nav {
+            display: flex;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            background: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .tab-btn:not(:last-child) {
+            border-right: 1px solid #e2e8f0;
+        }
+        .tab-btn:hover {
+            background-color: #f8fafc;
+            color: var(--brand-green);
+        }
+        .tab-btn.active {
+            color: var(--brand-green);
+            background-color: #f0fdf4;
+        }
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--brand-gold);
+            animation: lineStretch 0.3s ease forwards;
+        }
+        @keyframes lineStretch {
+            0% { width: 0; left: 50%; }
+            100% { width: 100%; left: 0; }
+        }
+
+        /* 🚀 डायनेमिक कंटेंट एरिया */
+        .content-container {
+            max-width: 1140px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+        }
+        .tab-panel {
+            display: none;
+            animation: panelFade 0.4s ease forwards;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+        @keyframes panelFade {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 🏛️ टैब 1: RJYF परिचय कार्ड */
+        .rjyf-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 22px 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--brand-green);
+            border-top: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .panel-title {
+            font-size: 19px;
+            color: var(--brand-green);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .panel-text {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .highlight-text {
+            font-weight: 700;
+            color: var(--brand-dark-green);
+        }
+
+        /* 📝 टैब 2: पंजीकरण फॉर्म बटन स्ट्रिप */
+        .form-strip {
+            background: linear-gradient(135deg, #11532e, #1a7442);
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(17,83,46,0.12);
+        }
+        .form-desc {
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .strip-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--brand-green);
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 13.5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .strip-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(25deg);
+            animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% { left: -60%; }
+            15% { left: 140%; }
+            100% { left: 140%; }
+        }
+        .strip-btn:hover {
+            background: var(--brand-dark-green);
+            color: #ffffff;
+            transform: scale(1.03);
+        }
+
+        /* 👥 टैब 3: रजिस्टर्ड सदस्य टेबल स्टाइल */
+        .table-responsive {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .members-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13.5px;
+        }
+        .members-table th {
+            background-color: var(--brand-green);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 10px 12px;
+            border: 1px solid #1a663b;
+        }
+        .members-table td {
+            padding: 9px 12px;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            line-height: 1.4;
+        }
+        .members-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .members-table tr:hover {
+            background-color: #f0fdf4;
+        }
+
+        /* 📱 सोशल मीडिया कनेक्ट */
+        .social-section { text-align: center; margin: 35px auto 25px auto; padding: 0 20px; }
+        .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .social-icon { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #ffffff; 
+            text-decoration: none; 
+            font-size: 18px; 
+            transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .social-icon.fb { background: #1877f2; }
+        .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .social-icon.yt { background: #ff0000; }
+        .social-icon.x { background: #000000; }
+        .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+
+        /* 🏢 फुटर स्टाइल */
+        .footer-section { 
+            background: #0b3a20; 
+            color: #ffffff; 
+            padding: 25px 20px; 
+            border-top: 4px solid var(--brand-gold);
+            text-align: center;
+            border-radius: 12px;
+        }
+        .footer-bottom { 
+            font-size: 12px; 
+            color: rgba(255,255,255,0.6); 
+        }
+
+        @media (max-width: 650px) {
+            .tab-btn { font-size: 12.5px; padding: 10px 5px; gap: 4px; }
+            .intro-card, .form-strip, .table-responsive { padding: 15px; }
+            .panel-title { font-size: 17px; }
+            .panel-text, .members-table { font-size: 13px; }
+        }
+
+        ::selection {
+            background: #11532e;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🗂️ 3-in-1 टैब मेनू बार (यहाँ नाम सिर्फ "RJYF" किया गया है) -->
+    <div class="tabs-container">
+        <nav class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab(event, 'main-rjyf')">
+                <i class="fa-solid fa-building-columns"></i> RJYF
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'reg-form')">
+                <i class="fa-solid fa-pen-to-square"></i> पंजीकरण फॉर्म
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'members-list')">
+                <i class="fa-solid fa-users"></i> रजिस्टर्ड सदस्य
+            </button>
+        </nav>
+    </div>
+
+    <!-- 🚀 डायनेमिक कंटेंट एरिया -->
+    <div class="content-container">
+        
+        <!-- टैब 1: RJYF का परिचय -->
+        <div id="main-rjyf" class="tab-panel active">
+            <div class="rjyf-card">
+                <h2 class="panel-title"><i class="fa-solid fa-rocket"></i> राइजिंग जाट यूथ फाउंडेशन (RJYF)</h2>
+                <p class="panel-text">
+                    <span class="highlight-text">राइजिंग जाट यूथ फाउंडेशन (RJYF)</span> जाट समाज संस्थान, भादरा की एक ऊर्जावान और प्रगतिशील युवा शाखा है। इस फाउंडेशन का मुख्य उद्देश्य समाज के युवाओं को एक मजबूत मंच प्रदान करना है, जहाँ वे अपनी शैक्षणिक, बौद्धिक और सामाजिक क्षमताओं का विकास कर सकें। हम युवाओं में नेतृत्व क्षमता, नवाचार और सामाजिक दायित्व की भावना को जागृत करने के लिए निरंतर कार्य कर रहे हैं।<br><br>
+                    फाउंडेशन के माध्यम से युवाओं के लिए करियर गाइडेंस, प्रतियोगी परीक्षाओं के लिए मार्गदर्शन, खेलकूद प्रोत्साहन और सामाजिक सुधार से जुड़े विशेष अभियान चलाए जाते हैं। RJYF समाज के हर जागरूक युवा को एक सूत्र में पिरोकर राष्ट्र निर्माण और सामाजिक प्रगति में सक्रिय भागीदारी निभाने के लिए पूरी तरह प्रतिबद्ध है।
+                </p>
+            </div>
+        </div>
+
+        <!-- टैब 2: पंजीकरण फॉर्म -->
+        <div id="reg-form" class="tab-panel">
+            <div class="form-strip">
+                <p class="form-desc">राइजिंग जाट यूथ फाउंडेशन (RJYF) से जुड़ने और समाज की प्रगति में भागीदार बनने के लिए नीचे दिए बटन पर क्लिक कर अपना फॉर्म भरें।</p>
+                <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
+                    <i class="fa-solid fa-user-plus"></i> ऑनलाइन पंजीकरण हेतु यहाँ क्लिक करें
+                </a>
+            </div>
+        </div>
+
+        <!-- टैब 3: रजिस्टर्ड सदस्यों की सूची -->
+        <div id="members-list" class="tab-panel">
+            <div class="table-responsive">
+                <h2 class="panel-title" style="color: var(--brand-dark-green); margin-bottom: 12px;">
+                    <i class="fa-solid fa-address-book"></i> पंजीकृत सदस्यों की सूची
+                </h2>
+                <table class="members-table">
+                    <thead>
+                        <tr>
+                            <th>क्र.सं.</th>
+                            <th>सदस्य का नाम</th>
+                            <th>गाँव / शहर</th>
+                            <th>पद / जिम्मेदारी</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>रामकुमार ज्याणी</td>
+                            <td>भादरा</td>
+                            <td>युवा संयोजक</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>विकास सिहाग</td>
+                            <td>डूंगराना</td>
+                            <td>सह-संयोजक</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>संदीप बेनीवाल</td>
+                            <td>छानी बड़ी</td>
+                            <td>सदस्य</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- सोशल मीडिया कनेक्ट -->
+    <div class="social-section">
+        <p class="social-text">संस्थान के सोशल मीडिया अकाउंट से जुड़ें</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- फुटर -->
+    <div class="footer-section">
+        <div class="footer-bottom">
+            &copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabId) {
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+  </html>
+
