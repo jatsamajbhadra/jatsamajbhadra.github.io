@@ -107,44 +107,68 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* 🏛️ टैब 1: RJYF परिचय कार्ड */
+        /* 🏛️ सामान्य कार्ड और टेक्स्ट लेआउट */
         .rjyf-card {
             background: #ffffff;
             border-radius: 16px;
             padding: 22px 25px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border-left: 5px solid var(--brand-green);
-            border-top: 1px solid #f1f5f9;
-            border-right: 1px solid #f1f5f9;
-            border-bottom: 1px solid #f1f5f9;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+        .yellow-box {
+            background-color: #fcd34d;
+            border-radius: 16px;
+            padding: 22px 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+            color: #0f172a;
         }
         .panel-title {
             font-size: 19px;
             color: var(--brand-green);
             font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 5px;
         }
         .panel-text {
-            font-size: 14px;
-            color: #334155;
+            font-size: 14.5px;
             line-height: 1.6;
+            margin-bottom: 15px;
             text-align: justify;
         }
-        .highlight-text {
-            font-weight: 700;
-            color: var(--brand-dark-green);
+        .content-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .content-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .content-list li::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--brand-green);
+            font-size: 12px;
+        }
+        .yellow-box .content-list li::before {
+            color: #0f172a;
         }
 
-        /* 📝 टैब 2: पंजीकरण फॉर्म बटन स्ट्रिप */
+        /* 📝 पंजीकरण फॉर्म बटन और QR स्टाइल */
         .form-strip {
             background: linear-gradient(135deg, #11532e, #1a7442);
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(17,83,46,0.12);
+            margin-bottom: 20px;
         }
         .form-desc {
             color: #ffffff;
@@ -174,61 +198,37 @@
             70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
         }
-        .strip-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 30%;
-            height: 200%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-            transform: rotate(25deg);
-            animation: shine 3.5s infinite;
-        }
-        @keyframes shine {
-            0% { left: -60%; }
-            15% { left: 140%; }
-            100% { left: 140%; }
-        }
         .strip-btn:hover {
             background: var(--brand-dark-green);
             color: #ffffff;
             transform: scale(1.03);
         }
-
-        /* 👥 टैब 3: रजिस्टर्ड सदस्य टेबल स्टाइल */
-        .table-responsive {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
-            overflow-x: auto;
+        .qr-container {
+            text-align: center;
+            margin-top: 20px;
         }
-        .members-table {
+        .qr-img {
+            max-width: 220px;
             width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 13.5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 4px solid #ffffff;
         }
-        .members-table th {
-            background-color: var(--brand-green);
-            color: #ffffff;
-            font-weight: 700;
-            padding: 10px 12px;
-            border: 1px solid #1a663b;
-        }
-        .members-table td {
-            padding: 9px 12px;
+
+        /* 👥 गूगल शीट एम्बेड स्टाइल */
+        .sheet-frame-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
             border: 1px solid #e2e8f0;
-            color: #334155;
-            line-height: 1.4;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            background: #ffffff;
         }
-        .members-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-        .members-table tr:hover {
-            background-color: #f0fdf4;
+        .sheet-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* 📱 सोशल मीडिया कनेक्ट */
@@ -270,9 +270,10 @@
 
         @media (max-width: 650px) {
             .tab-btn { font-size: 12.5px; padding: 10px 5px; gap: 4px; }
-            .intro-card, .form-strip, .table-responsive { padding: 15px; }
+            .rjyf-card, .yellow-box, .form-strip { padding: 15px; }
             .panel-title { font-size: 17px; }
-            .panel-text, .members-table { font-size: 13px; }
+            .panel-text, .content-list li { font-size: 13px; }
+            .sheet-frame-container { height: 400px; }
         }
 
         ::selection {
@@ -283,7 +284,7 @@
 </head>
 <body>
 
-    <!-- 🗂️ 3-in-1 टैब मेनू बार (यहाँ नाम सिर्फ "RJYF" किया गया है) -->
+    <!-- 🗂️ 3-in-1 टैब मेनू बार -->
     <div class="tabs-container">
         <nav class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab(event, 'main-rjyf')">
@@ -303,61 +304,74 @@
         
         <!-- टैब 1: RJYF का परिचय -->
         <div id="main-rjyf" class="tab-panel active">
-            <div class="rjyf-card">
-                <h2 class="panel-title"><i class="fa-solid fa-rocket"></i> राइजिंग जाट यूथ फाउंडेशन (RJYF)</h2>
-                <p class="panel-text">
-                    <span class="highlight-text">राइजिंग जाट यूथ फाउंडेशन (RJYF)</span> जाट समाज संस्थान, भादरा की एक ऊर्जावान और प्रगतिशील युवा शाखा है। इस फाउंडेशन का मुख्य उद्देश्य समाज के युवाओं को एक मजबूत मंच प्रदान करना है, जहाँ वे अपनी शैक्षणिक, बौद्धिक और सामाजिक क्षमताओं का विकास कर सकें। हम युवाओं में नेतृत्व क्षमता, नवाचार और सामाजिक दायित्व की भावना को जागृत करने के लिए निरंतर कार्य कर रहे हैं।<br><br>
-                    फाउंडेशन के माध्यम से युवाओं के लिए करियर गाइडेंस, प्रतियोगी परीक्षाओं के लिए मार्गदर्शन, खेलकूद प्रोत्साहन और सामाजिक सुधार से जुड़े विशेष अभियान चलाए जाते हैं। RJYF समाज के हर जागरूक युवा को एक सूत्र में पिरोकर राष्ट्र निर्माण और सामाजिक प्रगति में सक्रिय भागीदारी निभाने के लिए पूरी तरह प्रतिबद्ध है।
+            <div class="yellow-box">
+                <h2 class="panel-title" style="color: #0f172a; border-bottom-color: rgba(0,0,0,0.1);">हमारे बारे में (About Us):</h2>
+                <p class="panel-text" style="font-weight: 600;">
+                    राइजिंग जाट यूथ फाउंडेशन (RJYF) जाट समाज संस्थान, भादरा की एक ऊर्जावान, प्रगतिशील और समर्पित युवा विंग है। इस संगठन की स्थापना क्षेत्र के जागरूक, शिक्षित और कर्मठ युवाओं को एक मज़बूत और साझा मंच प्रदान करने के उद्देश्य से की गई है।
                 </p>
+                <p class="panel-text" style="margin-bottom: 0; font-weight: 500;">
+                    हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा और दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
+                </p>
+            </div>
+
+            <div class="rjyf-card">
+                <h2 class="panel-title">Our Vision & Mission (दृष्टिकोण और उद्देश्य):</h2>
+                <ul class="content-list">
+                    <li><strong>गौरवशाली इतिहास का संरक्षण:</strong> समाज के प्रत्येक व्यक्ति, विशेषकर नई पीढ़ी (युवाओं) तक जाट समाज की ऐतिहासिक शौर्य गाथाओं, वीर योद्धाओं और महान जाट रत्नों के गौरवशाली इतिहास को पहुँचाना।</li>
+                    <li><strong>सामाजिक सुधार और जागरूकता:</strong> समाज में व्याप्त कुरीतियों और फिजूलखर्ची के खिलाफ आवाज़ उठाना, युवाओं को नशे की लत से दूर रखना (नशामुक्त अभियान) और सामाजिक समरसता को बढ़ावा देना।</li>
+                    <li><strong>युवा सशक्तिकरण और शिक्षा:</strong> ग्रामीण व कस्बाई क्षेत्रों के होनहार युवाओं को सही करियर मार्गदर्शन देना, सफल अभ्यर्थियों को प्रोत्साहित करना, प्रतियोगी परीक्षाओं की तैयारी में हरसंभव सहायता करना और शिक्षा के स्तर को ऊँचा उठाना।</li>
+                    <li><strong>नेतृत्व क्षमता का विकास (Leadership Building):</strong> युवाओं में सकारात्मक सोच और नेतृत्व के गुण विकसित करना, ताकि वे भविष्य में समाज और देश का सही प्रतिनिधित्व कर सकें।</li>
+                </ul>
+            </div>
+
+            <div class="rjyf-card">
+                <h2 class="panel-title">What We Do (हमारे मुख्य कार्य) :</h2>
+                <ul class="content-list">
+                    <li><strong>स्वास्थ्य और सेवा:</strong> रक्तदान शिविर (Blood Donation Camps), नशामुक्ति अभियान और स्वास्थ्य जागरूकता कार्यक्रमों का संचालन।</li>
+                    <li><strong>संस्कृति एवं खेलकूद:</strong> युवाओं की शारीरिक व मानसिक प्रगति के लिए खेल प्रतियोगिताओं का आयोजन करना और उनमें खेल भावना को प्रोत्साहित करना।</li>
+                    <li><strong>पर्यावरण संरक्षण:</strong> प्रकृति के प्रति अपनी जिम्मेदारी निभाते हुए व्यापक स्तर पर पर्यावरण संरक्षण अभियान चलाना।</li>
+                    <li><strong>आपसी एकता व भाईचारा:</strong> समाज के हर वर्ग को साथ लेकर चलना, आपसी सहयोग और भाईचारे के ताने-बाने को सुदृढ़ करना।</li>
+                </ul>
             </div>
         </div>
 
         <!-- टैब 2: पंजीकरण फॉर्म -->
         <div id="reg-form" class="tab-panel">
+            <div class="yellow-box">
+                <h2 class="panel-title" style="color: #0f172a; border-bottom-color: rgba(0,0,0,0.1);">Steps for Registration :</h2>
+                <ul class="content-list">
+                    <li><strong>लिंक या QR कोड ओपन करें:</strong> अपने मोबाइल फोन पर नीचे दिए गए आधिकारिक गूगल फॉर्म (Google Form) लिंक को खोलें, या फिर नीचे दिए गए QR कोड को स्कैन करें।</li>
+                    <li><strong>जानकारी दर्ज करें:</strong> गूगल फॉर्म खुलने के बाद, उसमें मांगी गई सभी आवश्यक जानकारियों को बिल्कुल सही-सही भरें।</li>
+                    <li><strong>फॉर्म सबमिट करें:</strong> सभी विवरणों को दोबारा जाँचने के बाद फॉर्म के अंत में दिए गए 'Submit' बटन पर क्लिक करें। आपका पंजीकरण सफलतापूर्वक दर्ज हो जाएगा।</li>
+                </ul>
+            </div>
+
             <div class="form-strip">
-                <p class="form-desc">राइजिंग जाट यूथ फाउंडेशन (RJYF) से जुड़ने और समाज की प्रगति में भागीदार बनने के लिए नीचे दिए बटन पर क्लिक कर अपना फॉर्म भरें।</p>
+                <p class="form-desc">ऑनलाइन फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
                 <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
-                    <i class="fa-solid fa-user-plus"></i> ऑनलाइन पंजीकरण हेतु यहाँ क्लिक करें
+                    <i class="fa-solid fa-user-plus"></i> Click Here For Registration
                 </a>
+            </div>
+
+            <div class="qr-container">
+                <p style="font-size: 14px; font-weight: bold; margin-bottom: 10px; color: var(--text-main);">Scan QR Code For Registration</p>
+                <!-- गिटहब फोल्डर में मौजूद आपकी असली क्यूआर इमेज -->
+                <img src="IMG-20260615-WA0021.jpg" alt="Scan QR Code" class="qr-img">
             </div>
         </div>
 
-        <!-- टैब 3: रजिस्टर्ड सदस्यों की सूची -->
+        <!-- टैब 3: रजिस्टर्ड सदस्य (100% सेफ लाइव गूगल शीट) -->
         <div id="members-list" class="tab-panel">
-            <div class="table-responsive">
-                <h2 class="panel-title" style="color: var(--brand-dark-green); margin-bottom: 12px;">
-                    <i class="fa-solid fa-address-book"></i> पंजीकृत सदस्यों की सूची
-                </h2>
-                <table class="members-table">
-                    <thead>
-                        <tr>
-                            <th>क्र.सं.</th>
-                            <th>सदस्य का नाम</th>
-                            <th>गाँव / शहर</th>
-                            <th>पद / जिम्मेदारी</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>रामकुमार ज्याणी</td>
-                            <td>भादरा</td>
-                            <td>युवा संयोजक</td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>विकास सिहाग</td>
-                            <td>डूंगराना</td>
-                            <td>सह-संयोजक</td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>संदीप बेनीवाल</td>
-                            <td>छानी बड़ी</td>
-                            <td>सदस्य</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
+                <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
+                    यहाँ साझा की गई पंजीकृत सदस्यों की सूची केवल प्रारंभिक सूची (Draft List) है। इसे अभी अंतिम या आधिकारिक सूची न समझा जाए। आवश्यक समीक्षा और सुधारों के बाद जल्द ही आधिकारिक सूची साझा की जाएगी।
+                </p>
+                <p style="font-size: 12px; font-weight: bold; color: #64748b; margin-top: 5px;">(List last updated on July 03, 2026)</p>
+            </div>
+
+            <!-- लाइव रेस्पॉन्सिव गूगल शीट फ्रेम -->
+            <div class="sheet-frame-container">
+                <iframe class="sheet-frame" src="https://docs.google.com/spreadsheets/d/11bmYTRynE8vgEAT-mZS3q0XNFZbof7L1KgpFRDpcc_I/pubhtml?widget=true&amp;headers=false"></iframe>
             </div>
         </div>
 
@@ -377,7 +391,7 @@
     <!-- फुटर -->
     <div class="footer-section">
         <div class="footer-bottom">
-            &copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
+            &copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
         </div>
     </div>
 
@@ -394,5 +408,4 @@
         }
     </script>
 </body>
-  </html>
-
+</html>
