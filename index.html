@@ -7,6 +7,11 @@
     <!-- Font Awesome Icons for Social Media (Updated to v6.6.0 for X Logo Fix) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* 1. स्मूथ स्क्रॉलिंग जोड़ना */
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --brand-green: #11532e;
             --brand-dark-green: #0b3a20;
@@ -189,6 +194,12 @@
             .gallery-img-box { height: 200px; }
             .intro-card { padding: 20px; }
             .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        /* 🎨 2. सिलेक्शन कलर स्टाइल (CSS के आखिर में) */
+        ::selection {
+            background: #11532e;
+            color: #fff;
         }
     </style>
 </head>
