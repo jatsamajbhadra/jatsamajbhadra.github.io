@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
-    <!-- Font Awesome Icons for Social Media -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
         html {
@@ -33,7 +32,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* 🏛️ 1. संस्थान परिचय सेक्शन (फ़ॉन्ट और स्पेसिंग कम की गई) */
+        /* 🏛️ 1. संस्थान परिचय सेक्शन */
         .intro-section { max-width: 1140px; margin: 25px auto; padding: 0 20px; }
         .intro-card { 
             background: #ffffff; 
@@ -51,7 +50,7 @@
             box-shadow: 0 10px 25px rgba(17, 83, 46, 0.08);
         }
         .intro-title { 
-            font-size: 19px; /* पहले 22px था */
+            font-size: 19px; 
             color: var(--brand-green); 
             font-weight: 700; 
             margin-bottom: 10px; 
@@ -60,9 +59,9 @@
             gap: 8px;
         }
         .intro-text { 
-            font-size: 14px; /* पहले 15px था */
+            font-size: 14px; 
             color: #334155; 
-            line-height: 1.6; /* पहले 1.8 था */
+            line-height: 1.6; 
             text-align: justify;
         }
         .intro-highlight {
@@ -118,7 +117,7 @@
             padding: 10px 24px; 
             border-radius: 30px; 
             font-weight: 700; 
-            font-size: 13.5px; /* पहले 14.5px था */
+            font-size: 13.5px; 
             box-shadow: 0 3px 8px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
@@ -157,7 +156,7 @@
 
         /* 📺 4. वीडियो सेक्शन */
         .video-section { max-width: 800px; margin: 35px auto; padding: 0 20px; text-align: center; }
-        .video-title { font-size: 18px; /* पहले 20px था */ font-weight: 700; margin-bottom: 15px; color: var(--brand-dark-green); }
+        .video-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--brand-dark-green); }
         .video-wrapper { 
             position: relative; 
             padding-bottom: 56.25%; 
@@ -171,12 +170,12 @@
         .video-wrapper:hover { transform: scale(1.01); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* 📱 5. सोशल मीडिया कनेक्ट */
+        /* 📱 5. सोशल मीडिया कनेक्ट (गलती यहाँ सुधारी गई है) */
         .social-section { text-align: center; margin: 40px auto; padding: 0 20px; }
-        .social-text { font-size: 13px; /* पहले 14px था */ font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .social-icon { 
-            width: 40px; /* पहले 45px था */
+            width: 40px; 
             height: 40px; 
             border-radius: 50%; 
             display: flex; 
@@ -184,7 +183,7 @@
             justify-content: center; 
             color: #ffffff; 
             text-decoration: none; 
-            font-size: 18px; /* पहले 20px था */
+            font-size: 18px; 
             transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); 
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
@@ -194,11 +193,11 @@
         .social-icon.x { background: #000000; }
         .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
 
-        /* 🏢 6. एलीट कॉर्पोरेट फुटर (लाइन स्पेसिंग सुधारी गई) */
+        /* 🏢 6. एलीट कॉर्पोरेट फुटर */
         .footer-section { 
             background: #0b3a20; 
             color: #ffffff; 
-            padding: 30px 20px; /* पहले 40px था */
+            padding: 30px 20px; 
             border-top: 4px solid var(--brand-gold);
             margin-top: 35px;
             text-align: left;
@@ -211,7 +210,7 @@
             gap: 15px;
         }
         .footer-title { 
-            font-size: 16.5px; /* पहले 18px था */
+            font-size: 16.5px; 
             font-weight: 700; 
             color: var(--brand-gold); 
             border-bottom: 1px dashed rgba(212,175,55,0.3);
@@ -226,8 +225,8 @@
         .footer-info-item { 
             display: flex; 
             gap: 10px; 
-            font-size: 13.5px; /* पहले 14.5px था */
-            line-height: 1.4; /* पहले 1.6 था (लाइन स्पेस कम) */
+            font-size: 13.5px; 
+            line-height: 1.4; 
             align-items: flex-start; 
         }
         .footer-info-item i { color: var(--brand-gold); font-size: 14px; margin-top: 3px; }
@@ -272,18 +271,16 @@
 </head>
 <body>
 
-    <!-- 1. संस्थान परिचय सेक्शन -->
     <div class="intro-section">
         <div class="intro-card">
             <h2 class="intro-title"><i class="fa-solid fa-building-columns"></i> संस्थान परिचय:</h2>
             <p class="intro-text">
                 <span class="intro-highlight">जाट समाज संस्थान, भादरा</span> सामाजिक एकता, शिक्षा, संस्कृति एवं सामुदायिक विकास को समर्पित एक प्रतिष्ठित संस्था है। संस्थान का उद्देश्य जाट समाज के सामाजिक, शैक्षणिक, सांस्कृतिक एवं आर्थिक उत्थान के लिए सार्थक प्रयास करना तथा समाज में भाईचारे, सहयोग और जागरूकता को बढ़ावा देना है।<br><br>
-                संस्थान द्वारा समय-समय पर प्रतिभा सम्मान समारोह, शैक्षणिक प्रोत्साहन कार्यक्रम, सांस्कृतिक आयोजन एवं जनकल्याणकारी गतिविधियों का आयोजन किया जाता है। हम समाज की गौरवशाली परंपराओं और मूल्यों को सुरक्षित रखते हुए नई पीढ़ी को शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी के लिए प्रेरित करने का कार्य करते हैं। जाट समाज संस्थान, भादरा समाज सेवा, संगठन और विकास के माध्यम से एक स्वस्थ एवं प्रगतिशील समाज के निर्माण हेतु निरंतर प्रतिबद्ध है।
+                संस्थान द्वारा समय-समय पर प्रतिभा सम्मान समारोह, शैक्षणिक प्रोत्साहन कार्यक्रम, सांस्कृतिक आयोजन एवं जनकल्याणकारी गतिविधियों का आयोजन किया जाता है। हम समाज की गौरवशाली परंपराओं और मूल्यों को सुरक्षित रखते हुए नई पीढ़ी को शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी के लिए प्रेरित करने का कार्य करते हैं। जाट समाज संस्थान, भादरा समाज सेवा, संगठन and विकास के माध्यम से एक स्वस्थ एवं प्रगतिशील समाज के निर्माण हेतु निरंतर प्रतिबद्ध है।
             </p>
         </div>
     </div>
 
-    <!-- 2. मॉडर्न इमेज गैलरी सेक्शन -->
     <div class="gallery-section">
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox('FB_IMG_1783181660134.jpg')">
@@ -299,14 +296,12 @@
         </div>
     </div>
 
-    <!-- 3. पंजीकरण क्विक लिंक स्ट्रिप -->
     <div class="link-strip">
         <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
             <i class="fa-solid fa-user-plus"></i> राइजिंग जाट यूथ फाउंडेशन (RJYF) पंजीकरण लिंक
         </a>
     </div>
 
-    <!-- 4. वीडियो सेक्शन -->
     <div class="video-section">
         <h3 class="video-title"><i class="fa-solid fa-video"></i> किसान मसीहा चौधरी कुंभाराम आर्य - शार्ट फिल्म</h3>
         <div class="video-wrapper">
@@ -314,7 +309,6 @@
         </div>
     </div>
 
-    <!-- 5. सोशल मीडिया कनेक्ट -->
     <div class="social-section">
         <p class="social-text">नीचे दिए बटन पर क्लिक कर संस्थान के सोशल मीडिया अकाउंट से जुड़ सकते हैं</p>
         <div class="social-links">
@@ -325,7 +319,6 @@
         </div>
     </div>
 
-    <!-- 6. एलीट कॉर्पोरेट फुटर -->
     <div class="footer-section">
         <div class="footer-container">
             <h3 class="footer-title">Contact Us (संपर्क सूत्र)</h3>
@@ -358,13 +351,11 @@
         </div>
     </div>
 
-    <!-- इमेज ज़ूम लाइटबॉक्स संरचना -->
     <div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-img" id="lightboxTarget" src="" alt="Zoomed Image">
     </div>
 
-    <!-- स्क्रिप्ट टैग -->
     <script>
         function openLightbox(imgUrl) {
             document.getElementById('lightboxTarget').src = imgUrl;
