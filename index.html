@@ -2,7 +2,8 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 🖥️ यह लाइन गूगल साइट्स के अंदर भी इसे डेस्कटॉप की तरह फिक्स रखेगी -->
+    <meta name="viewport" content="width=1200, initial-scale=0.35, minimum-scale=0.25, maximum-scale=1.0">
     <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
     <!-- Font Awesome Icons for Social Media -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -17,10 +18,23 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; }
+        
+        /* 🎬 स्मूथ एंट्री एनिमेशन */
+        body { 
+            background-color: var(--light-bg); 
+            color: var(--text-main); 
+            -webkit-font-smoothing: antialiased; 
+            width: 1200px; /* चौड़ाई को कंप्यूटर स्क्रीन की तरह फिक्स कर दिया */
+            margin: 0 auto;
+            animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards;
+        }
+        @keyframes pageFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
-        /* 🏛️ 1. संस्थान परिचय सेक्शन */
-        .intro-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
+        /* 🏛️ 1. संस्थान परिचय सेक्शन (डेस्कटॉप लुक) */
+        .intro-section { width: 1140px; margin: 30px auto; padding: 0 20px; }
         .intro-card { 
             background: #ffffff; 
             border-radius: 20px; 
@@ -30,9 +44,14 @@
             border-top: 1px solid #f1f5f9;
             border-right: 1px solid #f1f5f9;
             border-bottom: 1px solid #f1f5f9;
+            transition: all 0.4s ease;
+        }
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(17, 83, 46, 0.08);
         }
         .intro-title { 
-            font-size: 22px; 
+            font-size: 24px; 
             color: var(--brand-green); 
             font-weight: 700; 
             margin-bottom: 15px; 
@@ -41,7 +60,7 @@
             gap: 10px;
         }
         .intro-text { 
-            font-size: 15px; 
+            font-size: 16px; 
             color: #334155; 
             line-height: 1.8; 
             text-align: justify;
@@ -51,11 +70,11 @@
             color: var(--brand-dark-green);
         }
 
-        /* 📸 2. मॉडर्न इमेज गैलरी ग्रिड */
-        .gallery-section { max-width: 1140px; margin: 40px auto; padding: 0 20px; }
+        /* 📸 2. मॉडर्न इमेज गैलरी ग्रिड (दो कॉलम फिक्स कंप्यूटर स्टाइल) */
+        .gallery-section { width: 1140px; margin: 40px auto; padding: 0 20px; }
         .gallery-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            grid-template-columns: 1fr 1fr; /* मोबाइल पर भी दो कॉलम फिक्स रहेंगे */
             gap: 25px; 
         }
         .gallery-item { 
@@ -65,28 +84,29 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.02); 
             border: 1px solid #e2e8f0;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1);
         }
         .gallery-item:hover { 
-            transform: translateY(-6px); 
-            box-shadow: 0 15px 30px rgba(17,83,46,0.1);
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 35px rgba(17,83,46,0.12);
             border-color: var(--brand-green);
         }
-        .gallery-img-box { width: 100%; height: 240px; overflow: hidden; }
+        .gallery-img-box { width: 100%; height: 260px; overflow: hidden; }
         .gallery-img-box img { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
-        .gallery-item:hover .gallery-img-box img { transform: scale(1.05); }
+        .gallery-item:hover .gallery-img-box img { transform: scale(1.06); }
 
-        /* 🔗 3. पंजीकरण क्विक लिंक स्ट्रिप */
+        /* 🔗 3. पंजीकरण क्विक लिंक स्ट्रिप (चमकदार पल्स एनिमेशन) */
         .link-strip { 
             background: linear-gradient(135deg, #11532e, #1a7442); 
-            padding: 15px 20px; 
+            padding: 20px; 
             text-align: center; 
             margin: 40px 0;
+            width: 1200px;
             box-shadow: 0 4px 15px rgba(17,83,46,0.15);
         }
         .strip-btn { 
@@ -96,22 +116,48 @@
             background: #ffffff; 
             color: var(--brand-green); 
             text-decoration: none; 
-            padding: 10px 24px; 
+            padding: 12px 30px; 
             border-radius: 30px; 
             font-weight: 700; 
-            font-size: 14px; 
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            font-size: 16px; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s infinite;
         }
+        
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .strip-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(25deg);
+            animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% { left: -60%; }
+            15% { left: 140%; }
+            100% { left: 140%; }
+        }
+
         .strip-btn:hover { 
             background: var(--brand-dark-green); 
             color: #ffffff; 
-            transform: scale(1.03); 
+            transform: scale(1.04); 
         }
 
-        /* 📺 4. वीडियो सेक्शन */
-        .video-section { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .video-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--brand-dark-green); }
+        /* 📺 4. वीडियो सेक्शन (सिनेमाई लुक) */
+        .video-section { width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .video-title { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: var(--brand-dark-green); }
         .video-wrapper { 
             position: relative; 
             padding-bottom: 56.25%; 
@@ -120,81 +166,67 @@
             border-radius: 20px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.12);
             border: 4px solid #ffffff;
+            transition: transform 0.4s ease;
         }
+        .video-wrapper:hover { transform: scale(1.01); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* 📱 5. सोशल मीडिया कनेक्ट और आइकॉन */
-        .social-section { text-align: center; margin: 50px auto; padding: 0 20px; }
-        .social-text { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 15px; font-style: italic; }
-        .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        /* 📱 5. सोशल मीडिया कनेक्ट */
+        .social-section { text-align: center; margin: 50px auto; }
+        .social-text { font-size: 15px; font-weight: 600; color: var(--text-muted); margin-bottom: 15px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 15px; }
         .social-icon { 
-            width: 45px; 
-            height: 45px; 
+            width: 48px; 
+            height: 48px; 
             border-radius: 50%; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             color: #ffffff; 
             text-decoration: none; 
-            font-size: 20px; 
-            transition: all 0.3s ease; 
+            font-size: 22px; 
+            transition: all 0.3s cubic-bezier(0.15, 0.85, 0.45, 1); 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         .social-icon.fb { background: #1877f2; }
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
-        .social-icon:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .social-icon:hover { transform: translateY(-6px) rotate(360deg); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         /* 🏢 6. एलीट कॉर्पोरेट फुटर */
         .footer-section { 
             background: #0b3a20; 
             color: #ffffff; 
-            padding: 40px 20px; 
+            padding: 45px 20px; 
             border-top: 4px solid var(--brand-gold);
+            width: 1200px;
         }
-        .footer-container { 
-            max-width: 1140px; 
-            margin: 0 auto; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px;
-        }
+        .footer-container { max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
         .footer-title { 
-            font-size: 18px; 
+            font-size: 20px; 
             font-weight: 700; 
             color: var(--brand-gold); 
             border-bottom: 1px dashed rgba(212,175,55,0.3);
             padding-bottom: 10px;
             margin-bottom: 5px;
         }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .footer-info-item { display: flex; gap: 12px; font-size: 14.5px; line-height: 1.6; align-items: flex-start; }
-        .footer-info-item i { color: var(--brand-gold); font-size: 16px; margin-top: 4px; }
-        .footer-info-item a { color: #ffffff; text-decoration: none; transition: color 0.2s; }
-        .footer-info-item a:hover { color: var(--brand-gold); }
-        .footer-bottom { text-align: center; font-size: 12.5px; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 15px; }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 25px; }
+        .footer-info-item { display: flex; gap: 12px; font-size: 15px; line-height: 1.6; align-items: flex-start; }
+        .footer-info-item i { color: var(--brand-gold); font-size: 18px; margin-top: 4px; }
+        .footer-info-item a { color: #ffffff; text-decoration: none; }
+        .footer-bottom { text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 15px; }
 
-        /* 🔍 इमेज लाइटबॉक्स पॉपअप मॉडल */
+        /* 🔍 ज़ूम लाइटबॉक्स पॉपअप */
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 20px; }
-        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; animation: zoomIn 0.3s ease forwards; }
+        @keyframes zoomIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
         .lightbox-close { position: absolute; top: 20px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; font-weight: bold; }
-
-        @media (max-width: 650px) {
-            .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
-            .gallery-img-box { height: 200px; }
-            .intro-card { padding: 20px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 20px; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- 1. संस्थान परिचय सेक्शन -->
+    <!-- 1. संस्थान परिचय सेक्शन (पूरा खुला डेस्कटॉप स्टाइल) -->
     <div class="intro-section">
         <div class="intro-card">
             <h2 class="intro-title"><i class="fa-solid fa-building-columns"></i> संस्थान परिचय:</h2>
@@ -205,7 +237,7 @@
         </div>
     </div>
 
-    <!-- 2. मॉडर्न इमेज गैलरी सेक्शन -->
+    <!-- 2. मॉडर्न इमेज गैलरी सेक्शन (फिक्स 2 कॉलम) -->
     <div class="gallery-section">
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox('https://images.squarespace-cdn.com/content/v1/6407ae862f90a61d6bc0b98f/fb0b6fe9-8260-4966-bd5e-0cc53ee92248/1000292786.png')">
@@ -254,24 +286,15 @@
             <div class="footer-grid">
                 <div class="footer-info-item">
                     <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <strong>Address:</strong><br>
-                        Tehsil Bhadra, District - Hanumangarh, Rajasthan
-                    </div>
+                    <div><strong>Address:</strong><br>Tehsil Bhadra, District - Hanumangarh, Rajasthan</div>
                 </div>
                 <div class="footer-info-item">
                     <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <strong>Mobile No:</strong><br>
-                        <a href="tel:+917427014160">7427014160</a>
-                    </div>
+                    <div><strong>Mobile No:</strong><br><a href="tel:+917427014160">7427014160</a></div>
                 </div>
                 <div class="footer-info-item">
                     <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <strong>Email:</strong><br>
-                        <a href="mailto:jatsamajsansthanbhadra@gmail.com">jatsamajsansthanbhadra@gmail.com</a>
-                    </div>
+                    <div><strong>Email:</strong><br><a href="mailto:jatsamajsansthanbhadra@gmail.com">jatsamajsansthanbhadra@gmail.com</a></div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -280,7 +303,6 @@
         </div>
     </div>
 
-    <!-- इमेज ज़ूम लाइटबॉक्स संरचना -->
     <div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-img" id="lightboxTarget" src="" alt="Zoomed Image">
