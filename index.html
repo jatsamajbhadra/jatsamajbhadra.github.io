@@ -7,7 +7,6 @@
     <!-- Font Awesome Icons for Social Media (Updated to v6.6.0 for X Logo Fix) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* 1. स्मूथ स्क्रॉलिंग जोड़ना */
         html {
             scroll-behavior: smooth;
         }
@@ -22,9 +21,20 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; }
+        
+        /* 🎬 پورے پیج کے لیے اسموتھ اینٹری اینیمیشن */
+        body { 
+            background-color: var(--light-bg); 
+            color: var(--text-main); 
+            -webkit-font-smoothing: antialiased; 
+            animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards;
+        }
+        @keyframes pageFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
-        /* 🏛️ 1. संस्थान परिचय सेक्शन */
+        /* 🏛️ 1. سنستھان پریچے سیکشن (ہوور اینیمیشن کے ساتھ) */
         .intro-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
         .intro-card { 
             background: #ffffff; 
@@ -35,6 +45,11 @@
             border-top: 1px solid #f1f5f9;
             border-right: 1px solid #f1f5f9;
             border-bottom: 1px solid #f1f5f9;
+            transition: all 0.4s ease;
+        }
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(17, 83, 46, 0.08);
         }
         .intro-title { 
             font-size: 22px; 
@@ -56,7 +71,7 @@
             color: var(--brand-dark-green);
         }
 
-        /* 📸 2. मॉडर्न इमेज गैलरी ग्रिड */
+        /* 📸 2. ماڈرن امیج گیلری گرڈ (زوم اور لفٹ اینیمیشن) */
         .gallery-section { max-width: 1140px; margin: 40px auto; padding: 0 20px; }
         .gallery-grid { 
             display: grid; 
@@ -70,11 +85,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.02); 
             border: 1px solid #e2e8f0;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1);
         }
         .gallery-item:hover { 
-            transform: translateY(-6px); 
-            box-shadow: 0 15px 30px rgba(17,83,46,0.1);
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 35px rgba(17,83,46,0.12);
             border-color: var(--brand-green);
         }
         .gallery-img-box { width: 100%; height: 240px; overflow: hidden; }
@@ -82,14 +97,14 @@
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
-        .gallery-item:hover .gallery-img-box img { transform: scale(1.05); }
+        .gallery-item:hover .gallery-img-box img { transform: scale(1.06); }
 
-        /* 🔗 3. पंजीकरण क्विक लिंक स्ट्रिप */
+        /* 🔗 3. پنجیکرن کوئک لنک سٹرپ (گلو اور پلس اینیمیشن) */
         .link-strip { 
             background: linear-gradient(135deg, #11532e, #1a7442); 
-            padding: 15px 20px; 
+            padding: 18px 20px; 
             text-align: center; 
             margin: 40px 0;
             box-shadow: 0 4px 15px rgba(17,83,46,0.15);
@@ -101,20 +116,49 @@
             background: #ffffff; 
             color: var(--brand-green); 
             text-decoration: none; 
-            padding: 10px 24px; 
+            padding: 12px 28px; 
             border-radius: 30px; 
             font-weight: 700; 
-            font-size: 14px; 
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            font-size: 14.5px; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s infinite;
             transition: all 0.3s ease;
         }
+        
+        /* بٹن دھڑکن (Pulse) اینیمیشن */
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* بٹن پر چمکدار پٹی (Shine Effect) */
+        .strip-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(25deg);
+            animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% { left: -60%; }
+            15% { left: 140%; }
+            100% { left: 140%; }
+        }
+
         .strip-btn:hover { 
             background: var(--brand-dark-green); 
             color: #ffffff; 
-            transform: scale(1.03); 
+            transform: scale(1.04); 
         }
 
-        /* 📺 4. वीडियो सेक्शन */
+        /* 📺 4. ویڈیو سیکشن */
         .video-section { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
         .video-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--brand-dark-green); }
         .video-wrapper { 
@@ -125,13 +169,17 @@
             border-radius: 20px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.12);
             border: 4px solid #ffffff;
+            transition: transform 0.4s ease;
+        }
+        .video-wrapper:hover {
+            transform: scale(1.01);
         }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* 📱 5. सोशल मीडिया कनेक्ट */
+        /* 📱 5. سوشل میڈیا کنیکٹ (روٹیٹ اینیمیشن کے ساتھ) */
         .social-section { text-align: center; margin: 50px auto; padding: 0 20px; }
         .social-text { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 15px; font-style: italic; }
-        .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .social-links { display: flex; justify(content: center; gap: 15px; flex-wrap: wrap; }
         .social-icon { 
             width: 45px; 
             height: 45px; 
@@ -142,16 +190,16 @@
             color: #ffffff; 
             text-decoration: none; 
             font-size: 20px; 
-            transition: all 0.3s ease; 
+            transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         .social-icon.fb { background: #1877f2; }
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
-        .social-icon:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .social-icon:hover { transform: translateY(-6px) rotate(360deg); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* 🏢 6. एलीट कॉर्पोरेट फुटर */
+        /* 🏢 6. ایلیٹ کارپوریٹ فوٹر */
         .footer-section { 
             background: #0b3a20; 
             color: #ffffff; 
@@ -184,9 +232,19 @@
         .footer-info-item a:hover { color: var(--brand-gold); }
         .footer-bottom { text-align: center; font-size: 12.5px; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 15px; }
 
-        /* 🔍 इमेज लाइटबॉक्स पॉपअप मॉडल */
+        /* 🔍 امیج لائٹ بکس پاپ اپ ماڈل (زوم ان اینیمیشن کے ساتھ) */
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 20px; }
-        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+        .lightbox-img { 
+            max-width: 100%; 
+            max-height: 90vh; 
+            border-radius: 8px; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5); 
+            animation: zoomIn 0.3s ease forwards;
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
         .lightbox-close { position: absolute; top: 20px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; font-weight: bold; }
 
         @media (max-width: 650px) {
@@ -196,7 +254,6 @@
             .footer-grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
-        /* 🎨 2. सिलेक्शन कलर स्टाइल (CSS के आखिर में) */
         ::selection {
             background: #11532e;
             color: #fff;
@@ -205,7 +262,7 @@
 </head>
 <body>
 
-    <!-- 1. संस्थान परिचय सेक्शन -->
+    <!-- 1. سنستھان پریچے سیکشن -->
     <div class="intro-section">
         <div class="intro-card">
             <h2 class="intro-title"><i class="fa-solid fa-building-columns"></i> संस्थान परिचय:</h2>
@@ -216,7 +273,7 @@
         </div>
     </div>
 
-    <!-- 2. मॉडर्न इमेज गैलरी सेक्शन (Lazy Loading के साथ) -->
+    <!-- 2. ماڈرن امیج گیلری سیکشن -->
     <div class="gallery-section">
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox('FB_IMG_1783181660134.jpg')">
@@ -232,14 +289,14 @@
         </div>
     </div>
 
-    <!-- 3. पंजीकरण क्विक लिंक स्ट्रिप -->
+    <!-- 3. پنجیکرن کوئک لنک سٹرپ -->
     <div class="link-strip">
         <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
             <i class="fa-solid fa-user-plus"></i> राइजिंग जाट यूथ फाउंडेशन (RJYF) पंजीकरण लिंक
         </a>
     </div>
 
-    <!-- 4. वीडियो सेक्शन -->
+    <!-- 4. ویڈیو سیکشن -->
     <div class="video-section">
         <h3 class="video-title"><i class="fa-solid fa-video"></i> किसान मसीहा चौधरी कुंभाराम आर्य - शार्ट फिल्म</h3>
         <div class="video-wrapper">
@@ -247,7 +304,7 @@
         </div>
     </div>
 
-    <!-- 5. सोशल मीडिया कनेक्ट -->
+    <!-- 5. سوشل میڈیا کنیکٹ -->
     <div class="social-section">
         <p class="social-text">नीचे दिए बटन पर क्लिक कर संस्थान के सोशल मीडिया अकाउंट से जुड़ सकते हैं</p>
         <div class="social-links">
@@ -258,7 +315,7 @@
         </div>
     </div>
 
-    <!-- 6. एलीट कॉर्पोरेट फुटर -->
+    <!-- 6. ایلیٹ کارپوریٹ فوٹر -->
     <div class="footer-section">
         <div class="footer-container">
             <h3 class="footer-title">Contact Us (संपर्क सूत्र)</h3>
@@ -291,13 +348,13 @@
         </div>
     </div>
 
-    <!-- इमेज ज़ूम लाइटबॉक्स संरचना -->
+    <!-- امیج زوم لائٹ بکس سرنچنا -->
     <div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-img" id="lightboxTarget" src="" alt="Zoomed Image">
     </div>
 
-    <!-- स्क्रिप्ट टैग -->
+    <!-- سکرپٹ ٹیگ -->
     <script>
         function openLightbox(imgUrl) {
             document.getElementById('lightboxTarget').src = imgUrl;
