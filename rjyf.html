@@ -148,7 +148,7 @@
         /* 📝 पंजीकरण फॉर्म और लिस्ट बॉक्स */
         .form-strip {
             background: linear-gradient(135deg, #11532e, #1a7442);
-            padding: 30px 20px;
+            padding: 35px 20px;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(17,83,46,0.12);
@@ -158,11 +158,11 @@
         }
         .live-list-strip {
             background: linear-gradient(135deg, #0b3a20, #11532e);
-            padding: 35px 20px !important;
+            padding: 45px 20px !important;
         }
         .form-desc {
             color: #ffffff;
-            font-size: 15px;
+            font-size: 15.5px;
             margin-bottom: 20px;
             font-weight: 500;
             line-height: 1.5;
@@ -201,7 +201,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* बटन बेसिक सीएसएस */
+        /* बटन का प्रीमियम और शानदार स्टाइल */
         .strip-btn {
             display: inline-flex;
             align-items: center;
@@ -210,14 +210,14 @@
             background: #ffffff;
             color: var(--brand-green);
             text-decoration: none;
-            padding: 13px 28px;
+            padding: 14px 32px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 14.5px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             border: none;
-            max-width: 100%;
+            width: auto;
         }
         .strip-btn:hover {
             background: #fcd34d;
@@ -225,19 +225,10 @@
             transform: scale(1.02);
         }
 
-        /* सदस्य सूची वाला विशेष छोटा बटन */
-        .compact-member-btn {
-            background-color: #fcd34d !important;
-            color: #0f172a !important;
-            font-size: 13px !important;
-            padding: 11px 22px !important;
-            width: auto !important;
-            display: inline-flex !important;
-            border-radius: 25px !important;
-        }
-        .compact-member-btn:hover {
-            background-color: #ffffff !important;
-            color: var(--brand-green) !important;
+        /* सदस्य सूची वाला पुराना सुंदर पीला बटन */
+        .member-btn-style {
+            background-color: #fcd34d;
+            color: #0f172a;
         }
 
         .qr-container {
@@ -291,16 +282,12 @@
             color: rgba(255,255,255,0.6); 
         }
 
-        /* 📱 मोबाइल रिस्पॉन्सिव सेटिंग्स */
         @media (max-width: 650px) {
             .tab-btn { font-size: 12px; padding: 12px 5px; gap: 4px; }
-            .rjyf-card, .yellow-box { padding: 18px 15px; }
-            .form-strip { padding: 22px 15px; }
-            .live-list-strip { padding: 25px 15px !important; }
-            .panel-title { font-size: 16.5px; }
+            .rjyf-card, .yellow-box, .form-strip { padding: 18px; }
+            .panel-title { font-size: 17px; }
             .panel-text, .content-list li, .form-desc { font-size: 13.5px; }
-            .strip-btn { padding: 12px 20px; font-size: 13px; width: 100%; }
-            .compact-member-btn { width: auto !important; max-width: 90%; font-size: 12.5px !important; padding: 10px 18px !important; }
+            .strip-btn { padding: 13px 24px; font-size: 13.5px; }
         }
     </style>
 </head>
@@ -342,7 +329,7 @@
                     <li><strong>गौरवशाली इतिहास का संरक्षण:</strong> समाज के प्रत्येक व्यक्ति, विशेषकर नई पीढ़ी (युवाओं) तक जाट समाज की ऐतिहासिक शौर्य गाथाओं, वीर योद्धाओं और महान जाट रत्नों के गौरवशाली इतिहास को पहुँचाना।</li>
                     <li><strong>सामाजिक सुधार और जागरूकता:</strong> समाज में व्याप्त कुरीतियों और फिजूलखर्ची के खिलाफ आवाज़ उठाना, युवाओं को नशे की लत से दूर रखना (नशामुक्त अभियान) और सामाजिक समरसता को बढ़ावा देना।</li>
                     <li><strong>युवा सशक्तिकरण और शिक्षा:</strong> ग्रामीण व कस्बाई क्षेत्रों के होनहार युवाओं को सही करियर मार्गदर्शन देना, सफल अभ्यर्थियों को प्रोत्साहित करना, प्रतियोगी परीक्षाओं की तैयारी में हरसंभव सहायता करना और शिक्षा के स्तर को ऊँचा उठाना।</li>
-                    <li><strong>नेतৃত্ব क्षमता का विकास (Leadership Building):</strong> युवाओं में सकारात्मक सोच और नेतृत्व के गुण विकसित करना, ताकि वे भविष्य में समाज और देश का सही प्रतिनिधित्व कर सकें।</li>
+                    <li><strong>नेतृत्व क्षमता का विकास (Leadership Building):</strong> युवाओं में सकारात्मक सोच और नेतृत्व के गुण विकसित करना, ताकि वे भविष्य में समाज और देश का सही प्रतिनिधित्व कर सकें।</li>
                 </ul>
             </div>
 
@@ -384,7 +371,7 @@
             </div>
         </div>
 
-        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (पूरी तरह संतुलित और छोटा बटन) -->
+        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (100% फिट टू पेज प्रिव्यू बाईपास लिंक के साथ) -->
         <div id="members-list" class="tab-panel">
             <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
@@ -392,13 +379,13 @@
                 </p>
             </div>
 
-            <!-- लाइव लिस्ट बॉक्स - अब पूरी तरह छोटा और फिट साइज़ -->
             <div class="form-strip live-list-strip">
-                <i class="fa-solid fa-table-list" style="font-size: 32px; color: #fcd34d; margin-bottom: 12px; display: block;"></i>
-                <p class="form-desc" style="max-width: 100%; margin-bottom: 18px;">
+                <i class="fa-solid fa-table-list" style="font-size: 45px; color: #fcd34d; margin-bottom: 15px;"></i>
+                <p class="form-desc">
                     मोबाइल स्क्रीन पर बेहतर और साफ़ व्यू के लिए पंजीकृत सदस्यों की पूरी लाइव सूची देखने के लिए नीचे दिए गए बटन का उपयोग करें।
                 </p>
-                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml" target="_blank" rel="noopener noreferrer" class="strip-btn compact-member-btn">
+                <!-- 🚀 न्यू "Fit to Page" प्रिव्यू व्यूअर बाईपास लिंक -->
+                <a href="https://docs.google.com/spreadsheets/d/1-wRzY3N6Ie10m4v9KOnL6bL3jV7w0Xv7/preview" target="_blank" rel="noopener noreferrer" class="strip-btn member-btn-style">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i> सदस्य सूची देखने के लिए यहाँ क्लिक करें
                 </a>
             </div>
