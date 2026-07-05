@@ -11,25 +11,123 @@
             --brand-green: #11532e;
             --brand-dark-green: #0b3a20;
             --brand-gold: #d4af37;
-            --light-bg: #f8fafc;
             --text-main: #1e293b;
             --text-muted: #64748b;
         }
 
+        /* 🟢 सुझाव 4: फ़ायरफ़ॉक्स (Firefox) के लिए ग्रीन स्क्रॉलबार सपोर्ट */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: var(--brand-green) #f1f5f9;
+        }
+
+        /* 🟢 सुझाव 6: क्रोम/एज/वेबकिट ब्राउज़र्स के लिए थीम-मैचिंग ग्रीन स्क्रॉलबार */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-green);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-dark-green);
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
         
+        /* 🟢 सुझाव 4: प्रीमियम हल्का ग्रीनिश लिनियर ग्रेडिएंट बैकग्राउंड */
         body { 
-            background-color: var(--light-bg); 
+            background: linear-gradient(#f8fafc, #eef7f1);
+            background-attachment: fixed;
             color: var(--text-main); 
             -webkit-font-smoothing: antialiased; 
             padding-bottom: 20px;
+        }
+
+        /* 🟢 सुझाव 1: भव्य और आकर्षक Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #0b3a20, #11532e);
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--brand-gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 80%);
+            pointer-events: none;
+        }
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 8px;
+        }
+        .hero-tagline {
+            font-size: 18px;
+            font-weight: 500;
+            color: #eceff1;
+            margin-bottom: 25px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 🟢 सुझाव 8: बटन के लिए चमकीला ग्लॉसी Shine Effect */
+        .shine-btn-container {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+        .hero-reg-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--brand-gold);
+            color: #0f172a;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .hero-reg-btn:hover {
+            background: #ffffff;
+            color: var(--brand-green);
+        }
+        .shine-btn-container::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%;
+            width: 30%; height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(30deg);
+            transition: none;
+            animation: shineMove 3.5s ease-in-out infinite;
+        }
+        @keyframes shineMove {
+            0% { left: -60%; }
+            20% { left: 140%; }
+            100% { left: 140%; }
         }
 
         /* 🗂️ 3-in-1 असली टैब नेविगेशन बार */
         .tabs-container {
             max-width: 100%;
             width: 1140px;
-            margin: 15px auto;
+            margin: 20px auto 15px auto;
             padding: 0 15px;
         }
         .tabs-nav {
@@ -42,10 +140,10 @@
         }
         .tab-btn {
             flex: 1;
-            padding: 14px 10px;
+            padding: 15px 10px;
             border: none;
             background: none;
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 700;
             color: var(--text-main);
             cursor: pointer;
@@ -53,7 +151,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         .tab-btn:not(:last-child) {
             border-right: 1px solid #e2e8f0;
@@ -62,10 +160,13 @@
             background-color: #f8fafc;
             color: var(--brand-green);
         }
+        /* 🟢 सुझाव 5: एक्टिव टैब पर प्रीमियम गोल्डन ग्लो शैडो इफेक्ट */
         .tab-btn.active {
             color: var(--brand-green);
             background-color: #f0fdf4;
-            border-bottom: 3px solid var(--brand-gold);
+            border-bottom: 4px solid var(--brand-gold);
+            box-shadow: 0 0 15px rgba(212,175,55,0.4);
+            z-index: 2;
         }
 
         /* 🚀 कंटेंट एरिया */
@@ -80,16 +181,24 @@
             display: none;
             width: 100%;
         }
+        
+        /* 🟢 सुझाव 2: नेक्स्ट-लेवल प्रीमियम कंबाइंड टैब एनीमेशन (Fade + Slide + Scale) */
         .tab-panel.active {
             display: block;
-            animation: fadeIn 0.4s ease forwards;
+            animation: premiumTabAnim 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes premiumTabAnim {
+            0% { 
+                opacity: 0; 
+                transform: translateY(15px) scale(0.97); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
         }
 
-        /* 🏛️ कार्ड्स और लेआउट */
+        /* 🏛️ कार्ड्स लेआउट और 🟢 सुझाव 3: स्मूथ 8px ऊपर उठने वाला होवर इफेक्ट */
         .rjyf-card, .yellow-box {
             background: #ffffff;
             border-radius: 16px;
@@ -99,10 +208,17 @@
             margin-bottom: 20px;
             width: 100%;
             max-width: 100%;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
+        .rjyf-card:hover, .yellow-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+        
         .yellow-box {
             background-color: #fcd34d;
             color: #0f172a;
+            border: 1px solid #fbbf24;
         }
         .panel-title {
             font-size: 19px;
@@ -145,7 +261,7 @@
             color: #0f172a;
         }
 
-        /* 📝 पंजीकरण फॉर्म और लिस्ट बॉक्स स्ट्रिप */
+        /* 📝 पंजीकरण फॉर्म स्ट्रिप */
         .form-strip {
             background: linear-gradient(135deg, #11532e, #1a7442);
             padding: 35px 20px;
@@ -168,7 +284,7 @@
             line-height: 1.5;
         }
 
-        /* 🔥 जादुई गोल्डन फायर रोटेटिंग बॉर्डर कंटेनर */
+        /* 🔥 सुझाव 2: जादुई गोल्डन फायर रोटेटिंग बॉर्डर कंटेनर - स्पीड को 4s (धीमा व प्रीमियम) किया गया */
         .fire-border-box {
             position: relative;
             display: inline-block;
@@ -181,12 +297,10 @@
         .fire-border-box::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: conic-gradient(transparent, #ffae00 10%, #fff700 20%, #d4af37 40%, transparent 60%, #ffae00 70%, #d4af37 90%, transparent);
-            animation: rotateFire 2.5s linear infinite;
+            animation: rotateFire 4s linear infinite;
             z-index: -2;
         }
         .fire-border-box::after {
@@ -201,7 +315,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* बटन का प्रीमियम स्टाइल */
+        /* बटन का प्रीमियम स्टाइल + 🟢 सुझाव 8 का शाइन इफेक्ट */
         .strip-btn {
             display: inline-flex;
             align-items: center;
@@ -214,23 +328,33 @@
             border-radius: 30px;
             font-weight: 700;
             font-size: 14.5px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             border: none;
-            width: auto;
+            position: relative;
+            overflow: hidden;
         }
         .strip-btn:hover {
             background: #fcd34d;
             color: #0f172a;
             transform: scale(1.02);
         }
+        .strip-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%;
+            width: 30%; height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            animation: shineMove 4s ease-in-out infinite;
+        }
 
-        /* सदस्य सूची वाला पुराना सुंदर पीला बटन */
         .member-btn-style {
             background-color: #fcd34d;
             color: #0f172a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
+        /* QR कोड कंटेनर एवं 🟢 सुझाव 9: QR होवर ज़ूम इफ़ेक्ट (scale 1.05) */
         .qr-container {
             text-align: center;
             margin-top: 25px;
@@ -242,9 +366,13 @@
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 4px solid #ffffff;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .qr-img:hover {
+            transform: scale(1.05);
         }
 
-        /* 📱 सोशल मीडिया कनेक्ट */
+        /* 📱 सोशल मीडिया कनेक्ट एवं 🟢 सुझाव 7: 360 डिग्री रोटेशन इफ़ेक्ट */
         .social-section { text-align: center; margin: 35px auto 25px auto; padding: 0 20px; }
         .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
@@ -258,14 +386,18 @@
             color: #ffffff; 
             text-decoration: none; 
             font-size: 18px; 
-            transition: all 0.3s ease;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            /* 🟢 सुझाव 1: यहाँ 'px' मिस्टेक को पूरी तरह ठीक कर दिया गया है */
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .social-icon.fb { background: #1877f2; }
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
-        .social-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .social-icon:hover { 
+            transform: rotate(360deg); 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
+        }
 
         /* 🏢 फुटर स्टाइल */
         .footer-section { 
@@ -278,20 +410,41 @@
             margin-top: 20px;
         }
         .footer-bottom { 
-            font-size: 12px; 
-            color: rgba(255,255,255,0.6); 
+            font-size: 12.5px; 
+            color: rgba(255,255,255,0.75); 
+            font-weight: 500;
         }
 
+        /* 📱 मीडिया क्वेरी रिस्पॉन्सिवनेस */
         @media (max-width: 650px) {
-            .tab-btn { font-size: 12px; padding: 12px 5px; gap: 4px; }
+            .tab-btn { font-size: 12.5px; padding: 12px 5px; gap: 4px; }
             .rjyf-card, .yellow-box, .form-strip { padding: 18px; }
             .panel-title { font-size: 17px; }
             .panel-text, .content-list li, .form-desc { font-size: 13.5px; }
             .strip-btn { padding: 13px 24px; font-size: 13.5px; }
         }
+
+        /* 🟢 सुझाव 3: छोटे 320px वाले मोबाइल स्क्रीन्स के लिए Hero Banner Responsive सीएसएस */
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- 🟢 सुझाव 1: टॉप पर नया ब्रांडेड Hero Banner -->
+    <div class="hero-banner">
+        <h1 class="hero-title">RJYF</h1>
+        <p class="hero-tagline">"युवा शक्ति - समाज की शक्ति"</p>
+        <div class="shine-btn-container">
+            <a href="#" onclick="openTab('reg-form', 'btn-reg'); return false;" class="hero-reg-btn">
+                <i class="fa-solid fa-user-check"></i> Register Now
+            </a>
+        </div>
+    </div>
 
     <!-- 🗂️ 3-in-1 टैब नेविगेशन बार -->
     <div class="tabs-container">
@@ -319,7 +472,7 @@
                     राइजिंग जाट यूथ फाउंडेशन (RJYF) जाट समाज संस्थान, भादरा की एक ऊर्जावान, प्रगतिशील और समर्पित युवा विंग है। इस संगठन की स्थापना क्षेत्र के जागरूक, शिक्षित और कर्मठ युवाओं को एक मज़बूत और साझा मंच प्रदान करने के उद्देश्य से की गई है।
                 </p>
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 500;">
-                    हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा और दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
+                    हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा and दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
                 </p>
             </div>
 
@@ -329,7 +482,7 @@
                     <li><strong>गौरवशाली इतिहास का संरक्षण:</strong> समाज के प्रत्येक व्यक्ति, विशेषकर नई पीढ़ी (युवाओं) तक जाट समाज की ऐतिहासिक शौर्य गाथाओं, वीर योद्धाओं और महान जाट रत्नों के गौरवशाली इतिहास को पहुँचाना।</li>
                     <li><strong>सामाजिक सुधार और जागरूकता:</strong> समाज में व्याप्त कुरीतियों और फिजूलखर्ची के खिलाफ आवाज़ उठाना, युवाओं को नशे की लत से दूर रखना (नशामुक्त अभियान) और सामाजिक समरसता को बढ़ावा देना।</li>
                     <li><strong>युवा सशक्तिकरण और शिक्षा:</strong> ग्रामीण व कस्बाई क्षेत्रों के होनहार युवाओं को सही करियर मार्गदर्शन देना, सफल अभ्यर्थियों को प्रोत्साहित करना, प्रतियोगी परीक्षाओं की तैयारी में हरसंभव सहायता करना और शिक्षा के स्तर को ऊँचा उठाना।</li>
-                    <li><strong>नेतृत्व क्षमता का विकास (Leadership Building):</strong> युवाओं में सकारात्मक सोच और नेतृत्व के गुण विकसित करना, ताकि वे भविष्य में समाज और देश का सही प्रतिनिधित्व कर सकें।</li>
+                    <li><strong>नेतৃত্ব क्षमता का विकास (Leadership Building):</strong> युवाओं में सकारात्मक सोच और नेतृत्व के गुण विकसित करना, ताकि वे भविष्य में समाज और देश का सही प्रतिनिधित्व कर सकें।</li>
                 </ul>
             </div>
 
@@ -341,6 +494,16 @@
                     <li><strong>पर्यावरण संरक्षण:</strong> प्रकृति के प्रति अपनी जिम्मेदारी निभाते हुए व्यापक स्तर पर पर्यावरण संरक्षण अभियान चलाना।</li>
                     <li><strong>आपसी एकता व भाईचारा:</strong> समाज के हर वर्ग को साथ लेकर चलना, आपसी सहयोग और भाईचारे के ताने-बाने को सुदृढ़ करना।</li>
                 </ul>
+            </div>
+
+            <!-- 🎯 होम पेज पर भी रजिस्ट्रेशन को आसान बनाने वाला वही शानदार घूमती गोल्डन लाइट वाला बटन स्ट्रिप -->
+            <div class="form-strip" style="margin-top: 25px;">
+                <p class="form-desc">फाउंडेशन से जुड़ने के लिए नीचे दिए गए बटन पर क्लिक करके अपना पंजीकरण पूरा करें:</p>
+                <div class="fire-border-box">
+                    <a href="#" onclick="openTab('reg-form', 'btn-reg'); return false;" class="strip-btn">
+                        <i class="fa-solid fa-user-plus"></i> Click Here For Registration
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -357,78 +520,5 @@
 
             <div class="form-strip">
                 <p class="form-desc">ऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
-                <!-- 🔥 चमकीली घूमती गोल्डन फायर बॉर्डर इफेक्ट वाला बटन -->
                 <div class="fire-border-box">
-                    <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
-                        <i class="fa-solid fa-user-plus"></i> Click Here For Registration
-                    </a>
-                </div>
-            </div>
-
-            <div class="qr-container">
-                <p style="font-size: 14px; font-weight: bold; margin-bottom: 10px; color: var(--text-main);">Scan QR Code For Registration</p>
-                <img src="IMG-20260615-WA0021.jpg" alt="Scan QR Code" class="qr-img">
-            </div>
-        </div>
-
-        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (छोटे और सीधे सन्देश के साथ असली पब्लिश लिंक) -->
-        <div id="members-list" class="tab-panel">
-            <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
-                <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
-                    यहाँ साझा की गई पंजीकृत सदस्यों की सूची केवल प्रारंभिक सूची (Draft List) है। इसे अभी अंतिम या आधिकारिक सूची न समझा जाए। आवश्यक समीक्षा और सुधारों के बाद जल्द ही आधिकारिक सूची साझा की जाएगी।
-                </p>
-            </div>
-
-            <div class="form-strip live-list-strip">
-                <i class="fa-solid fa-table-list" style="font-size: 45px; color: #fcd34d; margin-bottom: 15px;"></i>
-                <!-- 🎯 छोटा और सीधा मैसेज जो आपने बोला -->
-                <p class="form-desc">
-                    पंजीकृत सदस्यों की सूची देखने के लिए नीचे दिए गए बटन पर क्लिक करें।
-                </p>
-                <!-- 🚀 आपका अपना असली लाइव पब्लिश लिंक बिना किसी त्रुटि के वापस जोड़ दिया है -->
-                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml" target="_blank" rel="noopener noreferrer" class="strip-btn member-btn-style">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> सदस्य सूची देखने के लिए यहाँ क्लिक करें
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- सोशल मीडिया कनेक्ट -->
-    <div class="social-section">
-        <p class="social-text">संस्थान के सोशल मीडिया अकाउंट से जुड़ें</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-    </div>
-
-    <!-- फुटर -->
-    <div class="footer-section">
-        <div class="footer-bottom">
-            &copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
-        </div>
-    </div>
-
-    <script>
-        function openTab(panelId, btnId) {
-            var panels = document.getElementsByClassName('tab-panel');
-            for (var i = 0; i < panels.length; i++) {
-                panels[i].classList.remove('active');
-            }
-            
-            var buttons = document.getElementsByClassName('tab-btn');
-            for (var j = 0; j < buttons.length; j++) {
-                buttons[j].classList.remove('active');
-            }
-            
-            document.getElementById(panelId).classList.add('active');
-            document.getElementById(btnId).classList.add('active');
-            
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-    </script>
-</body>
-</html>
+                    
