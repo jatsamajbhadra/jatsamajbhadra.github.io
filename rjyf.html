@@ -145,7 +145,7 @@
             color: #0f172a;
         }
 
-        /* 📝 पंजीकरण फॉर्म और लिस्ट बॉक्स */
+        /* 📝 पंजीकरण फॉर्म स्ट्रिप */
         .form-strip {
             background: linear-gradient(135deg, #11532e, #1a7442);
             padding: 35px 20px;
@@ -155,10 +155,6 @@
             margin-bottom: 20px;
             width: 100%;
             max-width: 100%;
-        }
-        .live-list-strip {
-            background: linear-gradient(135deg, #0b3a20, #11532e);
-            padding: 45px 20px !important;
         }
         .form-desc {
             color: #ffffff;
@@ -225,10 +221,23 @@
             transform: scale(1.02);
         }
 
-        /* सदस्य सूची वाला पुराना सुंदर पीला बटन */
-        .member-btn-style {
-            background-color: #fcd34d;
-            color: #0f172a;
+        /* 📱 100% फिट टू पेज - गूगल शीट कंटेनर बॉक्स */
+        .sheet-embed-container {
+            width: 100%;
+            height: 550px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            background: #ffffff;
+            margin-top: 15px;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+        .sheet-embed-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .qr-container {
@@ -288,6 +297,7 @@
             .panel-title { font-size: 17px; }
             .panel-text, .content-list li, .form-desc { font-size: 13.5px; }
             .strip-btn { padding: 13px 24px; font-size: 13.5px; }
+            .sheet-embed-container { height: 450px; }
         }
     </style>
 </head>
@@ -356,7 +366,7 @@
             </div>
 
             <div class="form-strip">
-                <p class="form-desc">ऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
+                <p class="form-desc">オンラインऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
                 <!-- 🔥 चमकीली घूमती गोल्डन फायर बॉर्डर इफेक्ट वाला बटन -->
                 <div class="fire-border-box">
                     <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
@@ -371,7 +381,7 @@
             </div>
         </div>
 
-        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (गूगल शीट 'Fit to Page' मोबाइल रिस्पॉन्सिव लिंक के साथ) -->
+        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (100% फिट-टू-स्क्रीन इन-बिल्ट लाइव लिस्ट बॉक्स) -->
         <div id="members-list" class="tab-panel">
             <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
@@ -379,15 +389,9 @@
                 </p>
             </div>
 
-            <div class="form-strip live-list-strip">
-                <i class="fa-solid fa-table-list" style="font-size: 45px; color: #fcd34d; margin-bottom: 15px;"></i>
-                <p class="form-desc">
-                    मोबाइल स्क्रीन पर बेहतर और साफ़ व्यू के लिए पंजीकृत सदस्यों की पूरी लाइव सूची देखने के लिए नीचे दिए गए बटन का उपयोग करें।
-                </p>
-                <!-- 🚀 जादुई 'Fit to Screen' पैरामीटर युक्त असली लाइव लिंक -->
-                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml?headers=false&chrome=false" target="_blank" rel="noopener noreferrer" class="strip-btn member-btn-style">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> सदस्य सूची देखने के लिए यहाँ क्लिक करें
-                </a>
+            <!-- 📱 मोबाइल फ्रेंडली इन-बिल्ट लाइव कंटेनर (यह पूरी लिस्ट को स्क्रीन के अंदर फिट रखेगा) -->
+            <div class="sheet-embed-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml?widget=false&headers=false&chrome=false"></iframe>
             </div>
         </div>
 
