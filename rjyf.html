@@ -156,6 +156,10 @@
             width: 100%;
             max-width: 100%;
         }
+        .live-list-strip {
+            background: linear-gradient(135deg, #0b3a20, #11532e);
+            padding: 45px 20px !important;
+        }
         .form-desc {
             color: #ffffff;
             font-size: 15.5px;
@@ -197,7 +201,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* बटन का प्रीमियम और शानदार स्टाइल */
+        /* बटन का प्रीमियम स्टाइल */
         .strip-btn {
             display: inline-flex;
             align-items: center;
@@ -221,23 +225,10 @@
             transform: scale(1.02);
         }
 
-        /* 📱 100% फिट टू पेज - गूगल शीट कंटेनर बॉक्स */
-        .sheet-embed-container {
-            width: 100%;
-            height: 550px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 2px solid #e2e8f0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            background: #ffffff;
-            margin-top: 15px;
-            position: relative;
-            -webkit-overflow-scrolling: touch;
-        }
-        .sheet-embed-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        /* सदस्य सूची वाला पुराना सुंदर पीला बटन */
+        .member-btn-style {
+            background-color: #fcd34d;
+            color: #0f172a;
         }
 
         .qr-container {
@@ -297,7 +288,6 @@
             .panel-title { font-size: 17px; }
             .panel-text, .content-list li, .form-desc { font-size: 13.5px; }
             .strip-btn { padding: 13px 24px; font-size: 13.5px; }
-            .sheet-embed-container { height: 450px; }
         }
     </style>
 </head>
@@ -326,7 +316,7 @@
             <div class="yellow-box">
                 <h2 class="panel-title">हमारे बारे में (About Us):</h2>
                 <p class="panel-text" style="font-weight: 600;">
-                    राइजिंग जाट यूथ फाउंडेशन (RJYF) जाट समाज संस्थान, भादरा की एक ऊर्जावान, प्रगतिशील और समर्पित युवा विंग है। इस संगठन की स्थापना क्षेत्र के जागरूक, शिक्षित और कर्मठ युवाओं को एक मज़बूत और साझा मंच प्रदान करने के उद्देश्य से की गई है।
+                    राइजिंग जाट यूथ फाउंडेशन (RJYF) जाट समाज संस्थान, भादरा की एक ऊर्जावान, प्रगतिशील and समर्पित युवा विंग है। इस संगठन की स्थापना क्षेत्र के जागरूक, शिक्षित और कर्मठ युवाओं को एक मज़बूत और साझा मंच प्रदान करने के उद्देश्य से की गई है।
                 </p>
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 500;">
                     हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा और दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
@@ -366,7 +356,7 @@
             </div>
 
             <div class="form-strip">
-                <p class="form-desc">オンラインऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
+                <p class="form-desc">オンラインपंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
                 <!-- 🔥 चमकीली घूमती गोल्डन फायर बॉर्डर इफेक्ट वाला बटन -->
                 <div class="fire-border-box">
                     <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
@@ -381,7 +371,7 @@
             </div>
         </div>
 
-        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (100% फिट-टू-स्क्रीन इन-बिल्ट लाइव लिस्ट बॉक्स) -->
+        <!-- अनुभाग 3: रजिस्टर्ड सदस्य (नई टैब में खुलने वाला मोबाइल फ्रेंडली डायरेक्ट प्रिव्यू लिंक) -->
         <div id="members-list" class="tab-panel">
             <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
@@ -389,9 +379,15 @@
                 </p>
             </div>
 
-            <!-- 📱 मोबाइल फ्रेंडली इन-बिल्ट लाइव कंटेनर (यह पूरी लिस्ट को स्क्रीन के अंदर फिट रखेगा) -->
-            <div class="sheet-embed-container">
-                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml?widget=false&headers=false&chrome=false"></iframe>
+            <div class="form-strip live-list-strip">
+                <i class="fa-solid fa-table-list" style="font-size: 45px; color: #fcd34d; margin-bottom: 15px;"></i>
+                <p class="form-desc">
+                    मोबाइल स्क्रीन पर बेहतर और साफ़ व्यू के लिए पंजीकृत सदस्यों की पूरी लाइव सूची देखने के लिए नीचे दिए गए बटन का उपयोग करें।
+                </p>
+                <!-- 🚀 न्यू टैब प्रिव्यू लिंक: जो बिना किसी एम्बेड एरर के नई टैब में खुलेगा और फिट भी रहेगा -->
+                <a href="https://docs.google.com/spreadsheets/d/1-wRzY3N6Ie10m4v9KOnL6bL3jV7w0Xv7/preview" target="_blank" rel="noopener noreferrer" class="strip-btn member-btn-style">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> सदस्य सूची देखने के लिए यहाँ क्लिक करें
+                </a>
             </div>
         </div>
 
