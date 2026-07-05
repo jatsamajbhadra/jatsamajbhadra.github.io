@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RJYF - राइजिंग जाट यूथ फाउंडेशन</title>
+    <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
         html {
@@ -25,30 +26,30 @@
             background-color: var(--light-bg); 
             color: var(--text-main); 
             -webkit-font-smoothing: antialiased; 
-            animation: pageFadeIn 0.8s cubic-bezier(0.15, 0.85, 0.45, 1) forwards;
-        }
-        @keyframes pageFadeIn {
-            0% { opacity: 0; transform: translateY(15px); }
-            100% { opacity: 1; transform: translateY(0); }
+            padding-bottom: 20px;
         }
 
         /* 🗂️ 3-in-1 टैब नेविगेशन बार स्टाइल */
         .tabs-container {
             max-width: 1140px;
-            margin: 20px auto 10px auto;
-            padding: 0 20px;
+            margin: 15px auto 10px auto;
+            padding: 0 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--light-bg);
         }
         .tabs-nav {
             display: flex;
             background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             border: 1px solid #e2e8f0;
         }
         .tab-btn {
             flex: 1;
-            padding: 12px 15px;
+            padding: 14px 10px;
             border: none;
             background: none;
             font-size: 14px;
@@ -59,8 +60,8 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
         .tab-btn:not(:last-child) {
             border-right: 1px solid #e2e8f0;
@@ -72,41 +73,21 @@
         .tab-btn.active {
             color: var(--brand-green);
             background-color: #f0fdf4;
-        }
-        .tab-btn.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--brand-gold);
-            animation: lineStretch 0.3s ease forwards;
-        }
-        @keyframes lineStretch {
-            0% { width: 0; left: 50%; }
-            100% { width: 100%; left: 0; }
+            border-bottom: 3px solid var(--brand-gold);
         }
 
-        /* 🚀 डायनेमिक कंटेंट एरिया */
+        /* 🚀 डायनेमिक कंटेंट एरिया स्टाइल */
         .content-container {
             max-width: 1140px;
-            margin: 0 auto 30px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
         .tab-panel {
-            display: none;
-            animation: panelFade 0.4s ease forwards;
-        }
-        .tab-panel.active {
-            display: block;
-        }
-        @keyframes panelFade {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
+            padding-top: 10px;
+            margin-bottom: 30px;
         }
 
-        /* 🏛️ सामान्य कार्ड और टेक्स्ट लेआउट */
+        /* 🏛️ कार्ड्स और लेआउट */
         .rjyf-card {
             background: #ffffff;
             border-radius: 16px;
@@ -130,6 +111,10 @@
             margin-bottom: 15px;
             border-bottom: 2px solid #f1f5f9;
             padding-bottom: 5px;
+        }
+        .yellow-box .panel-title {
+            color: #0f172a;
+            border-bottom-color: rgba(0,0,0,0.1);
         }
         .panel-text {
             font-size: 14.5px;
@@ -160,10 +145,10 @@
             color: #0f172a;
         }
 
-        /* 📝 पंजीकरण फॉर्म बटन और QR स्टाइल */
+        /* 📝 पंजीकरण फॉर्म और QR स्टाइल */
         .form-strip {
             background: linear-gradient(135deg, #11532e, #1a7442);
-            padding: 25px 20px;
+            padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(17,83,46,0.12);
@@ -171,7 +156,7 @@
         }
         .form-desc {
             color: #ffffff;
-            font-size: 14px;
+            font-size: 14.5px;
             margin-bottom: 15px;
             font-weight: 500;
         }
@@ -182,20 +167,12 @@
             background: #ffffff;
             color: var(--brand-green);
             text-decoration: none;
-            padding: 12px 28px;
+            padding: 13px 30px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 13.5px;
+            font-size: 14px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-            animation: buttonPulse 2s infinite;
             transition: all 0.3s ease;
-        }
-        @keyframes buttonPulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
         }
         .strip-btn:hover {
             background: var(--brand-dark-green);
@@ -204,7 +181,8 @@
         }
         .qr-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
         }
         .qr-img {
             max-width: 220px;
@@ -228,14 +206,14 @@
             color: #ffffff; 
             text-decoration: none; 
             font-size: 18px; 
-            transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); 
+            transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .social-icon.fb { background: #1877f2; }
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
-        .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .social-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
 
         /* 🏢 फुटर स्टाइल */
         .footer-section { 
@@ -245,6 +223,7 @@
             border-top: 4px solid var(--brand-gold);
             text-align: center;
             border-radius: 12px;
+            margin-top: 20px;
         }
         .footer-bottom { 
             font-size: 12px; 
@@ -252,44 +231,42 @@
         }
 
         @media (max-width: 650px) {
-            .tab-btn { font-size: 12.5px; padding: 10px 5px; gap: 4px; }
-            .rjyf-card, .yellow-box, .form-strip { padding: 15px; }
+            .tab-btn { font-size: 12px; padding: 12px 5px; gap: 4px; }
+            .rjyf-card, .yellow-box, .form-strip { padding: 18px; }
             .panel-title { font-size: 17px; }
-            .panel-text, .content-list li { font-size: 13px; }
-        }
-
-        ::selection {
-            background: #11532e;
-            color: #fff;
+            .panel-text, .content-list li { font-size: 13.5px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 🗂️ 3-in-1 नेविगेशन बार (बिना जावास्क्रिप्ट के सीधे काम करने वाला) -->
     <div class="tabs-container">
         <nav class="tabs-nav">
-            <button class="tab-btn active" onclick="switchTab(event, 'main-rjyf')">
+            <a href="#main-rjyf" class="tab-btn active" id="btn-rjyf" onclick="highlightTab('btn-rjyf')">
                 <i class="fa-solid fa-building-columns"></i> RJYF
-            </button>
-            <button class="tab-btn" onclick="switchTab(event, 'reg-form')">
+            </a>
+            <a href="#reg-form" class="tab-btn" id="btn-reg" onclick="highlightTab('btn-reg')">
                 <i class="fa-solid fa-pen-to-square"></i> पंजीकरण फॉर्म
-            </button>
-            <button class="tab-btn" onclick="switchTab(event, 'members-list')">
+            </a>
+            <a href="#members-list" class="tab-btn" id="btn-members" onclick="highlightTab('btn-members')">
                 <i class="fa-solid fa-users"></i> रजिस्टर्ड सदस्य
-            </button>
+            </a>
         </nav>
     </div>
 
+    <!-- 🚀 कंटेंट एरिया -->
     <div class="content-container">
         
-        <div id="main-rjyf" class="tab-panel active">
+        <!-- अनुभाग 1: RJYF का परिचय -->
+        <div id="main-rjyf" class="tab-panel">
             <div class="yellow-box">
-                <h2 class="panel-title" style="color: #0f172a; border-bottom-color: rgba(0,0,0,0.1);">हमारे बारे में (About Us):</h2>
+                <h2 class="panel-title">हमारे बारे में (About Us):</h2>
                 <p class="panel-text" style="font-weight: 600;">
                     राइजिंग जाट यूथ फाउंडेशन (RJYF) जाट समाज संस्थान, भादरा की एक ऊर्जावान, प्रगतिशील और समर्पित युवा विंग है। इस संगठन की स्थापना क्षेत्र के जागरूक, शिक्षित और कर्मठ युवाओं को एक मज़बूत और साझा मंच प्रदान करने के उद्देश्य से की गई है।
                 </p>
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 500;">
-                    हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा... और दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
+                    हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा और दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
                 </p>
             </div>
 
@@ -307,16 +284,17 @@
                 <h2 class="panel-title">What We Do (हमारे मुख्य कार्य) :</h2>
                 <ul class="content-list">
                     <li><strong>स्वास्थ्य और सेवा:</strong> रक्तदान शिविर (Blood Donation Camps), नशामुक्ति अभियान और स्वास्थ्य जागरूकता कार्यक्रमों का संचालन।</li>
-                    <li><strong>संस्कृति एवं खेलकूद:</strong> युवाओं की शारीरिक व मानसिक प्रगति के लिए खेल प्रतियोगिताओं का आयोजन करना और उनमें खेल भावना को प्रोत्साहित करना。</li>
+                    <li><strong>संस्कृति एवं खेलकूद:</strong> युवाओं की शारीरिक व मानसिक प्रगति के लिए खेल प्रतियोगिताओं का आयोजन करना और उनमें खेल भावना को प्रोत्साहित करना।</li>
                     <li><strong>पर्यावरण संरक्षण:</strong> प्रकृति के प्रति अपनी जिम्मेदारी निभाते हुए व्यापक स्तर पर पर्यावरण संरक्षण अभियान चलाना।</li>
                     <li><strong>आपसी एकता व भाईचारा:</strong> समाज के हर वर्ग को साथ लेकर चलना, आपसी सहयोग और भाईचारे के ताने-बाने को सुदृढ़ करना।</li>
                 </ul>
             </div>
         </div>
 
+        <!-- अनुभाग 2: पंजीकरण फॉर्म -->
         <div id="reg-form" class="tab-panel">
             <div class="yellow-box">
-                <h2 class="panel-title" style="color: #0f172a; border-bottom-color: rgba(0,0,0,0.1);">Steps for Registration :</h2>
+                <h2 class="panel-title">Steps for Registration :</h2>
                 <ul class="content-list">
                     <li><strong>लिंक या QR कोड ओपन करें:</strong> अपने मोबाइल फोन पर नीचे दिए गए आधिकारिक गूगल फॉर्म (Google Form) लिंक को खोलें, या फिर नीचे दिए गए QR कोड को स्कैन करें।</li>
                     <li><strong>जानकारी दर्ज करें:</strong> गूगल फॉर्म खुलने के बाद, उसमें मांगी गई सभी आवश्यक जानकारियों को बिल्कुल सही-सही भरें।</li>
@@ -325,7 +303,7 @@
             </div>
 
             <div class="form-strip">
-                <p class="form-desc">オンラインフォームを開くには、下のボタンをクリックしてください：</p>
+                <p class="form-desc">ऑनलाइन फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
                 <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
                     <i class="fa-solid fa-user-plus"></i> Click Here For Registration
                 </a>
@@ -337,6 +315,7 @@
             </div>
         </div>
 
+        <!-- अनुभाग 3: रजिस्टर्ड सदस्य -->
         <div id="members-list" class="tab-panel">
             <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
@@ -345,12 +324,12 @@
                 <p style="font-size: 12px; font-weight: bold; color: #64748b; margin-top: 5px;">(List last updated on July 03, 2026)</p>
             </div>
 
-            <div class="form-strip" style="background: linear-gradient(135deg, #0b3a20, #11532e); padding: 40px 20px; margin-top: 20px;">
+            <div class="form-strip" style="background: linear-gradient(135deg, #0b3a20, #11532e); padding: 40px 20px;">
                 <i class="fa-solid fa-table-list" style="font-size: 45px; color: #fcd34d; margin-bottom: 15px;"></i>
-                <p class="form-desc" style="font-size: 16px; font-weight: 600; line-height: 1.5; max-width: 600px; margin: 0 auto 20px auto;">
-                    सुरक्षा कारणों और बेहतर मोबाइल व्यू (Mobile Friendly View) के लिए पंजीकृत सदस्यों की लाइव सूची को सीधे एक नए सुरक्षित पेज पर लाइव कर दिया गया है। 
+                <p class="form-desc" style="font-size: 15.5px; font-weight: 600; line-height: 1.5; max-width: 600px; margin: 0 auto 20px auto;">
+                    सुरक्षा कारणों और बेहतर मोबाइल व्यू (Mobile Friendly View) के लिए पंजीकृत सदस्यों की लाइव सूची को सीधे एक नए सुरक्षित पेज पर लाइव कर दिया गया है।
                 </p>
-                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml" target="_blank" rel="noopener noreferrer" class="strip-btn" style="background-color: #fcd34d; color: #0f172a; padding: 14px 35px; font-size: 14px;">
+                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRhErYNQKy2V5L1vbwCgranu6wvr4C0JM0xvfP8EwjxqW1C7iYtpeVhOv2nXN2euIu-hYLmNzIZ96T/pubhtml" target="_blank" rel="noopener noreferrer" class="strip-btn" style="background-color: #fcd34d; color: #0f172a; padding: 14px 35px;">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i> यहाँ क्लिक करके लाइव सदस्य सूची देखें
                 </a>
             </div>
@@ -358,6 +337,7 @@
 
     </div>
 
+    <!-- सोशल मीडिया कनेक्ट -->
     <div class="social-section">
         <p class="social-text">संस्थान के सोशल मीडिया अकाउंट से जुड़ें</p>
         <div class="social-links">
@@ -368,6 +348,7 @@
         </div>
     </div>
 
+    <!-- फुटर -->
     <div class="footer-section">
         <div class="footer-bottom">
             &copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
@@ -375,15 +356,10 @@
     </div>
 
     <script>
-        function switchTab(event, tabId) {
-            const panels = document.querySelectorAll('.tab-panel');
-            panels.forEach(panel => panel.classList.remove('active'));
-
+        function highlightTab(activeBtnId) {
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            document.getElementById(activeBtnId).classList.add('active');
         }
     </script>
 </body>
