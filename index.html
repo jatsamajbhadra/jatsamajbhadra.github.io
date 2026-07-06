@@ -32,6 +32,61 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* 🏛️ VIP नेविगेशन बार (हरी पट्टी) सेटिंग */
+        .master-nav-container {
+            max-width: 1140px;
+            margin: 10px auto 5px auto;
+            padding: 0 20px;
+        }
+        .master-navbar {
+            background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green));
+            border-bottom: 4px solid var(--brand-gold);
+            padding: 10px 14px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            overflow-x: auto; /* मोबाइल पर स्वाइप के लिए */
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* स्क्रॉलबार को छिपाने के लिए */
+        .master-navbar::-webkit-scrollbar {
+            display: none;
+        }
+        .master-navbar {
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+
+        /* 💎 एनिमेटेड बटन स्टाइल */
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--brand-gold);
+            color: var(--brand-dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-color: var(--brand-gold);
+        }
+        .nav-btn i {
+            font-size: 14px;
+        }
+
         /* 🏛️ 1. संस्थान परिचय सेक्शन */
         .intro-section { max-width: 1140px; margin: 25px auto; padding: 0 20px; }
         .intro-card { 
@@ -170,7 +225,7 @@
         .video-wrapper:hover { transform: scale(1.01); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* 📱 5. सोशल मीडिया कनेक्ट (गलती यहाँ सुधारी गई है) */
+        /* 📱 5. सोशल मीडिया कनेक्ट */
         .social-section { text-align: center; margin: 40px auto; padding: 0 20px; }
         .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
@@ -191,7 +246,7 @@
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
-        .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 166px rgba(0,0,0,0.2); }
 
         /* 🏢 6. एलीट कॉर्पोरेट फुटर */
         .footer-section { 
@@ -261,6 +316,8 @@
             .gallery-img-box { height: 190px; }
             .intro-card { padding: 18px; }
             .footer-grid { grid-template-columns: 1fr; gap: 15px; }
+            .master-nav-container { padding: 0 10px; }
+            .nav-btn { padding: 6px 12px; font-size: 12px; }
         }
 
         ::selection {
@@ -270,6 +327,27 @@
     </style>
 </head>
 <body>
+
+    <!-- 🏛️ VIP एनिमेटेड हरी पट्टी (Navigation Menu) -->
+    <div class="master-nav-container">
+        <nav class="master-navbar">
+            <a href="https://sites.google.com/view/jatsamajbhadra/" target="_top" class="nav-btn active">
+                <i class="fa-solid fa-house"></i> होम
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/rjyf?authuser=0" target="_top" class="nav-btn">
+                <i class="fa-solid fa-users-gear"></i> RJYF
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/meetings?authuser=0" target="_top" class="nav-btn">
+                <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/news-events?authuser=0" target="_top" class="nav-btn">
+                <i class="fa-solid fa-newspaper"></i> News & Events
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/contact-us?authuser=0" target="_top" class="nav-btn">
+                <i class="fa-solid fa-address-book"></i> Contact Us
+            </a>
+        </nav>
+    </div>
 
     <div class="intro-section">
         <div class="intro-card">
@@ -356,7 +434,7 @@
         <img class="lightbox-img" id="lightboxTarget" src="" alt="Zoomed Image">
     </div>
 
-    <script>
+    <script {
         function openLightbox(imgUrl) {
             document.getElementById('lightboxTarget').src = imgUrl;
             document.getElementById('imageLightbox').style.display = 'flex';
