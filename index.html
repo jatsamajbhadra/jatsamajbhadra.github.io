@@ -25,13 +25,17 @@
             background-color: var(--light-bg); 
             color: var(--text-main); 
             -webkit-font-smoothing: antialiased; 
-            padding-bottom: 20px;
+            animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards;
+        }
+        @keyframes pageFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         /* 🏛️ VIP नेविगेशन बार (हरी पट्टी) सेटिंग */
         .master-nav-container {
             max-width: 1140px;
-            margin: 10px auto 5px auto;
+            margin: 10px auto 15px auto;
             padding: 0 20px;
         }
         .master-navbar {
@@ -248,7 +252,7 @@
         .footer-section { 
             background: #0b3a20; 
             color: #ffffff; 
-            padding: 30px 20px; 
+            padding: 30px 20px 20px 20px; 
             border-top: 4px solid var(--brand-gold);
             margin-top: 35px;
             text-align: left;
@@ -285,8 +289,6 @@
         .footer-info-item a:hover { color: var(--brand-gold); }
         .footer-bottom { 
             text-align: center; 
-            font-size: 12px; 
-            color: rgba(255,255,255,0.5); 
             border-top: 1px solid rgba(255,255,255,0.08); 
             padding-top: 15px; 
             margin-top: 10px; 
@@ -324,21 +326,22 @@
 </head>
 <body>
 
+    <!-- 🏛️ VIP एनिमेटेड हरी पट्टी (Navigation Menu) -->
     <div class="master-nav-container">
         <nav class="master-navbar">
             <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn active">
                 <i class="fa-solid fa-house"></i> होम
             </a>
-            <a href="https://sites.google.com/view/jatsamajbhadra/rjyf?authuser=0" target="_blank" class="nav-btn">
+            <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-users-gear"></i> RJYF
             </a>
-            <a href="https://sites.google.com/view/jatsamajbhadra/meetings?authuser=0" target="_blank" class="nav-btn">
+            <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
             </a>
-            <a href="https://sites.google.com/view/jatsamajbhadra/news-events?authuser=0" target="_blank" class="nav-btn">
+            <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-newspaper"></i> News & Events
             </a>
-            <a href="https://sites.google.com/view/jatsamajbhadra/contact-us?authuser=0" target="_blank" class="nav-btn">
+            <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-address-book"></i> Contact Us
             </a>
         </nav>
@@ -349,7 +352,7 @@
             <h2 class="intro-title"><i class="fa-solid fa-building-columns"></i> संस्थान परिचय:</h2>
             <p class="intro-text">
                 <span class="intro-highlight">जाट समाज संस्थान, भादरा</span> सामाजिक एकता, शिक्षा, संस्कृति एवं सामुदायिक विकास को समर्पित एक प्रतिष्ठित संस्था है। संस्थान का उद्देश्य जाट समाज के सामाजिक, शैक्षणिक, सांस्कृतिक एवं आर्थिक उत्थान के लिए सार्थक प्रयास करना तथा समाज में भाईचारे, सहयोग और जागरूकता को बढ़ावा देना है।<br><br>
-                संस्थान द्वारा समय-समय पर प्रतिभा सम्मान समारोह, शैक्षणिक प्रोत्साहन कार्यक्रम, सांस्कृतिक आयोजन एवं जनकल्याणकारी गतिविधियों का आयोजन किया जाता है। हम समाज की गौरवशाली परंपराओं और मूल्यों को सुरक्षित रखते हुए नई पीढ़ी को शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी के लिए प्रेरित करने का कार्य करते हैं। जाट समाज संस्थान, भादरा समाज सेवा, संगठन और विकास के माध्यम से एक स्वस्थ एवं प्रगतिशील समाज के निर्माण हेतु निरंतर प्रतिबद्ध है।
+                संस्थान द्वारा समय-समय पर प्रतिभा सम्मान समारोह, शैक्षणिक प्रोत्साहन कार्यक्रम, सांस्कृतिक आयोजन एवं जनकल्याणकारी गतिविधियों का आयोजन किया जाता है। हम समाज की गौरवशाली परंपराओं और मूल्यों को सुरक्षित रखते हुए नई पीढ़ी को शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी के लिए प्रेरित करने का कार्य करते हैं। जाट समाज संस्थान, भादरा समाज सेवा, संगठन and विकास के माध्यम से एक स्वस्थ एवं प्रगतिशील समाज के निर्माण हेतु निरंतर प्रतिबद्ध है।
             </p>
         </div>
     </div>
@@ -418,9 +421,15 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- 💻 आपका VIP डेवलपर क्रेडिट -->
             <div class="footer-bottom">
-                &copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
+                <div style="text-align: center; line-height: 1.8;">
+                    <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
+                    <p style="font-size: 12px; color: var(--brand-gold); font-weight: bold; letter-spacing: 0.5px;">Designed & Developed by : PC Beniwal</p>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -431,19 +440,13 @@
 
     <script>
         function openLightbox(imgUrl) {
-            var lightbox = document.getElementById('imageLightbox');
-            var targetImg = document.getElementById('lightboxTarget');
-            if(lightbox && targetImg){
-                targetImg.src = imgUrl;
-                lightbox.style.display = 'flex';
-            }
+            document.getElementById('lightboxTarget').src = imgUrl;
+            document.getElementById('imageLightbox').style.display = 'flex';
         }
         function closeLightbox() {
-            var lightbox = document.getElementById('imageLightbox');
-            if(lightbox){
-                lightbox.style.display = 'none';
-            }
+            document.getElementById('imageLightbox').style.display = 'none';
         }
     </script>
 </body>
 </html>
+
