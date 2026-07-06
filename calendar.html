@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>जाट कैलेंडर - जाट समाज संस्थान भादरा</title>
+    <title>जाट कैलेंडर 2026 - जाट समाज संस्थान भादरा</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
         :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; }
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8fafc; }
         
+        /* नेविगेशन बार */
         .master-nav-container { max-width: 1140px; margin: 15px auto; padding: 0 20px; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; display: flex; gap: 10px; overflow-x: auto; white-space: nowrap; }
         .nav-btn { display: inline-flex; align-items: center; gap: 6px; color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.1); }
         .nav-btn:hover, .nav-btn.active { background: var(--brand-gold); color: var(--brand-dark-green); }
 
-        .viewer-container { max-width: 800px; margin: 20px auto; padding: 0 10px; height: 70vh; }
-        /* iframe में हमने toolbar=0 और navpanes=0 रखा है ताकि ब्राउज़र कम से कम दखल दे */
-        iframe { width: 100%; height: 100%; border: 3px solid var(--brand-green); border-radius: 8px; background: #fff; }
-
-        .controls { text-align: center; margin: 20px auto; padding: 0 20px; max-width: 800px; }
-        .btn { background: var(--brand-gold); color: var(--brand-dark-green); padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        .disclaimer { font-size: 11px; color: #555; margin-top: 10px; line-height: 1.4; text-align: justify; }
-
+        /* स्लाइडर कंटेनर */
+        .slider-container { max-width: 600px; margin: 20px auto; position: relative; padding: 0 10px; }
+        .slide { display: none; text-align: center; }
+        .slide img { width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 2px solid var(--brand-gold); }
+        
+        /* नेविगेशन बटन */
+        .nav-arrow { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(17, 83, 46, 0.8); color: white; border: none; font-size: 20px; font-weight: bold; border-radius: 50%; }
+        .prev { left: 0px; } .next { right: 0px; }
+        
+        /* कंट्रोल */
+        .controls { text-align: center; margin: 20px auto; padding: 0 20px; max-width: 600px; }
+        .disclaimer { font-size: 11px; color: #555; margin-top: 15px; line-height: 1.4; text-align: justify; }
         .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; margin-top: 30px; text-align: center; font-size: 13px; }
     </style>
 </head>
@@ -38,16 +43,28 @@
         </nav>
     </div>
 
-    <div class="viewer-container">
-        <!-- यहाँ iframe सिर्फ PDF दिखाएगा, कोई ऑटो-डाउनलोड नहीं करेगा -->
-        <iframe src="Jat_Samaj_Calendar_Bhadra_2026.pdf#toolbar=0&navpanes=0&scrollbar=1" title="Jat Samaj Calendar 2026"></iframe>
+    <div class="slider-container">
+        <!-- 12 स्लाइड यहाँ से शुरू -->
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_01.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_02.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_03.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_04.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_05.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_06.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_07.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_08.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_09.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_10.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_11.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_12.png"></div>
+        
+        <button class="nav-arrow prev" onclick="plusSlides(-1)">❮</button>
+        <button class="nav-arrow next" onclick="plusSlides(1)">❯</button>
     </div>
 
     <div class="controls">
-        <!-- यह असली मैनुअल डाउनलोड बटन है -->
-        <a href="Jat_Samaj_Calendar_Bhadra_2026.pdf" download="Jat_Samaj_Calendar_Bhadra_2026.pdf" class="btn">📥 ओरिजिनल कैलेंडर डाउनलोड करें</a>
         <p class="disclaimer">
-            नोट: इस कैलेंडर को तैयार करने में पूर्ण सावधानी बरती गई है, फिर भी किसी प्रकार की मानवीय त्रुटि की संभावना हो सकती है। यदि आपको किसी तिथि या जानकारी में त्रुटि दिखाई दे, तो कृपया 'Contact Us' के माध्यम से हमें अवश्य सूचित करें ताकि हम उसमें सुधार कर सकें।
+            नोट: यह कैलेंडर इमेज व्यूअर है। यदि आपको कैलेंडर डाउनलोड करना है, तो कृपया मुख्य फाइल का उपयोग करें। किसी भी त्रुटि के लिए 'Contact Us' पर सूचित करें।
         </p>
     </div>
 
@@ -56,5 +73,18 @@
         Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" style="color: var(--brand-gold);">PC Beniwal</a>
     </div>
 
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {slides[i].style.display = "none";}
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
 </body>
 </html>
