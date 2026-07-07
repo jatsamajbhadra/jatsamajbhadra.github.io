@@ -6,14 +6,14 @@
     <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* 1. पूरे पेज के लिए इनविजिबल स्क्रोलबार (Invisible Scrollbar) और स्मूथ स्क्रोलिंग */
+        /* 1. पूरे पेज के लिए इनविजिबल स्क्रोलबार और स्मूथ स्क्रोलिंग */
         html, body {
             scroll-behavior: smooth;
-            -ms-overflow-style: none;  /* IE और Edge के लिए स्क्रोलबार छिपाएं */
-            scrollbar-width: none;  /* Firefox के लिए स्क्रोलबार छिपाएं */
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
         }
         html::-webkit-scrollbar, body::-webkit-scrollbar {
-            display: none; /* Chrome, Safari और Opera के लिए स्क्रोलबार छिपाएं */
+            display: none; 
         }
 
         :root {
@@ -38,7 +38,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* 🏛️ VIP नेविगेशन बार (डायनेमिक + 3D लेआउट) */
+        /* 🏛️ VIP नेविगेशन बार */
         .master-nav-container {
             max-width: 1140px;
             margin: 10px auto 15px auto;
@@ -57,7 +57,6 @@
             position: relative;
         }
 
-        /* डायनेमिक बटन्स कंटेनर */
         .primary-menu {
             display: flex;
             gap: 12px;
@@ -66,7 +65,6 @@
             flex-grow: 1;
         }
 
-        /* 💎 3D एनिमेटेड बटन स्टाइल (Embossed & Inset) */
         .nav-btn {
             display: inline-flex;
             align-items: center;
@@ -74,33 +72,29 @@
             background: #0e4425; 
             color: #ffffff;
             text-decoration: none;
-            padding: 6px 12px; /* स्लिम साइज */
+            padding: 6px 12px; 
             border-radius: 8px;
             font-size: 12.5px; 
             font-weight: 700;
             border: 1px solid rgba(255,255,255,0.03);
-            /* 3D उभरा हुआ (Embossed) इफेक्ट */
             box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .nav-btn:hover {
             color: var(--brand-gold);
-            /* होवर पर हल्का और उभरेगा */
             box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1);
             transform: translateY(-1px);
         }
-        /* Active (दबा हुआ / Inset) State - होम पेज के लिए होम बटन एक्टिव */
+        /* Active State - होम बटन एक्टिव रहेगा क्योंकि यह होम पेज है */
         .nav-btn.active {
             background: #0a331c; 
             color: var(--brand-gold);
-            /* 3D अंदर की तरफ दबा हुआ इफेक्ट */
             box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05);
             transform: translateY(1px); 
             border: 1px solid rgba(0,0,0,0.3);
         }
         .nav-btn i { font-size: 14px; }
 
-        /* ड्रॉपडाउन कंटेनर और बटन */
         .more-menu-container {
             position: relative;
             flex-shrink: 0;
@@ -137,7 +131,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ड्रॉपडाउन के अंदर वाले बटनों का विशेष डिज़ाइन */
         .more-menu .nav-btn {
             background: var(--light-bg);
             color: var(--brand-dark-green);
@@ -167,10 +160,7 @@
             border-bottom: 1px solid #f1f5f9;
             transition: all 0.4s ease;
         }
-        .intro-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(17, 83, 46, 0.08);
-        }
+        .intro-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(17, 83, 46, 0.08); }
         .intro-title { font-size: 19px; color: var(--brand-green); font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
         .intro-text { font-size: 14px; color: #334155; line-height: 1.6; text-align: justify; }
         .intro-highlight { font-weight: 700; color: var(--brand-dark-green); }
@@ -215,7 +205,7 @@
         .social-icon.x { background: #000000; }
         .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
 
-        /* 🏢 एलीट कॉर्पोरेट फुटर */
+        /* 🏢 फुटर सेक्शन */
         .footer-section { background: #0b3a20; color: #ffffff; padding: 30px 20px 20px 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; text-align: left; }
         .footer-container { max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
         .footer-title { font-size: 16.5px; font-weight: 700; color: var(--brand-gold); border-bottom: 1px dashed rgba(212,175,55,0.3); padding-bottom: 8px; margin-bottom: 3px; }
@@ -232,13 +222,19 @@
         @keyframes zoomIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
         .lightbox-close { position: absolute; top: 20px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; font-weight: bold; }
 
+        /* 📱 मोबाइल रिस्पॉन्सिव इंजन (इसमें कम से कम 3 बटन पहली लाइन में फिक्स कर दिए हैं) */
         @media (max-width: 650px) {
             .gallery-grid { grid-template-columns: 1fr; gap: 15px; }
             .gallery-img-box { height: 190px; }
             .intro-card { padding: 18px; }
             .footer-grid { grid-template-columns: 1fr; gap: 15px; }
-            .master-nav-container { padding: 0 10px; }
-            .nav-btn { padding: 5px 10px; font-size: 11.5px; } /* मोबाइल पर बटन स्लिम */
+            
+            /* 🚀 मोबाइल पर कम से कम 3 बटनों को एक साथ दिखाने के लिए स्पेस ऑप्टिमाइजेशन */
+            .master-nav-container { padding: 0 6px; }
+            .master-navbar { padding: 6px 6px; gap: 4px; border-radius: 10px; }
+            .primary-menu { gap: 5px; } 
+            .nav-btn { padding: 5px 8px; font-size: 11.5px; border-radius: 6px; gap: 4px; } 
+            .nav-btn i { font-size: 11px; }
         }
 
         ::selection { background: #11532e; color: #fff; }
@@ -250,11 +246,9 @@
         <nav class="master-navbar" id="master-navbar">
             
             <div class="primary-menu" id="primary-menu">
-                <!-- होम बटन दबा हुआ (Inset/Active) है क्योंकि यूज़र होम पेज पर है -->
                 <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn active">
                     <i class="fa-solid fa-house"></i> होम
                 </a>
-                <!-- बाकी सब बटन उभरे हुए (Embossed) हैं -->
                 <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
                     <i class="fa-solid fa-users-gear"></i> RJYF
                 </a>
@@ -272,12 +266,10 @@
                 </a>
             </div>
 
-            <!-- 'अन्य ▾' डायनेमिक ओवरफ्लो बटन -->
             <div class="more-menu-container" id="more-menu-container">
                 <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
                 <div class="more-menu" id="more-menu">
-                    <!-- छिपे हुए बटन यहाँ स्वतः आ जाएंगे -->
-                </div>
+                    </div>
             </div>
             
         </nav>
@@ -315,7 +307,7 @@
     </div>
 
     <div class="video-section">
-        <h3 class="video-title"><i class="fa-solid fa-video"></i> किसान मसीहा चौधरी कुंभाराम आर्य - शार्ट फिल्म</h3>
+        <h3 class="video-title"><i class="fa-solid fa-video"></i> <b>किसान मसीहा चौधरी कुंभाराम आर्य - शार्ट फिल्म</b></h3>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/QJrT_F44jzE" title="YouTube video player" loading="lazy" allowfullscreen></iframe>
         </div>
@@ -361,8 +353,8 @@
             <div class="footer-bottom">
                 <div style="text-align: center; line-height: 1.8;">
                     <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
-                    <p style="font-size: 12px; color: var(--brand-gold); font-weight: bold; letter-spacing: 0.5px;">
-                        Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none;">PC Beniwal</a>
+                    <p style="font-size: 12px; color: rgba(255,255,255,0.7); font-weight: normal;">
+                        Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none; font-weight: bold; letter-spacing: 0.5px;">PC Beniwal</a>
                     </p>
                 </div>
             </div>
