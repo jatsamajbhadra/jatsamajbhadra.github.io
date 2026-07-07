@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RJYF - राइजिंग जाट यूथ फाउंडेशन</title>
-    <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* 1. पूरे पेज और पट्टियों के लिए इनविजिबल स्क्रोलबार (Invisible Scrollbar) */
+        html, body {
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none; 
+        }
+
         :root {
             --brand-green: #11532e;
             --brand-dark-green: #0b3a20;
@@ -15,31 +24,8 @@
             --text-muted: #64748b;
         }
 
-        /* 🟢 फ़ायरफ़ॉक्स (Firefox) के लिए ग्रीन स्क्रॉलबार सपोर्ट */
-        html {
-            scrollbar-width: thin;
-            scrollbar-color: var(--brand-green) #f1f5f9;
-        }
-
-        /* 🟢 क्रोम/एज/वेबकिट ब्राउज़र्स के लिए थीम-मैचिंग ग्रीन स्क्रॉलबार */
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--brand-green);
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--brand-dark-green);
-        }
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
         
-        /* 🟢 प्रीमियम हल्का ग्रीनिश लिनियर ग्रेडिएंट बैकग्राउंड */
         body { 
             background: linear-gradient(#f8fafc, #eef7f1);
             background-attachment: fixed;
@@ -48,24 +34,142 @@
             padding-bottom: 20px;
         }
 
-        /* 🗂️ 3-in-1 असली टैब नेविगेशन बार */
+        /* =========================================
+           🏛️ 1. मास्टर नेविगेशन बार (डायनेमिक + 3D)
+           ========================================= */
+        .master-nav-container {
+            max-width: 1140px;
+            margin: 10px auto 15px auto;
+            padding: 0 15px; /* सब-नेविगेशन के अलाइनमेंट से मैच करने के लिए */
+        }
+        .master-navbar {
+            background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green));
+            border-bottom: 4px solid var(--brand-gold);
+            padding: 10px 14px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            position: relative;
+        }
+
+        .primary-menu {
+            display: flex;
+            gap: 12px;
+            overflow: hidden;
+            white-space: nowrap;
+            flex-grow: 1;
+        }
+
+        /* 💎 3D एनिमेटेड बटन स्टाइल (Embossed & Inset) */
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            /* 3D Base Color */
+            background: #0e4425; 
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.03);
+            /* 3D Embossed (उभरा हुआ) Shadow */
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .nav-btn:hover {
+            color: var(--brand-gold);
+            /* Hover पर हल्का सा और उभरेगा */
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+        /* Active (दबा हुआ / Inset) State - RJYF के लिए */
+        .nav-btn.active {
+            background: #0a331c; /* थोड़ा गहरा रंग */
+            color: var(--brand-gold);
+            /* 3D Inset (दबा हुआ) Shadow */
+            box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05);
+            transform: translateY(1px); /* नीचे दबा हुआ फील */
+            border: 1px solid rgba(0,0,0,0.3);
+        }
+        .nav-btn i { font-size: 14px; }
+
+        /* ड्रॉपडाउन कंटेनर और बटन */
+        .more-menu-container {
+            position: relative;
+            flex-shrink: 0;
+            display: none; 
+        }
+        .more-btn {
+            background: var(--brand-gold) !important;
+            color: var(--brand-dark-green) !important;
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important;
+            cursor: pointer;
+        }
+        .more-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1000;
+            flex-direction: column;
+            gap: 8px;
+            border: 2px solid var(--brand-gold);
+            min-width: 200px;
+        }
+        .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ड्रॉपडाउन के अंदर वाले बटनों का विशेष डिज़ाइन (फ्लैट) */
+        .more-menu .nav-btn {
+            background: var(--light-bg);
+            color: var(--brand-dark-green);
+            border: 1px solid #e2e8f0;
+            box-shadow: none; /* अंदर 3D की जरूरत नहीं */
+            width: 100%;
+            justify-content: flex-start;
+            padding: 10px 15px;
+            font-size: 13.5px;
+            transform: none;
+        }
+        .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
+
+        /* =========================================
+           🗂️ 2. 3-in-1 असली टैब नेविगेशन बार (सफ़ेद)
+           ========================================= */
         .tabs-container {
             max-width: 100%;
             width: 1140px;
-            margin: 20px auto 15px auto;
+            margin: 5px auto 15px auto;
             padding: 0 15px;
         }
         .tabs-nav {
             display: flex;
             background: #ffffff;
             border-radius: 12px;
-            overflow: hidden;
+            overflow-x: auto; /* मोबाइल पर स्क्रोल के लिए */
+            white-space: nowrap; /* बटन एक लाइन में रहें */
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             border: 1px solid #e2e8f0;
+            /* इनविजिबल स्क्रोलबार */
+            -ms-overflow-style: none;  
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
         }
+        .tabs-nav::-webkit-scrollbar { display: none; }
+        
         .tab-btn {
             flex: 1;
-            padding: 15px 10px;
+            padding: 15px 15px;
             border: none;
             background: none;
             font-size: 14.5px;
@@ -77,15 +181,10 @@
             justify-content: center;
             gap: 8px;
             transition: all 0.3s ease;
+            min-width: 140px; /* मोबाइल पर सुगठित दिखने के लिए */
         }
-        .tab-btn:not(:last-child) {
-            border-right: 1px solid #e2e8f0;
-        }
-        .tab-btn:hover {
-            background-color: #f8fafc;
-            color: var(--brand-green);
-        }
-        /* 🟢 एक्टिव टैब पर प्रीमियम गोल्डन ग्लो शैडो इफेक्ट */
+        .tab-btn:not(:last-child) { border-right: 1px solid #e2e8f0; }
+        .tab-btn:hover { background-color: #f8fafc; color: var(--brand-green); }
         .tab-btn.active {
             color: var(--brand-green);
             background-color: #f0fdf4;
@@ -95,268 +194,108 @@
         }
 
         /* 🚀 कंटेंट एरिया */
-        .content-container {
-            max-width: 100%;
-            width: 1140px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .tab-panel {
-            display: none;
-            width: 100%;
-        }
-        
-        /* 🟢 नेक्स्ट-लेवल प्रीमियम कंबाइंड टैब एनीमेशन (Fade + Slide + Scale) */
-        .tab-panel.active {
-            display: block;
-            animation: premiumTabAnim 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-        @keyframes premiumTabAnim {
-            0% { 
-                opacity: 0; 
-                transform: translateY(15px) scale(0.97); 
-            }
-            100% { 
-                opacity: 1; 
-                transform: translateY(0) scale(1); 
-            }
-        }
+        .content-container { max-width: 100%; width: 1140px; margin: 0 auto; padding: 0 15px; }
+        .tab-panel { display: none; width: 100%; }
+        .tab-panel.active { display: block; animation: premiumTabAnim 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+        @keyframes premiumTabAnim { 0% { opacity: 0; transform: translateY(15px) scale(0.97); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-        /* 🏛️ कार्ड्स लेआउट और 🟢 स्मूथ 8px ऊपर उठने वाला होवर इफेक्ट */
+        /* 🏛️ कार्ड्स लेआउट */
         .rjyf-card, .yellow-box {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 22px 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 100%;
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            background: #ffffff; border-radius: 16px; padding: 22px 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; margin-bottom: 20px; width: 100%; transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
-        .rjyf-card:hover, .yellow-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-        }
-        
-        .yellow-box {
-            background-color: #fcd34d;
-            color: #0f172a;
-            border: 1px solid #fbbf24;
-        }
-        .panel-title {
-            font-size: 19px;
-            color: var(--brand-green);
-            font-weight: 700;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 5px;
-        }
-        .yellow-box .panel-title {
-            color: #0f172a;
-            border-bottom-color: rgba(0,0,0,0.1);
-        }
-        .panel-text {
-            font-size: 14.5px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        .content-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .content-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        .content-list li::before {
-            content: "■";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--brand-green);
-            font-size: 12px;
-        }
-        .yellow-box .content-list li::before {
-            color: #0f172a;
-        }
+        .rjyf-card:hover, .yellow-box:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
+        .yellow-box { background-color: #fcd34d; color: #0f172a; border: 1px solid #fbbf24; }
+        .panel-title { font-size: 19px; color: var(--brand-green); font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 5px; }
+        .yellow-box .panel-title { color: #0f172a; border-bottom-color: rgba(0,0,0,0.1); }
+        .panel-text { font-size: 14.5px; line-height: 1.6; margin-bottom: 15px; text-align: justify; }
+        .content-list { list-style: none; padding-left: 0; }
+        .content-list li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
+        .content-list li::before { content: "■"; position: absolute; left: 0; top: 0; color: var(--brand-green); font-size: 12px; }
+        .yellow-box .content-list li::before { color: #0f172a; }
 
         /* 📝 पंजीकरण फॉर्म स्ट्रिप */
-        .form-strip {
-            background: linear-gradient(135deg, #11532e, #1a7442);
-            padding: 35px 20px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(17,83,46,0.12);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 100%;
-        }
-        .live-list-strip {
-            background: linear-gradient(135deg, #0b3a20, #11532e);
-            padding: 35px 20px !important;
-        }
-        .form-desc {
-            color: #ffffff;
-            font-size: 15.5px;
-            margin-bottom: 20px;
-            font-weight: 500;
-            line-height: 1.5;
-        }
+        .form-strip { background: linear-gradient(135deg, #11532e, #1a7442); padding: 35px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 12px rgba(17,83,46,0.12); margin-bottom: 20px; width: 100%; }
+        .live-list-strip { background: linear-gradient(135deg, #0b3a20, #11532e); padding: 35px 20px !important; }
+        .form-desc { color: #ffffff; font-size: 15.5px; margin-bottom: 20px; font-weight: 500; line-height: 1.5; }
 
-        /* 🔥 जादुई गोल्डन फायर रोटेटिंग बॉर्डर कंटेनर - स्पीड 4s (धीमा व प्रीमियम) */
-        .fire-border-box {
-            position: relative;
-            display: inline-block;
-            padding: 3px;
-            border-radius: 35px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.1);
-            z-index: 1;
-        }
-        .fire-border-box::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(transparent, #ffae00 10%, #fff700 20%, #d4af37 40%, transparent 60%, #ffae00 70%, #d4af37 90%, transparent);
-            animation: rotateFire 4s linear infinite;
-            z-index: -2;
-        }
-        .fire-border-box::after {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            background: var(--brand-green);
-            border-radius: 32px;
-            z-index: -1;
-        }
-        @keyframes rotateFire {
-            100% { transform: rotate(360deg); }
-        }
+        /* 🔥 जादुई गोल्डन फायर रोटेटिंग बॉर्डर कंटेनर */
+        .fire-border-box { position: relative; display: inline-block; padding: 3px; border-radius: 35px; overflow: hidden; background: rgba(255, 255, 255, 0.1); z-index: 1; }
+        .fire-border-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, #ffae00 10%, #fff700 20%, #d4af37 40%, transparent 60%, #ffae00 70%, #d4af37 90%, transparent); animation: rotateFire 4s linear infinite; z-index: -2; }
+        .fire-border-box::after { content: ''; position: absolute; inset: 3px; background: var(--brand-green); border-radius: 32px; z-index: -1; }
+        @keyframes rotateFire { 100% { transform: rotate(360deg); } }
 
-        /* बटन का प्रीमियम स्टाइल + शाइन इफेक्ट */
-        .strip-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #ffffff;
-            color: var(--brand-green);
-            text-decoration: none;
-            padding: 14px 32px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14.5px;
-            transition: all 0.3s ease;
-            border: none;
-            position: relative;
-            overflow: hidden;
-        }
-        .strip-btn:hover {
-            background: #fcd34d;
-            color: #0f172a;
-            transform: scale(1.02);
-        }
-        .strip-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -60%;
-            width: 30%; height: 200%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(30deg);
-            animation: shineMove 4s ease-in-out infinite;
-        }
-        @keyframes shineMove {
-            0% { left: -60%; }
-            20% { left: 140%; }
-            100% { left: 140%; }
-        }
+        /* बटन का प्रीमियम स्टाइल */
+        .strip-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #ffffff; color: var(--brand-green); text-decoration: none; padding: 14px 32px; border-radius: 30px; font-weight: 700; font-size: 14.5px; transition: all 0.3s ease; border: none; position: relative; overflow: hidden; }
+        .strip-btn:hover { background: #fcd34d; color: #0f172a; transform: scale(1.02); }
+        .strip-btn::after { content: ''; position: absolute; top: -50%; left: -60%; width: 30%; height: 200%; background: rgba(255, 255, 255, 0.3); transform: rotate(30deg); animation: shineMove 4s ease-in-out infinite; }
+        @keyframes shineMove { 0% { left: -60%; } 20% { left: 140%; } 100% { left: 140%; } }
+        .member-btn-style { background-color: #fcd34d; color: #0f172a; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 
-        .member-btn-style {
-            background-color: #fcd34d;
-            color: #0f172a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
+        /* QR कोड कंटेनर */
+        .qr-container { text-align: center; margin-top: 25px; margin-bottom: 10px; }
+        .qr-img { max-width: 100%; width: 220px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 4px solid #ffffff; transition: transform 0.35s ease; }
+        .qr-img:hover { transform: scale(1.05); }
 
-        /* QR कोड कंटेनर एवं QR होवर ज़ूम इफ़ेक्ट (scale 1.05) */
-        .qr-container {
-            text-align: center;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .qr-img {
-            max-width: 100%;
-            width: 220px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 4px solid #ffffff;
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .qr-img:hover {
-            transform: scale(1.05);
-        }
-
-        /* 📱 सोशल मीडिया कनेक्ट एवं 360 डिग्री रोटेशन इफ़ेक्ट */
+        /* 📱 सोशल मीडिया कनेक्ट */
         .social-section { text-align: center; margin: 35px auto 25px auto; padding: 0 20px; }
         .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-        .social-icon { 
-            width: 40px; 
-            height: 40px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-size: 18px; 
-            transition: transform 0.5s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
+        .social-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; font-size: 18px; transition: transform 0.5s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
         .social-icon.fb { background: #1877f2; }
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
-        .social-icon:hover { 
-            transform: rotate(360deg); 
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
-        }
+        .social-icon:hover { transform: rotate(360deg); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
 
         /* 🏢 फुटर स्टाइल */
-        .footer-section { 
-            background: #0b3a20; 
-            color: #ffffff; 
-            padding: 25px 20px; 
-            border-top: 4px solid var(--brand-gold);
-            text-align: center;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-        .footer-bottom { 
-            font-size: 12.5px; 
-            color: rgba(255,255,255,0.75); 
-            font-weight: 500;
-        }
+        .footer-section { background: #0b3a20; color: #ffffff; padding: 25px 20px; border-top: 4px solid var(--brand-gold); text-align: center; border-radius: 12px; margin-top: 20px; }
+        .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 500; line-height: 1.8; }
 
-        /* 📱 मीडिया क्वेरी रिस्पॉन्सिवनेस */
         @media (max-width: 650px) {
-            .tab-btn { font-size: 12.5px; padding: 12px 5px; gap: 4px; }
+            .tab-btn { font-size: 12.5px; padding: 12px 10px; gap: 5px; min-width: 120px; }
             .rjyf-card, .yellow-box, .form-strip { padding: 18px; }
             .panel-title { font-size: 17px; }
             .panel-text, .content-list li, .form-desc { font-size: 13.5px; }
             .strip-btn { padding: 13px 24px; font-size: 13.5px; }
+            .nav-btn { padding: 5px 10px; font-size: 11.5px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 🗂️ 3-in-1 टैब नेविगेशन बार -->
+    <div class="master-nav-container">
+        <nav class="master-navbar" id="master-navbar">
+            
+            <div class="primary-menu" id="primary-menu">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn active">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+            </div>
+
+            <div class="more-menu-container" id="more-menu-container">
+                <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                <div class="more-menu" id="more-menu">
+                    </div>
+            </div>
+            
+        </nav>
+    </div>
+
     <div class="tabs-container">
         <nav class="tabs-nav">
             <button class="tab-btn active" id="btn-rjyf" onclick="openTab('main-rjyf', 'btn-rjyf')">
@@ -371,10 +310,8 @@
         </nav>
     </div>
 
-    <!-- 🚀 कंटेंट एरिया -->
     <div class="content-container">
         
-        <!-- अनुभाग 1: RJYF का परिचय -->
         <div id="main-rjyf" class="tab-panel active">
             <div class="yellow-box">
                 <h2 class="panel-title">हमारे बारे में (About Us):</h2>
@@ -406,7 +343,6 @@
                 </ul>
             </div>
 
-            <!-- 🎯 होम पेज पर रजिस्ट्रेशन बटन स्ट्रिप -->
             <div class="form-strip" style="margin-top: 25px;">
                 <p class="form-desc">फाउंडेशन से जुड़ने के लिए नीचे दिए गए बटन पर क्लिक करके अपना पंजीकरण पूरा करें:</p>
                 <div class="fire-border-box">
@@ -417,7 +353,6 @@
             </div>
         </div>
 
-        <!-- अनुभाग 2: पंजीकरण फॉर्म -->
         <div id="reg-form" class="tab-panel">
             <div class="yellow-box">
                 <h2 class="panel-title">Steps for Registration :</h2>
@@ -443,7 +378,6 @@
             </div>
         </div>
 
-        <!-- अनुभाग 3: रजिस्टर्ड सदस्य -->
         <div id="members-list" class="tab-panel">
             <div class="rjyf-card" style="border-left: 5px solid #e11d48; background-color: #fff1f2;">
                 <p class="panel-text" style="margin-bottom: 0; font-weight: 600; font-style: italic; color: #9f1239;">
@@ -464,7 +398,6 @@
 
     </div>
 
-    <!-- सोशल मीडिया कनेक्ट -->
     <div class="social-section">
         <p class="social-text">संस्थान के सोशल मीडिया अकाउंट से जुड़ें</p>
         <div class="social-links">
@@ -475,39 +408,74 @@
         </div>
     </div>
 
-    <!-- फुटर -->
     <div class="footer-section">
         <div class="footer-bottom" id="footer-text">
-            &copy; <span id="current-year"></span> जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।
+            &copy; <span id="current-year"></span> जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित。<br>
+            <span style="font-size: 12px; color: var(--brand-gold); font-weight: bold; letter-spacing: 0.5px; display: inline-block; margin-top: 8px;">
+                Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none;">PC Beniwal</a>
+            </span>
         </div>
     </div>
 
     <script>
-        // वर्तमान साल को डायनामिक तरीके से 2025-2026 या करंट ईयर दिखाने का स्क्रिप्ट
+        // 1. फुटर का साल सेट करना
         const currentYear = new Date().getFullYear();
-        if (currentYear <= 2026) {
-            document.getElementById('current-year').textContent = "2025-2026";
-        } else {
-            document.getElementById('current-year').textContent = "2025-" + currentYear;
-        }
+        document.getElementById('current-year').textContent = currentYear <= 2026 ? "2025-2026" : "2025-" + currentYear;
 
-        function openTab(panelId, btnId) {
+        // 2. टैब बदलने वाला (Tab Switch) फंक्शन
+        function openTab(tabId, btnId) {
+            // सभी पैनल छिपाएं
             var panels = document.getElementsByClassName('tab-panel');
             for (var i = 0; i < panels.length; i++) {
                 panels[i].classList.remove('active');
             }
-            
-            var buttons = document.getElementsByClassName('tab-btn');
-            for (var j = 0; j < buttons.length; j++) {
-                buttons[j].classList.remove('active');
+            // सभी बटनों से एक्टिव क्लास हटाएँ
+            var btns = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove('active');
             }
-            
-            document.getElementById(panelId).classList.add('active');
+            // चुने हुए पैनल और बटन को एक्टिव करें
+            document.getElementById(tabId).classList.add('active');
             document.getElementById(btnId).classList.add('active');
-            
-            // टैब बदलते समय स्क्रीन स्मूथली ऊपर स्क्रॉल हो जाए
-            window.scrollTo({top: 0, behavior: 'smooth'});
         }
+
+        // 3. मास्टर नेविगेशन का डायनेमिक (Priority+) लॉजिक
+        const primaryMenu = document.getElementById('primary-menu');
+        const moreMenuContainer = document.getElementById('more-menu-container');
+        const moreMenu = document.getElementById('more-menu');
+
+        function adaptNav() {
+            // पहले सारे बटनों को वापस मुख्य मेनू में लाएं
+            while(moreMenu.firstChild) {
+                primaryMenu.appendChild(moreMenu.firstChild);
+            }
+            moreMenuContainer.style.display = 'none';
+
+            let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
+            
+            if (isOverflow) {
+                moreMenuContainer.style.display = 'block';
+                // जगह न होने पर आखिरी बटन को 'अन्य' में भेजें
+                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 1) {
+                    moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
+                }
+            }
+        }
+
+        window.addEventListener('resize', adaptNav);
+        window.addEventListener('load', adaptNav);
+
+        function toggleMoreMenu(event) {
+            moreMenu.classList.toggle('show');
+            event.stopPropagation();
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!moreMenuContainer.contains(event.target)) {
+                moreMenu.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
+                    
