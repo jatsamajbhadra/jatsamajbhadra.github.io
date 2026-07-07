@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जाट कैलेंडर 2026 - जाट समाज संस्थान भादरा</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8fafc; }
+        
+        /* नेविगेशन बार */
+        .master-nav-container { max-width: 1140px; margin: 15px auto; padding: 0 20px; }
+        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; display: flex; gap: 10px; overflow-x: auto; white-space: nowrap; justify-content: center; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 6px; color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; }
+        .nav-btn:hover, .nav-btn.active { background: var(--brand-gold); color: var(--brand-dark-green); }
+        
+        /* स्लाइडर कंटेनर */
+        .slider-container { max-width: 600px; margin: 20px auto; position: relative; padding: 0 10px; }
+        .slide { display: none; text-align: center; }
+        .slide img { width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 2px solid var(--brand-gold); display: block; }
+        
+        /* तीर के निशान (Prev/Next) */
+        .nav-arrow { cursor: pointer; position: absolute; top: 45%; transform: translateY(-50%); padding: 14px 18px; background: rgba(17, 83, 46, 0.8); color: white; border: none; font-size: 20px; font-weight: bold; border-radius: 50%; z-index: 10; }
+        .prev { left: 15px; } .next { right: 15px; }
+        
+        /* डाउनलोड बटन स्टाइल */
+        .download-container { text-align: center; margin: 20px 0; }
+        .download-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--brand-gold); color: var(--brand-dark-green); text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.2s; }
+        .download-btn:hover { background: #c5a030; }
+        
+        .disclaimer { font-size: 12px; color: #555; text-align: center; margin: 15px auto; max-width: 580px; padding: 0 15px; line-height: 1.5; }
+        .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; text-align: center; font-size: 13px; margin-top: 40px; border-top: 3px solid var(--brand-gold); }
+    </style>
+</head>
+<body>
+
+    <div class="master-nav-container">
+        <nav class="master-navbar">
+            <a href="https://sites.google.com/view/jatsamajbhadra/" class="nav-btn"><i class="fa-solid fa-house"></i> होम</a>
+            <a href="#" class="nav-btn active">📅 जाट कैलेंडर 2026</a>
+        </nav>
+    </div>
+
+    <div class="slider-container">
+        <!-- 12 महीनों की इमेजेज -->
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_01.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_02.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_03.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_04.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_05.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_06.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_07.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_08.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_09.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_10.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_11.png"></div>
+        <div class="slide"><img src="images/Calendar_Bhadra_2026_12.png"></div>
+        
+        <button class="nav-arrow prev" onclick="plusSlides(-1)">❮</button>
+        <button class="nav-arrow next" onclick="plusSlides(1)">❯</button>
+    </div>
+
+    <!-- डाउनलोड बटन -->
+    <div class="download-container">
+        <a id="downloadLink" href="#" class="download-btn" download><i class="fa-solid fa-download"></i> कैलेंडर महीना डाउनलोड करें</a>
+    </div>
+
+    <p class="disclaimer"><strong>नोट:</strong> यह कैलेंडर इमेज व्यूअर है। यदि मोबाइल में बटन से डाउनलोड न हो, तो कैलेंडर इमेज पर थोड़ी देर उंगली दबाकर रखें (Long Press) और 'Save Image' या 'Download Image' चुनकर सुरक्षित करें।</p>
+
+    <div class="footer-section">
+        &copy; 2026 जाट समाज संस्थान भादरा | सर्वाधिकार सुरक्षित।<br><br>
+        Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" style="color: var(--brand-gold); text-decoration: none; font-weight: bold;">PC Beniwal</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        window.onload = function() { showSlides(slideIndex); }
+        
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let downloadLink = document.getElementById("downloadLink");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            slides[slideIndex-1].style.display = "block";
+            
+            // डायनामिक डाउनलोड लिंक अपडेट
+            let currentImgSrc = slides[slideIndex-1].getElementsByTagName("img")[0].src;
+            downloadLink.href = currentImgSrc;
+        }
+    </script>
+</body>
+</html>
+
