@@ -7,7 +7,7 @@
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* 1. पूरे पेज और पट्टियों के लिए इनविजिबल स्क्रोलबार (Invisible Scrollbar) */
+        /* 1. पूरे पेज और पट्टियों के लिए इनविजिबल स्क्रोलबार */
         html, body {
             scroll-behavior: smooth;
             -ms-overflow-style: none;  
@@ -35,9 +35,7 @@
             padding-bottom: 20px;
         }
 
-        /* =========================================
-           🏛️ 1. मास्टर नेविगेशन बार (डायनेमिक + 3D)
-           ========================================= */
+        /* 🏛️ 1. मास्टर नेविगेशन बार (डायनेमिक + 3D) */
         .master-nav-container {
             max-width: 1140px;
             margin: 10px auto 15px auto;
@@ -77,7 +75,6 @@
             font-size: 12.5px;
             font-weight: 700;
             border: 1px solid rgba(255,255,255,0.03);
-            /* 3D उभरा हुआ इफेक्ट */
             box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -90,14 +87,12 @@
         .nav-btn.active {
             background: #0a331c; 
             color: var(--brand-gold);
-            /* 3D अंदर की तरफ दबा हुआ इफेक्ट */
             box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05);
             transform: translateY(1px); 
             border: 1px solid rgba(0,0,0,0.3);
         }
         .nav-btn i { font-size: 14px; }
 
-        /* ड्रॉपडाउन कंटेनर और बटन */
         .more-menu-container {
             position: relative;
             flex-shrink: 0;
@@ -128,7 +123,6 @@
         .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* ड्रॉपडाउन के अंदर वाले बटनों का विशेष डिज़ाइन */
         .more-menu .nav-btn {
             background: var(--light-bg);
             color: var(--brand-dark-green);
@@ -142,9 +136,7 @@
         }
         .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
 
-        /* =========================================
-           🗂️ 2. 3-in-1 असली टैब नेविगेशन बार (सफ़ेद)
-           ========================================= */
+        /* 🗂️ 2. 3-in-1 असली टैब नेविगेशन बार (सफ़ेद) */
         .tabs-container {
             max-width: 100%;
             width: 1140px;
@@ -161,7 +153,7 @@
         }
         
         .tab-btn {
-            flex: 1; /* डेस्कटॉप/लैपटॉप पर पूरी स्क्रीन पर बराबर अनुपात में फैलेंगे */
+            flex: 1; 
             padding: 15px 15px;
             border: none;
             background: none;
@@ -244,18 +236,23 @@
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 500; line-height: 1.8; }
 
         /* =========================================
-           📱 3. मीडिया क्वेरी रिस्पॉन्सिवनेस (मोबाइल के लिए विशेष बदलाव)
+           📱 3. मीडिया क्वेरी रिस्पॉन्सिवनेस (मोबाइल कस्टमाइजेशन)
            ========================================= */
         @media (max-width: 650px) {
-            /* सफ़ेद पट्टी के बटन मोबाइल स्क्रीन पर बिना कटे फिट रखने के लिए */
+            /* 🚀 मुख्य मेनू: मोबाइल पर कम से कम 3 बटन फिक्स दिखाने के लिए स्पेस ऑप्टिमाइजेशन */
+            .master-nav-container { padding: 0 6px; }
+            .master-navbar { padding: 6px 6px; gap: 4px; border-radius: 10px; }
+            .primary-menu { gap: 5px; } 
+            .nav-btn { padding: 5px 8px; font-size: 11.5px; border-radius: 6px; gap: 4px; } 
+            .nav-btn i { font-size: 11px; }
+
+            /* 🗂️ सब-पट्टी: सफ़ेद पट्टी के बटन मोबाइल स्क्रीन पर बिना कटे फिट रखने के लिए */
             .tab-btn { 
-                font-size: 11px; /* थोड़ा छोटा फॉन्ट */
-                padding: 12px 4px; /* स्लिम पैडिंग */
+                font-size: 11px; 
+                padding: 12px 4px; 
                 gap: 4px; 
-                min-width: unset; /* कम चौड़ाई वाली स्क्रीन पर दबने की आजादी */
+                min-width: unset; 
             }
-            .master-nav-container { padding: 0 10px; }
-            .nav-btn { padding: 5px 10px; font-size: 11.5px; } /* मुख्य मेनू के बटन स्लिम */
             
             .rjyf-card, .yellow-box, .form-strip { padding: 18px; }
             .panel-title { font-size: 17px; }
@@ -266,7 +263,7 @@
 </head>
 <body>
 
-    <!-- 🌟 मुख्य मास्टर नेविगेशन बार (डार्क ग्रीन - 3D इफ़ेक्ट) -->
+    <!-- 🌟 मुख्य मास्टर नेविगेशन बार (डार्क ग्रीन - अब मोबाइल पर भी 3 बटन फिक्स दिखेंगे) -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             
@@ -302,7 +299,7 @@
         </nav>
     </div>
 
-    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी - डेस्कटॉप पर फैलेगी, मोबाइल पर सिकुड़ेगी) -->
+    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी) -->
     <div class="tabs-container">
         <nav class="tabs-nav">
             <button class="tab-btn active" id="btn-rjyf" onclick="openTab('main-rjyf', 'btn-rjyf')">
@@ -374,7 +371,7 @@
             </div>
 
             <div class="form-strip">
-                <p class="form-desc">ऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
+                <p class="form-desc">オンライン पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p> 
                 <div class="fire-border-box">
                     <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
                         <i class="fa-solid fa-user-plus"></i> Click Here For Registration
@@ -487,3 +484,4 @@
     </script>
 </body>
 </html>
+                
