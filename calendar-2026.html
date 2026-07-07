@@ -8,64 +8,65 @@
     <style>
         :root { 
             --brand-green: #11532e; 
-            --brand-dark-green: #0a2f1c; /* बैनर के लिए एकदम डार्क हरा */
+            --brand-dark-green: #0a2f1c; 
             --brand-gold: #d4af37; 
             --bg-color: #f4f7f6;
         }
         body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); }
         
-        /* टॉप नेविगेशन बार */
-        .master-nav-container { max-width: 1140px; margin: 15px auto 5px auto; padding: 0 20px; }
-        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); padding: 10px 14px; border-radius: 12px; display: flex; gap: 10px; overflow-x: auto; white-space: nowrap; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .nav-btn { display: inline-flex; align-items: center; gap: 6px; color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold; transition: 0.3s; }
-        .nav-btn:hover, .nav-btn.active { background: var(--brand-gold); color: var(--brand-dark-green); }
-        
-        /* नया प्रीमियम बैनर (मीटिंग नोटिस की तर्ज पर) */
+        /* 1. नया प्रीमियम बैनर (अब सबसे ऊपर) */
         .page-banner {
             background-color: var(--brand-dark-green);
             background-image: radial-gradient(circle at center, #11532e 0%, #0a2f1c 100%);
             border-bottom: 5px solid var(--brand-gold);
-            border-radius: 12px;
+            border-radius: 0 0 12px 12px; /* ऊपर चिपका हुआ, नीचे से गोलाई */
             padding: 25px 20px;
             text-align: center;
-            margin: 15px auto;
+            margin: 0 auto 15px auto;
             max-width: 580px;
             color: white;
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
         .banner-title { font-size: 26px; font-weight: 900; margin: 0 0 8px 0; letter-spacing: 0.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
         .banner-subtitle { font-size: 15px; margin: 0; opacity: 0.95; font-weight: 500; }
+
+        /* 2. टॉप नेविगेशन बार (बैनर के नीचे) */
+        .master-nav-container { max-width: 580px; margin: 0 auto 15px auto; padding: 0 15px; }
+        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); padding: 10px 14px; border-radius: 12px; display: flex; gap: 10px; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .nav-btn { display: inline-flex; align-items: center; gap: 6px; color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold; transition: 0.3s; }
+        .nav-btn:hover, .nav-btn.active { background: var(--brand-gold); color: var(--brand-dark-green); }
         
-        /* ड्रॉपडाउन मेनू बार */
+        /* 3. ड्रॉपडाउन मेनू बार */
         .filter-bar { max-width: 580px; margin: 15px auto 5px auto; padding: 10px 15px; background: white; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
         .year-label { font-weight: bold; color: var(--brand-dark-green); font-size: 15px; display: flex; align-items: center; gap: 5px; }
         .month-select { padding: 8px 12px; border-radius: 6px; border: 2px solid var(--brand-green); font-size: 14px; font-weight: bold; color: var(--brand-dark-green); background-color: #f8fafc; cursor: pointer; outline: none; transition: 0.2s; }
         .month-select:focus { border-color: var(--brand-gold); box-shadow: 0 0 5px rgba(212, 175, 55, 0.5); }
         
-        /* कैलेंडर इमेज कंटेनर */
+        /* 4. कैलेंडर इमेज कंटेनर */
         .slider-container { max-width: 600px; margin: 15px auto; padding: 0 10px; position: relative; perspective: 1500px; }
         .slide { display: none; text-align: center; }
         .slide img { width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border: 2px solid var(--brand-gold); display: block; }
         
-        /* दाईं से बाईं ओर किताब के पन्ने जैसा 3D फ्लिप इफ़ेक्ट */
-        .flip-effect { animation: flipInRight 0.7s cubic-bezier(0.25, 1, 0.5, 1) both; }
-        @keyframes flipInRight {
-            0% { transform: perspective(1200px) rotateY(90deg); transform-origin: right center; opacity: 0; }
-            100% { transform: perspective(1200px) rotateY(0deg); transform-origin: right center; opacity: 1; }
+        /* 5. बाईं से दाईं ओर (Left to Right) 3D फ्लिप इफ़ेक्ट */
+        .flip-effect { animation: flipInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) both; }
+        @keyframes flipInLeft {
+            0% { transform: perspective(1200px) rotateY(-90deg); transform-origin: left center; opacity: 0; }
+            100% { transform: perspective(1200px) rotateY(0deg); transform-origin: left center; opacity: 1; }
         }
         
-        /* कंट्रोल और डाउनलोड बार */
-        .control-bar { display: flex; justify-content: space-between; align-items: center; max-width: 580px; margin: 20px auto; padding: 0 15px; gap: 10px; }
-        .nav-arrow-btn { background: var(--brand-green); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; }
+        /* 6. नया कंट्रोल लेआउट (महीना बदलने के बटन ऊपर, डाउनलोड बटन नीचे) */
+        .month-nav-bar { display: flex; justify-content: space-between; max-width: 580px; margin: 20px auto 10px auto; padding: 0 15px; gap: 15px; }
+        .nav-arrow-btn { flex: 1; background: var(--brand-green); color: white; border: none; padding: 12px 15px; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; }
         .nav-arrow-btn:hover { background: var(--brand-dark-green); transform: translateY(-2px); }
         
-        .download-btn { flex-grow: 1; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 15px; background: var(--brand-gold); color: var(--brand-dark-green); text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; }
+        .download-bar { max-width: 580px; margin: 0 auto 20px auto; padding: 0 15px; }
+        .download-btn { width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 15px; background: var(--brand-gold); color: var(--brand-dark-green); text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; }
         .download-btn:hover { background: #c5a030; transform: translateY(-2px); }
         
-        /* डिस्क्लेमर */
+        /* 7. डिस्क्लेमर */
         .disclaimer { font-size: 12px; color: #444; text-align: justify; text-align-last: center; margin: 25px auto; max-width: 580px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--brand-gold); box-shadow: 0 2px 5px rgba(0,0,0,0.05); line-height: 1.6; }
         
-        /* फुटर */
+        /* 8. फुटर */
         .footer-section { background: #0a2f1c; color: #ffffff; padding: 25px 15px; text-align: center; font-size: 13px; margin-top: 40px; border-top: 4px solid var(--brand-gold); line-height: 1.8; }
         .designer-link { color: var(--brand-gold); text-decoration: none; font-weight: bold; font-size: 14px; letter-spacing: 0.5px; transition: 0.2s; }
         .designer-link:hover { color: #fff; text-shadow: 0 0 5px var(--brand-gold); }
@@ -73,7 +74,13 @@
 </head>
 <body>
 
-    <!-- टॉप नेविगेशन (टारगेट ब्लैंक के साथ ताकि कोई एरर न आए) -->
+    <!-- नया प्रोफेशनल बैनर (सबसे ऊपर) -->
+    <div class="page-banner">
+        <h1 class="banner-title">जाट कैलेंडर 2026</h1>
+        <p class="banner-subtitle">जाट समाज संस्थान भादरा - आधिकारिक वार्षिक कैलेंडर</p>
+    </div>
+
+    <!-- टॉप नेविगेशन (बैनर के नीचे) -->
     <div class="master-nav-container">
         <nav class="master-navbar">
             <a href="https://sites.google.com/view/jatsamajbhadra/home" target="_blank" class="nav-btn"><i class="fa-solid fa-house"></i> होम</a>
@@ -81,16 +88,12 @@
         </nav>
     </div>
 
-    <!-- नया प्रोफेशनल बैनर -->
-    <div class="page-banner">
-        <h1 class="banner-title">जाट कैलेंडर 2026</h1>
-        <p class="banner-subtitle">जाट समाज संस्थान भादरा - आधिकारिक वार्षिक कैलेंडर</p>
-    </div>
-
     <!-- वर्ष और ड्रॉपडाउन मेनू -->
     <div class="filter-bar">
         <div class="year-label"><i class="fa-regular fa-calendar-check" style="color: var(--brand-gold);"></i> वर्ष: 2026</div>
         <select id="monthDropdown" class="month-select" onchange="jumpToSlide(this.value)">
+            <!-- डिफ़ॉल्ट ऑप्शन जो शुरुआत में दिखेगा -->
+            <option value="0" disabled selected>महीना चुनें ▾</option>
             <option value="1">जनवरी (January)</option>
             <option value="2">फरवरी (February)</option>
             <option value="3">मार्च (March)</option>
@@ -122,12 +125,15 @@
         <div class="slide"><img src="images/Calendar_Bhadra_2026_12.png" alt="December 2026"></div>
     </div>
 
-    <!-- नेविगेशन और PDF डाउनलोड बटन -->
-    <div class="control-bar">
-        <button class="nav-arrow-btn" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-        <!-- पूरे साल की PDF फाइल का सीधा डाउनलोड लिंक -->
+    <!-- महीना बदलने के बटन -->
+    <div class="month-nav-bar">
+        <button class="nav-arrow-btn" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i> पिछला महीना</button>
+        <button class="nav-arrow-btn" onclick="plusSlides(1)">अगला महीना <i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- फुल-विथ (Full-width) PDF डाउनलोड बटन -->
+    <div class="download-bar">
         <a href="Jat_Samaj_Calendar_Bhadra_2026.pdf" target="_blank" class="download-btn" download><i class="fa-solid fa-download"></i> कैलेंडर डाउनलोड करें</a>
-        <button class="nav-arrow-btn" onclick="plusSlides(1)"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
     <!-- डिस्क्लेमर -->
@@ -141,30 +147,37 @@
         Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" class="designer-link">PC Beniwal</a>
     </div>
 
-    <!-- जावास्क्रिप्ट (महीने बदलने और इफ़ेक्ट के लिए) -->
+    <!-- जावास्क्रिप्ट (महीने बदलने और ड्रॉपडाउन के लिए) -->
     <script>
         let slideIndex = 1;
         let slides = document.getElementsByClassName("slide");
         let dropdown = document.getElementById("monthDropdown");
 
+        // पेज लोड होते ही फोटो 1 (जनवरी) दिखेगी, लेकिन ड्रॉपडाउन '0' (महीना चुनें) पर रहेगा
         window.onload = function() { 
             showSlides(slideIndex); 
+            dropdown.value = "0"; 
         }
 
+        // ड्रॉपडाउन से महीना चुनने पर
         function jumpToSlide(val) {
+            if(val === "0") return; // अगर गलती से 'महीना चुनें' दब जाए तो कुछ न हो
             slideIndex = parseInt(val);
             showSlides(slideIndex);
         }
 
+        // 'अगला/पिछला महीना' बटन दबाने पर
         function plusSlides(n) { 
             slideIndex += n;
             if (slideIndex > slides.length) { slideIndex = 1 }
             if (slideIndex < 1) { slideIndex = slides.length }
             
+            // बटन दबाने पर ड्रॉपडाउन की वैल्यू भी उसी महीने के नाम पर सेट हो जाएगी
             dropdown.value = slideIndex;
             showSlides(slideIndex); 
         }
 
+        // इमेजेज और एनीमेशन कंट्रोल
         function showSlides(n) {
             for (let i = 0; i < slides.length; i++) { 
                 slides[i].style.display = "none"; 
