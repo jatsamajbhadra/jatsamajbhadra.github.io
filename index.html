@@ -6,8 +6,14 @@
     <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
-        html {
+        /* 5. पूरे पेज के लिए इनविजिबल स्क्रोलबार (Invisible Scrollbar) और स्मूथ स्क्रोलिंग */
+        html, body {
             scroll-behavior: smooth;
+            -ms-overflow-style: none;  /* IE और Edge के लिए स्क्रोलबार छिपाएं */
+            scrollbar-width: none;  /* Firefox के लिए स्क्रोलबार छिपाएं */
+        }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari और Opera के लिए स्क्रोलबार छिपाएं */
         }
 
         :root {
@@ -51,17 +57,15 @@
             overflow-x: auto; /* मोबाइल पर स्वाइप के लिए */
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
+            /* नेविगेशन बार के अंदर की स्क्रॉलबार छिपाने के लिए */
+            -ms-overflow-style: none;  
+            scrollbar-width: none; 
         }
-        /* स्क्रॉलबार को छिपाने के लिए */
         .master-navbar::-webkit-scrollbar {
             display: none;
         }
-        .master-navbar {
-            -ms-overflow-style: none;  
-            scrollbar-width: none;  
-        }
 
-        /* 💎 एनिमेटेड बटन स्टाइल */
+        /* 💎 1. एनिमेटेड बटन स्टाइल (छोटा और स्लीक साइज) */
         .nav-btn {
             display: inline-flex;
             align-items: center;
@@ -69,9 +73,9 @@
             background: rgba(255, 255, 255, 0.08);
             color: #ffffff;
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 6px 12px; /* पहले 8px 16px था, अब स्लिम कर दिया गया है */
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12.5px; /* पहले 13px था */
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -87,7 +91,7 @@
             font-size: 14px;
         }
 
-        /* 🏛️ 1. संस्थान परिचय सेक्शन */
+        /* 🏛️ संस्थान परिचय सेक्शन */
         .intro-section { max-width: 1140px; margin: 25px auto; padding: 0 20px; }
         .intro-card { 
             background: #ffffff; 
@@ -124,7 +128,7 @@
             color: var(--brand-dark-green);
         }
 
-        /* 📸 2. मॉडर्न इमेज गैलरी ग्रिड */
+        /* 📸 मॉडर्न इमेज गैलरी ग्रिड */
         .gallery-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
         .gallery-grid { 
             display: grid; 
@@ -154,7 +158,7 @@
         }
         .gallery-item:hover .gallery-img-box img { transform: scale(1.05); }
 
-        /* 🔗 3. पंजीकरण क्विक लिंक स्ट्रिप */
+        /* 🔗 पंजीकरण क्विक लिंक स्ट्रिप */
         .link-strip { 
             background: linear-gradient(135deg, #11532e, #1a7442); 
             padding: 15px 20px; 
@@ -209,7 +213,7 @@
             transform: scale(1.03); 
         }
 
-        /* 📺 4. वीडियो सेक्शन */
+        /* 📺 वीडियो सेक्शन */
         .video-section { max-width: 800px; margin: 35px auto; padding: 0 20px; text-align: center; }
         .video-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--brand-dark-green); }
         .video-wrapper { 
@@ -225,7 +229,7 @@
         .video-wrapper:hover { transform: scale(1.01); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* 📱 5. सोशल मीडिया कनेक्ट */
+        /* 📱 सोशल मीडिया कनेक्ट */
         .social-section { text-align: center; margin: 40px auto; padding: 0 20px; }
         .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
@@ -248,7 +252,7 @@
         .social-icon.x { background: #000000; }
         .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
 
-        /* 🏢 6. एलीट कॉर्पोरेट फुटर */
+        /* 🏢 एलीट कॉर्पोरेट फुटर */
         .footer-section { 
             background: #0b3a20; 
             color: #ffffff; 
@@ -309,13 +313,14 @@
         }
         .lightbox-close { position: absolute; top: 20px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; font-weight: bold; }
 
+        /* मोबाइल व्यू में बटन को और स्लिम करने के लिए */
         @media (max-width: 650px) {
             .gallery-grid { grid-template-columns: 1fr; gap: 15px; }
             .gallery-img-box { height: 190px; }
             .intro-card { padding: 18px; }
             .footer-grid { grid-template-columns: 1fr; gap: 15px; }
             .master-nav-container { padding: 0 10px; }
-            .nav-btn { padding: 6px 12px; font-size: 12px; }
+            .nav-btn { padding: 5px 10px; font-size: 11.5px; } /* मोबाइल पर बटन और स्लिम */
         }
 
         ::selection {
@@ -331,9 +336,6 @@
             <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn active">
                 <i class="fa-solid fa-house"></i> होम
             </a>
-            <a href="calendar.html" class="nav-btn">
-                <i class="fa-solid fa-calendar-days"></i> 📅 कैलेंडर
-            </a>
             <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-users-gear"></i> RJYF
             </a>
@@ -342,6 +344,9 @@
             </a>
             <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-newspaper"></i> News & Events
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn">
+                <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
             </a>
             <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
                 <i class="fa-solid fa-address-book"></i> Contact Us
