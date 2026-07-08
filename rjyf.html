@@ -35,12 +35,8 @@
             padding-bottom: 20px;
         }
 
-        /* 🏛️ 1. मास्टर नेविगेशन बार (डायनेमिक + 3D) */
-        .master-nav-container {
-            max-width: 1140px;
-            margin: 10px auto 15px auto;
-            padding: 0 15px;
-        }
+        /* 🏛️ 1. मास्टर नेविगेशन बार (होम पेज जैसा - डायनेमिक + 3D) */
+        .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
         .master-navbar {
             background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green));
             border-bottom: 4px solid var(--brand-gold);
@@ -136,7 +132,7 @@
         }
         .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
 
-        /* 🗂️ 2. 3-in-1 असली टैब नेविगेशन बार (सफ़ेद) */
+        /* 🗂️ 2. 3-in-1 असली टैब नेविगेशन बार (सफ़ेद) */
         .tabs-container {
             max-width: 100%;
             width: 1140px;
@@ -239,11 +235,11 @@
            📱 3. मीडिया क्वेरी रिस्पॉन्सिवनेस (मोबाइल कस्टमाइजेशन)
            ========================================= */
         @media (max-width: 650px) {
-            /* 🚀 मुख्य मेनू: मोबाइल पर कम से कम 3 बटन फिक्स दिखाने के लिए स्पेस ऑप्टिमाइजेशन */
-            .master-nav-container { padding: 0 6px; }
-            .master-navbar { padding: 6px 6px; gap: 4px; border-radius: 10px; }
+            /* 🚀 मुख्य मेनू: होम पेज जैसा स्पेस ऑप्टिमाइजेशन */
+            .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
+            .master-navbar { padding: 8px 10px; border-radius: 10px; }
             .primary-menu { gap: 5px; } 
-            .nav-btn { padding: 5px 8px; font-size: 11.5px; border-radius: 6px; gap: 4px; } 
+            .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; } 
             .nav-btn i { font-size: 11px; }
 
             /* 🗂️ सब-पट्टी: सफ़ेद पट्टी के बटन मोबाइल स्क्रीन पर बिना कटे फिट रखने के लिए */
@@ -263,27 +259,27 @@
 </head>
 <body>
 
-    <!-- 🌟 मुख्य मास्टर नेविगेशन बार (डार्क ग्रीन - अब मोबाइल पर भी 3 बटन फिक्स दिखेंगे) -->
+    <!-- 🌟 मुख्य मास्टर नेविगेशन बार (होम पेज जैसा - अब RJYF बटन एक्टिव है) -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             
             <div class="primary-menu" id="primary-menu">
-                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="jatsamaj_site" class="nav-btn">
                     <i class="fa-solid fa-house"></i> होम
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn active">
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="jatsamaj_site" class="nav-btn active">
                     <i class="fa-solid fa-users-gear"></i> RJYF
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn">
+                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="jatsamaj_site" class="nav-btn">
                     <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn">
+                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="jatsamaj_site" class="nav-btn">
                     <i class="fa-solid fa-newspaper"></i> News & Events
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn">
+                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="jatsamaj_site" class="nav-btn">
                     <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="jatsamaj_site" class="nav-btn">
                     <i class="fa-solid fa-address-book"></i> Contact Us
                 </a>
             </div>
@@ -299,7 +295,7 @@
         </nav>
     </div>
 
-    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी) -->
+    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी) -->
     <div class="tabs-container">
         <nav class="tabs-nav">
             <button class="tab-btn active" id="btn-rjyf" onclick="openTab('main-rjyf', 'btn-rjyf')">
@@ -371,8 +367,744 @@
             </div>
 
             <div class="form-strip">
-                <p class="form-desc">オンライン पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p> 
+                <p class="form-desc">ऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p> 
+              Claude finished the response
+क्या आपको अपनी पुरानी वाली चैट याद है जिसमें अपनो ने home फाइल की index.html edit की थी
+
+
+पिछली बातचीत याद न होने की सीमा स्पष्ट की।
+पिछली बातचीत याद न होने की सीमा स्पष्ट की।
+नहीं, मुझे अपनी पुरानी चैट्स याद नहीं रहतीं। हर नई बातचीत मेरे लिए बिल्कुल अलग और स्वतंत्र होती है — मुझे पिछली बातचीत की कोई जानकारी नहीं होती, भले ही वो आपने कल की हो या अभी थोड़ी देर पहले किसी और चैट विंडो में की हो।
+
+अगर आपके पास वो पुरानी index.html वाली फाइल या उसका कोड मौजूद है, तो आप उसे यहाँ पेस्ट कर सकते हैं या अपलोड कर सकते हैं — मैं उसे देखकर आगे मदद कर सकता हूँ।
+
+एक बात बता दूं: अगर आप चाहते हैं कि मुझे भविष्य में आपकी पुरानी बातचीत की जानकारी अपने आप याद रहे, तो Claude के पास एक Memory फीचर है जिसे आप Settings में जाकर ऑन कर सकते हैं। अभी वो आपके लिए ऑन नहीं है, इसलिए मुझे पिछली चैट्स का कोई एक्सेस नहीं है।
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html, body { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+        html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+        :root { --brand-green: 
+#11532e; --brand-dark-green: 
+#0b3a20; --brand-gold: 
+#d4af37; --light-bg: 
+#f8fafc; --text-main: 
+#1e293b; --text-muted: 
+#64748b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards; }
+        @keyframes pageFadeIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+        .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
+        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
+        .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: 
+#0e4425; color: 
+#ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .nav-btn:hover { color: var(--brand-gold); box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1); transform: translateY(-1px); }
+        .nav-btn.active { background: 
+#0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); transform: translateY(1px); border: 1px solid rgba(0,0,0,0.3); }
+        .nav-btn i { font-size: 14px; }
+        .more-menu-container { position: relative; flex-shrink: 0; display: none; }
+        .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; cursor: pointer; }
+        .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: 
+#ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
+        .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
+
+        .intro-section { max-width: 1140px; margin: 25px auto; padding: 0 20px; }
+        .intro-card { background: 
+#ffffff; border-radius: 16px; padding: 22px 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-left: 5px solid var(--brand-green); border-top: 1px solid 
+#f1f5f9; border-right: 1px solid 
+#f1f5f9; border-bottom: 1px solid 
+#f1f5f9; transition: all 0.4s ease; }
+        .intro-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(17, 83, 46, 0.08); }
+        .intro-title { font-size: 19px; color: var(--brand-green); font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .intro-text { font-size: 14px; color: 
+#334155; line-height: 1.6; text-align: justify; }
+        .intro-highlight { font-weight: 700; color: var(--brand-dark-green); }
+
+        .gallery-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .gallery-item { background: 
+#ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid 
+#e2e8f0; cursor: pointer; transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); }
+        .gallery-item:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(17,83,46,0.1); border-color: var(--brand-green); }
+        .gallery-img-box { width: 100%; height: 230px; overflow: hidden; }
+        .gallery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-item:hover .gallery-img-box img { transform: scale(1.05); }
+
+        .link-strip { background: linear-gradient(135deg, 
+#11532e, 
+#1a7442); padding: 15px 20px; text-align: center; margin: 30px 0; box-shadow: 0 4px 12px rgba(17,83,46,0.12); }
+        .strip-btn { display: inline-flex; align-items: center; gap: 8px; background: 
+#ffffff; color: var(--brand-green); text-decoration: none; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 13.5px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); position: relative; overflow: hidden; animation: buttonPulse 2s infinite; transition: all 0.3s ease; }
+        @keyframes buttonPulse { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
+        .strip-btn::after { content: ''; position: absolute; top: -50%; left: -60%; width: 30%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(25deg); animation: shine 3.5s infinite; }
+        @keyframes shine { 0% { left: -60%; } 15% { left: 140%; } 100% { left: 140%; } }
+        .strip-btn:hover { background: var(--brand-dark-green); color: 
+#ffffff; transform: scale(1.03); }
+
+        .video-section { max-width: 800px; margin: 35px auto; padding: 0 20px; text-align: center; }
+        .video-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--brand-dark-green); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 4px solid 
+#ffffff; transition: transform 0.4s ease; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        .social-section { text-align: center; margin: 40px auto; padding: 0 20px; }
+        .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .social-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: 
+#ffffff; text-decoration: none; font-size: 18px; transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .social-icon.fb { background: 
+#1877f2; }
+        .social-icon.insta { background: linear-gradient(45deg, 
+#f09433 0%, 
+#e6683c 25%, 
+#dc2743 50%, 
+#cc2366 75%, 
+#bc1888 100%); }
+        .social-icon.yt { background: 
+#ff0000; }
+        .social-icon.x { background: 
+#000000; }
+        .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+
+        .footer-section { background: 
+#0b3a20; color: 
+#ffffff; padding: 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; width: 100%; }
+        .footer-bottom { text-align: center; }
+
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 20px; }
+        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); animation: zoomIn 0.3s ease forwards; }
+        @keyframes zoomIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .lightbox-close { position: absolute; top: 20px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; font-weight: bold; }
+
+        @media (max-width: 650px) {
+            .gallery-grid { grid-template-columns: 1fr; gap: 15px; }
+            .gallery-img-box { height: 190px; }
+            .intro-card { padding: 18px; }
+            .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
+            .master-navbar { padding: 8px 10px; border-radius: 10px; }
+            .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; }
+        }
+        ::selection { background: 
+#11532e; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="master-nav-container">
+        <nav class="master-navbar" id="master-navbar">
+            <div class="primary-menu" id="primary-menu">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="jatsamaj_site" class="nav-btn active">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+            </div>
+            <div class="more-menu-container" id="more-menu-container">
+                <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                <div class="more-menu" id="more-menu"></div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="intro-section">
+        <div class="intro-card">
+            <h2 class="intro-title"><i class="fa-solid fa-building-columns"></i> संस्थान परिचय:</h2>
+            <p class="intro-text">
+                <span class="intro-highlight">जाट समाज संस्थान, भादरा</span> सामाजिक एकता, शिक्षा, संस्कृति एवं सामुदायिक विकास को समर्पित एक प्रतिष्ठित संस्था है। संस्थान का उद्देश्य जाट समाज के सामाजिक, शैक्षणिक, सांस्कृतिक एवं आर्थिक उत्थान के लिए सार्थक प्रयास करना तथा समाज में भाईचारे, सहयोग और जागरूकता को बढ़ावा देना है।<br><br>
+                संस्थान द्वारा समय-समय पर प्रतिभा सम्मान समारोह, शैक्षणिक प्रोत्साहन कार्यक्रम, सांस्कृतिक आयोजन एवं जनकल्याणकारी गतिविधियों का आयोजन किया जाता है। हम समाज की गौरवशाली परंपराओं और मूल्यों को सुरक्षित रखते हुए नई पीढ़ी को शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी के लिए प्रेरित करने का कार्य करते हैं। जाट समाज संस्थान, भादरा समाज सेवा, संगठन और विकास के माध्यम से एक स्वस्थ एवं प्रगतिशील समाज के निर्माण हेतु निरंतर प्रतिबद्ध है।
+            </p>
+        </div>
+    </div>
+
+    <div class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('FB_IMG_1783181660134.jpg')">
+                <div class="gallery-img-box">
+                    <img src="FB_IMG_1783181660134.jpg" loading="lazy" alt="जाट समाज जनसभा भादरा">
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('FB_IMG_1783181602074.jpg')">
+                <div class="gallery-img-box">
+                    <img src="FB_IMG_1783181602074.jpg" loading="lazy" alt="अंतरराष्ट्रीय जाट दिवस समारोह">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="link-strip">
+        <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
+            <i class="fa-solid fa-user-plus"></i> राइजिंग जाट यूथ फाउंडेशन (RJYF) पंजीकरण लिंक
+        </a>
+    </div>
+
+    <div class="video-section">
+        <h3 class="video-title"><i class="fa-solid fa-video"></i> किसान मसीहा चौधरी कुंभाराम आर्य - शार्ट फिल्म</h3>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/QJrT_F44jzE" title="YouTube video player" loading="lazy" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="social-section">
+        <p class="social-text">नीचे दिए बटन पर क्लिक कर संस्थान के सोशल मीडिया अकाउंट से जुड़ सकते हैं</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-bottom">
+            <div style="text-align: center; line-height: 1.8;">
+                <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
+                <p style="font-size: 12px; color: rgba(255,255,255,0.7); font-weight: normal;">
+                    Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none; font-weight: bold; letter-spacing: 0.5px;">PC Beniwal</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightboxTarget" src="" alt="Zoomed Image">
+    </div>
+
+    <script>
+        function openLightbox(imgUrl) {
+            document.getElementById('lightboxTarget').src = imgUrl;
+            document.getElementById('imageLightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('imageLightbox').style.display = 'none';
+        }
+
+        const primaryMenu = document.getElementById('primary-menu');
+        const moreMenuContainer = document.getElementById('more-menu-container');
+        const moreMenu = document.getElementById('more-menu');
+
+        function adaptNav() {
+            while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
+            moreMenuContainer.style.display = 'none';
+            let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
+            if (isOverflow) {
+                moreMenuContainer.style.display = 'block';
+                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 1) {
+                    moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
+                }
+            }
+        }
+
+        window.addEventListener('resize', adaptNav);
+        window.addEventListener('load', adaptNav);
+        function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
+        document.addEventListener('click', function(event) {
+            if (!moreMenuContainer.contains(event.target)) moreMenu.classList.remove('show');
+        });
+    </script>
+</body>
+                    </html>
+
+Show less
+
+Acknowledged code submission and prepared to suggest improvements
+Acknowledged code submission and prepared to suggest improvements
+धन्यवाद, ये आपकी index.html (होम पेज) फाइल है। अब मेरे पास पूरा कोड है, इसे मैंने ध्यान से देख लिया है।
+
+इसमें ये चीज़ें हैं:
+
+मास्टर नेविगेशन बार (होम, RJYF, बैठक सूचना, News & Events, जाट कैलेंडर, Contact Us)
+संस्थान परिचय सेक्शन
+फोटो गैलरी (लाइटबॉक्स के साथ)
+RJYF पंजीकरण लिंक स्ट्रिप
+YouTube वीडियो सेक्शन (चौधरी कुंभाराम आर्य पर शॉर्ट फिल्म)
+सोशल मीडिया लिंक्स
+फुटर
+एक बात नोट करने लायक है — गैलरी वाली दोनों इमेजेज़ (FB_IMG_1783181660134.jpg और FB_IMG_1783181602074.jpg) भी relative path से लोड हो रही हैं, यानी ये तभी दिखेंगी जब वो फाइलें इसी फोल्डर में मौजूद हों जहाँ ये HTML फाइल है।
+
+अब बताइए, आप इस फाइल में क्या बदलाव या एडिट करवाना चाहते हैं? जैसे:
+
+गैलरी में नई फोटो जोड़नी है
+कोई सेक्शन जोड़ना/हटाना है
+नेविगेशन में कोई नया लिंक जोड़ना है
+डिज़ाइन/स्टाइल में बदलाव
+इसमें जैसी नेविगेशन बार है बटन है वैसे ही RJYF वाले पेज के कोड में लगानी है ठीक उसी माप में उसी स्टाइल के साथ में बस फर्क इतना है कि होम पेज में होम का बटन दबा हुआ दिख रहा है यहां rjyf वाला दबा दिख रहा है
+
+
+नेविगेशन बार को RJYF पेज में स्थानांतरित किया, सक्रिय बटन बदला।
+नेविगेशन बार को RJYF पेज में स्थानांतरित किया, सक्रिय बटन बदला।
+समझ गया। आप चाहते हैं कि होम पेज (index.html) वाला नेविगेशन बार बिल्कुल उसी साइज़, पैडिंग, स्टाइल के साथ RJYF वाले पेज में भी लगे — बस "होम" की जगह "RJYF" बटन दबा हुआ (active) दिखे।
+
+इसके लिए RJYF पेज में दो जगह बदलाव करने होंगे — एक CSS में, एक HTML में। नीचे दोनों दिए गए हैं, इन्हें कॉपी करके अपनी RJYF फाइल में बदल दीजिए।
+
+1️⃣ CSS बदलें
+RJYF फाइल में मौजूद ये पुराना नेविगेशन CSS भाग:
+
+css
+.master-nav-container {
+    max-width: 1140px;
+    margin: 10px auto 15px auto;
+    padding: 0 15px;
+}
+...को इससे बदलें (होम पेज वाला एग्जैक्ट माप):
+
+css
+.master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
+और मोबाइल मीडिया क्वेरी में भी .nav-btn वाली लाइन:
+
+css
+.nav-btn { padding: 5px 8px; font-size: 11.5px; border-radius: 6px; gap: 4px; }
+को इससे बदलें:
+
+css
+.nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; }
+और .master-nav-container वाली मीडिया क्वेरी लाइन:
+
+css
+.master-nav-container { padding: 0 6px; }
+.master-navbar { padding: 6px 6px; gap: 4px; border-radius: 10px; }
+को इससे बदलें (होम पेज जैसा):
+
+css
+.master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
+.master-navbar { padding: 8px 10px; border-radius: 10px; }
+2️⃣ HTML नेविगेशन बार बदलें
+RJYF फाइल का पूरा नेविगेशन <div class="master-nav-container">...</div> वाला भाग इससे बदल दें:
+
+html
+<div class="master-nav-container">
+    <nav class="master-navbar" id="master-navbar">
+        <div class="primary-menu" id="primary-menu">
+            <a href="https://sites.google.com/view/jatsamajbhadra/" target="jatsamaj_site" class="nav-btn">
+                <i class="fa-solid fa-house"></i> होम
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="jatsamaj_site" class="nav-btn active">
+                <i class="fa-solid fa-users-gear"></i> RJYF
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="jatsamaj_site" class="nav-btn">
+                <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="jatsamaj_site" class="nav-btn">
+                <i class="fa-solid fa-newspaper"></i> News & Events
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="jatsamaj_site" class="nav-btn">
+                <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+            </a>
+            <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="jatsamaj_site" class="nav-btn">
+                <i class="fa-solid fa-address-book"></i> Contact Us
+            </a>
+        </div>
+        <div class="more-menu-container" id="more-menu-container">
+            <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+            <div class="more-menu" id="more-menu"></div>
+        </div>
+    </nav>
+</div>
+ध्यान दें: मैंने target="_blank" को भी target="jatsamaj_site" कर दिया है — जैसा होम पेज में है, ताकि सारे नेविगेशन लिंक एक ही ब्राउज़र टैब में खुलें (बार-बार नए टैब न खुलें)। अगर आप चाहें कि RJYF पेज में लिंक नए-नए टैब में ही खुलते रहें (जैसा पहले था), तो बताइए — मैं target="_blank" वापस रख दूँगा।
+
+चाहें तो पूरी अपडेटेड RJYF फाइल भी बना कर दे सकता हूँ — बताइए?
+
+मुझे ऐसे नहीं पता पूरा कोड एक साथ देदो ताकि कॉपी करके सीधा पेस्ट के सकु
+
+
+संपूर्ण कोड एकत्रित करके प्रस्तुत किया।
+संपूर्ण कोड एकत्रित करके प्रस्तुत किया।
+पूरा RJYF वाला कोड नीचे है, इसमें नेविगेशन बार होम पेज जैसा माप/स्टाइल में लगा दिया है और "RJYF" बटन दबा हुआ (active) दिखेगा। इसे कॉपी करके सीधे अपनी फाइल में पेस्ट कर दीजिए।
+
+html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJYF - राइजिंग जाट यूथ फाउंडेशन</title>
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 1. पूरे पेज और पट्टियों के लिए इनविजिबल स्क्रोलबार */
+        html, body {
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none; 
+        }
+
+        :root {
+            --brand-green: #11532e;
+            --brand-dark-green: #0b3a20;
+            --brand-gold: #d4af37;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        body { 
+            background: linear-gradient(#f8fafc, #eef7f1);
+            background-attachment: fixed;
+            color: var(--text-main); 
+            -webkit-font-smoothing: antialiased; 
+            padding-bottom: 20px;
+        }
+
+        /* 🏛️ 1. मास्टर नेविगेशन बार (होम पेज जैसा - डायनेमिक + 3D) */
+        .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
+        .master-navbar {
+            background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green));
+            border-bottom: 4px solid var(--brand-gold);
+            padding: 10px 14px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            position: relative;
+        }
+
+        .primary-menu {
+            display: flex;
+            gap: 12px;
+            overflow: hidden;
+            white-space: nowrap;
+            flex-grow: 1;
+        }
+
+        /* 💎 3D एनिमेटेड बटन स्टाइल (Embossed & Inset) */
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #0e4425; 
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.03);
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .nav-btn:hover {
+            color: var(--brand-gold);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1);
+            transform: translateY(-1px);
+        }
+        /* Active (दबा हुआ / Inset) State - RJYF के लिए */
+        .nav-btn.active {
+            background: #0a331c; 
+            color: var(--brand-gold);
+            box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05);
+            transform: translateY(1px); 
+            border: 1px solid rgba(0,0,0,0.3);
+        }
+        .nav-btn i { font-size: 14px; }
+
+        .more-menu-container {
+            position: relative;
+            flex-shrink: 0;
+            display: none; 
+        }
+        .more-btn {
+            background: var(--brand-gold) !important;
+            color: var(--brand-dark-green) !important;
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important;
+            cursor: pointer;
+        }
+        .more-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1000;
+            flex-direction: column;
+            gap: 8px;
+            border: 2px solid var(--brand-gold);
+            min-width: 200px;
+        }
+        .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .more-menu .nav-btn {
+            background: var(--light-bg);
+            color: var(--brand-dark-green);
+            border: 1px solid #e2e8f0;
+            box-shadow: none; 
+            width: 100%;
+            justify-content: flex-start;
+            padding: 10px 15px;
+            font-size: 13.5px;
+            transform: none;
+        }
+        .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
+
+        /* 🗂️ 2. 3-in-1 असली टैब नेविगेशन बार (सफ़ेद) */
+        .tabs-container {
+            max-width: 100%;
+            width: 1140px;
+            margin: 5px auto 15px auto;
+            padding: 0 15px;
+        }
+        .tabs-nav {
+            display: flex;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .tab-btn {
+            flex: 1; 
+            padding: 15px 15px;
+            border: none;
+            background: none;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .tab-btn:not(:last-child) { border-right: 1px solid #e2e8f0; }
+        .tab-btn:hover { background-color: #f8fafc; color: var(--brand-green); }
+        .tab-btn.active {
+            color: var(--brand-green);
+            background-color: #f0fdf4;
+            border-bottom: 4px solid var(--brand-gold);
+            box-shadow: 0 0 15px rgba(212,175,55,0.4);
+            z-index: 2;
+        }
+
+        /* 🚀 कंटेंटिया */
+        .content-container { max-width: 100%; width: 1140px; margin: 0 auto; padding: 0 15px; }
+        .tab-panel { display: none; width: 100%; }
+        .tab-panel.active { display: block; animation: premiumTabAnim 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+        @keyframes premiumTabAnim { 0% { opacity: 0; transform: translateY(15px) scale(0.97); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+
+        /* 🏛️ कार्ड्स लेआउट */
+        .rjyf-card, .yellow-box {
+            background: #ffffff; border-radius: 16px; padding: 22px 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; margin-bottom: 20px; width: 100%; transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .rjyf-card:hover, .yellow-box:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
+        .yellow-box { background-color: #fcd34d; color: #0f172a; border: 1px solid #fbbf24; }
+        .panel-title { font-size: 19px; color: var(--brand-green); font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 5px; }
+        .yellow-box .panel-title { color: #0f172a; border-bottom-color: rgba(0,0,0,0.1); }
+        .panel-text { font-size: 14.5px; line-height: 1.6; margin-bottom: 15px; text-align: justify; }
+        .content-list { list-style: none; padding-left: 0; }
+        .content-list li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
+        .content-list li::before { content: "■"; position: absolute; left: 0; top: 0; color: var(--brand-green); font-size: 12px; }
+        .yellow-box .content-list li::before { color: #0f172a; }
+
+        /* 📝 पंजीकरण फॉर्म स्ट्रिप */
+        .form-strip { background: linear-gradient(135deg, #11532e, #1a7442); padding: 35px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 12px rgba(17,83,46,0.12); margin-bottom: 20px; width: 100%; }
+        .live-list-strip { background: linear-gradient(135deg, #0b3a20, #11532e); padding: 35px 20px !important; }
+        .form-desc { color: #ffffff; font-size: 15.5px; margin-bottom: 20px; font-weight: 500; line-height: 1.5; }
+
+        /* 🔥 जादुई गोल्डन फायर रोटेटिंग बॉर्डर कंटेनर */
+        .fire-border-box { position: relative; display: inline-block; padding: 3px; border-radius: 35px; overflow: hidden; background: rgba(255, 255, 255, 0.1); z-index: 1; }
+        .fire-border-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, #ffae00 10%, #fff700 20%, #d4af37 40%, transparent 60%, #ffae00 70%, #d4af37 90%, transparent); animation: rotateFire 4s linear infinite; z-index: -2; }
+        .fire-border-box::after { content: ''; position: absolute; inset: 3px; background: var(--brand-green); border-radius: 32px; z-index: -1; }
+        @keyframes rotateFire { 100% { transform: rotate(360deg); } }
+
+        /* बटन का प्रीमियम स्टाइल */
+        .strip-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #ffffff; color: var(--brand-green); text-decoration: none; padding: 14px 32px; border-radius: 30px; font-weight: 700; font-size: 14.5px; transition: all 0.3s ease; border: none; position: relative; overflow: hidden; }
+        .strip-btn:hover { background: #fcd34d; color: #0f172a; transform: scale(1.02); }
+        .strip-btn::after { content: ''; position: absolute; top: -50%; left: -60%; width: 30%; height: 200%; background: rgba(255, 255, 255, 0.3); transform: rotate(30deg); animation: shineMove 4s ease-in-out infinite; }
+        @keyframes shineMove { 0% { left: -60%; } 20% { left: 140%; } 100% { left: 140%; } }
+        .member-btn-style { background-color: #fcd34d; color: #0f172a; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+
+        /* QR कोड कंटेनर */
+        .qr-container { text-align: center; margin-top: 25px; margin-bottom: 10px; }
+        .qr-img { max-width: 100%; width: 220px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 4px solid #ffffff; transition: transform 0.35s ease; }
+        .qr-img:hover { transform: scale(1.05); }
+
+        /* 📱 सोशल मीडिया कनेक्ट */
+        .social-section { text-align: center; margin: 35px auto 25px auto; padding: 0 20px; }
+        .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .social-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; font-size: 18px; transition: transform 0.5s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .social-icon.fb { background: #1877f2; }
+        .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .social-icon.yt { background: #ff0000; }
+        .social-icon.x { background: #000000; }
+        .social-icon:hover { transform: rotate(360deg); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
+
+        /* 🏢 फुटर स्टाइल */
+        .footer-section { background: #0b3a20; color: #ffffff; padding: 25px 20px; border-top: 4px solid var(--brand-gold); text-align: center; border-radius: 12px; margin-top: 20px; }
+        .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 500; line-height: 1.8; }
+
+        /* =========================================
+           📱 3. मीडिया क्वेरी रिस्पॉन्सिवनेस (मोबाइल कस्टमाइजेशन)
+           ========================================= */
+        @media (max-width: 650px) {
+            /* 🚀 मुख्य मेनू: होम पेज जैसा स्पेस ऑप्टिमाइजेशन */
+            .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
+            .master-navbar { padding: 8px 10px; border-radius: 10px; }
+            .primary-menu { gap: 5px; } 
+            .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; } 
+            .nav-btn i { font-size: 11px; }
+
+            /* 🗂️ सब-पट्टी: सफ़ेद पट्टी के बटन मोबाइल स्क्रीन पर बिना कटे फिट रखने के लिए */
+            .tab-btn { 
+                font-size: 11px; 
+                padding: 12px 4px; 
+                gap: 4px; 
+                min-width: unset; 
+            }
+            
+            .rjyf-card, .yellow-box, .form-strip { padding: 18px; }
+            .panel-title { font-size: 17px; }
+            .panel-text, .content-list li, .form-desc { font-size: 13.5px; }
+            .strip-btn { padding: 13px 24px; font-size: 13.5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌟 मुख्य मास्टर नेविगेशन बार (होम पेज जैसा - अब RJYF बटन एक्टिव है) -->
+    <div class="master-nav-container">
+        <nav class="master-navbar" id="master-navbar">
+            
+            <div class="primary-menu" id="primary-menu">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="jatsamaj_site" class="nav-btn active">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="jatsamaj_site" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+            </div>
+
+            <!-- 'अन्य ▾' डायनेमिक ओवरफ्लो बटन -->
+            <div class="more-menu-container" id="more-menu-container">
+                <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                <div class="more-menu" id="more-menu">
+                    <!-- छिपे हुए बटन यहाँ आएंगे -->
+                </div>
+            </div>
+            
+        </nav>
+    </div>
+
+    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी) -->
+    <div class="tabs-container">
+        <nav class="tabs-nav">
+            <button class="tab-btn active" id="btn-rjyf" onclick="openTab('main-rjyf', 'btn-rjyf')">
+                <i class="fa-solid fa-building-columns"></i> RJYF
+            </button>
+            <button class="tab-btn" id="btn-reg" onclick="openTab('reg-form', 'btn-reg')">
+                <i class="fa-solid fa-pen-to-square"></i> पंजीकरण फॉर्म
+            </button>
+            <button class="tab-btn" id="btn-members" onclick="openTab('members-list', 'btn-members')">
+                <i class="fa-solid fa-users"></i> रजिस्टर्ड सदस्य
+            </button>
+        </nav>
+    </div>
+
+    <!-- 🚀 कंटेंट एरिया -->
+    <div class="content-container">
+        
+        <!-- अनुभाग 1: RJYF का परिचय -->
+        <div id="main-rjyf" class="tab-panel active">
+            <div class="yellow-box">
+                <h2 class="panel-title">हमारे बारे में (About Us):</h2>
+                <p class="panel-text" style="font-weight: 600;">
+                    राइजिंग जाट यूथ फाउंडेशन (RJYF) जाट समाज संस्थान, भादरा की एक ऊर्जावान, प्रगतिशील और समर्पित युवा विंग है। इस संगठन की स्थापना क्षेत्र के जागरूक, शिक्षित और कर्मठ युवाओं को एक मज़बूत और साझा मंच प्रदान करने के उद्देश्य से की गई है।
+                </p>
+                <p class="panel-text" style="margin-bottom: 0; font-weight: 500;">
+                    हमारा दृढ़ विश्वास है कि किसी भी समाज का वास्तविक उत्थान उसकी युवा शक्ति की सकारात्मक सोच, दिशा और दशा पर निर्भर करता है। RJYF भादरा क्षेत्र के युवाओं को एकजुट कर उन्हें समाज हित, राष्ट्र निर्माण, शिक्षा और आत्म-निर्भरता की ओर अग्रसर करने के लिए पूरी तरह प्रतिबद्ध है।
+                </p>
+            </div>
+
+            <div class="rjyf-card">
+                <h2 class="panel-title">Our Vision & Mission (दृष्टिकोण और उद्देश्य):</h2>
+                <ul class="content-list">
+                    <li><strong>गौरवशाली इतिहास का संरक्षण:</strong> समाज के प्रत्येक व्यक्ति, विशेषकर नई पीढ़ी (युवाओं) तक जाट समाज की ऐतिहासिक शौर्य गाथाओं, वीर योद्धाओं और महान जाट रत्नों के गौरवशाली इतिहास को पहुँचाना।</li>
+                    <li><strong>सामाजिक सुधार और जागरूकता:</strong> समाज में व्याप्त कुरीतियों और फिजूलखर्ची के खिलाफ आवाज़ उठाना, युवाओं को नशे की लत से दूर रखना (नशामुक्त अभियान) और सामाजिक समरसता को बढ़ावा देना।</li>
+                    <li><strong>युवा सशक्तिकरण और शिक्षा:</strong> ग्रामीण व कस्बाई क्षेत्रों के होनहार युवाओं को सही करियर मार्गदर्शन देना, सफल अभ्यर्थियों को प्रोत्साहित करना, प्रतियोगी परीक्षाओं की तैयारी में हरसंभव सहायता करना और शिक्षा के स्तर को ऊँचा उठाना।</li>
+                    <li><strong>नेतृत्व क्षमता का विकास (Leadership Building):</strong> युवाओं में सकारात्मक सोच और नेतृत्व के गुण विकसित करना, ताकि वे भविष्य में समाज और देश का सही प्रतिनिधित्व कर सकें।</li>
+                </ul>
+            </div>
+
+            <div class="rjyf-card">
+                <h2 class="panel-title">What We Do (हमारे मुख्य कार्य) :</h2>
+                <ul class="content-list">
+                    <li><strong>स्वास्थ्य और सेवा:</strong> रक्तदान शिविर (Blood Donation Camps), नशामुक्ति अभियान और स्वास्थ्य जागरूकता कार्यक्रमों का संचालन।</li>
+                    <li><strong>संस्कृति एवं खेलकूद:</strong> युवाओं की शारीरिक व मानसिक प्रगति के लिए खेल प्रतियोगिताओं का आयोजन करना और उनमें खेल भावना को प्रोत्साहित करना।</li>
+                    <li><strong>पर्यावरण संरक्षण:</strong> प्रकृति के प्रति अपनी जिम्मेदारी निभाते हुए व्यापक स्तर पर पर्यावरण संरक्षण अभियान चलाना।</li>
+                    <li><strong>आपसी एकता व भाईचारा:</strong> समाज के हर वर्ग को साथ लेकर चलना, आपसी सहयोग और भाईचारे के ताने-बाने को सुदृढ़ करना।</li>
+                </ul>
+            </div>
+
+            <div class="form-strip" style="margin-top: 25px;">
+                <p class="form-desc">फाउंडेशन से जुड़ने के लिए नीचे दिए गए बटन पर क्लिक करके अपना पंजीकरण पूरा करें:</p>
                 <div class="fire-border-box">
+                    <a href="#" onclick="openTab('reg-form', 'btn-reg'); return false;" class="strip-btn">
+                        <i class="fa-solid fa-user-plus"></i> Click Here For Registration
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- अनुभाग 2: पंजीकरण फॉर्म -->
+        <div id="reg-form" class="tab-panel">
+            <div class="yellow-box">
+                <h2 class="panel-title">Steps for Registration :</h2>
+                <ul class="content-list">
+                    <li><strong>लिंक या QR कोड ओपन करें:</strong> अपने मोबाइल फोन पर नीचे दिए गए आधिकारिक गूगल फॉर्म (Google Form) लिंक को खोलें, या फिर नीचे दिए गए QR कोड को स्कैन करें।</li>
+                    <li><strong>जानकारी दर्ज करें:</strong> गूगल फॉर्म खुलने के बाद, उसमें मांगी गई सभी आवश्यक जानकारियों को बिल्कुल सही-सही भरें।</li>
+                    <li><strong>फॉर्म सबमिट करें:</strong> सभी विवरणों को दोबारा जाँचने के बाद फॉर्म के अंत में दिए गए 'Submit' बटन पर क्लिक करें। आपका पंजीकरण सफलतापूर्वक दर्ज हो जाएगा।</li>
+                </ul>
+            </div>
+
+            <div class="form-strip">
+                <p class="form-desc">ऑनलाइन पंजीकरण फॉर्म खोलने के लिए नीचे दिए गए बटन पर क्लिक करें:</p> 
+               <div class="fire-border-box">
                     <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
                         <i class="fa-solid fa-user-plus"></i> Click Here For Registration
                     </a>
@@ -484,4 +1216,3 @@
     </script>
 </body>
 </html>
-                
