@@ -6,21 +6,21 @@
     <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* बेस सेटिंग्स और स्क्रॉलबार छिपाना */
+        /* बेस सेटिंग्स */
         html, body { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
         html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
         :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; --light-bg: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; padding-top: 0px !important; margin-top: 0px !important; }
 
         /* 🌟 मास्टर स्ट्रेच-प्रूफ बैनर (100% सुरक्षित और बिना पिचकने वाला) */
         .page-banner-container { 
             background-color: var(--brand-dark-green); 
             border-bottom: 5px solid var(--brand-gold); 
             width: 100%; 
-            display: block; /* Flexbox हटा दिया ताकि कुछ भी पिचके नहीं */
+            display: block; 
             text-align: center; 
-            margin-bottom: 15px; 
+            margin-bottom: 20px; 
         }
         .page-banner-container img { 
             width: 100%; 
@@ -100,12 +100,10 @@
 </head>
 <body>
 
-    <!-- 🌟 मास्टर बैनर (Direct Raw Link के साथ ताकि कभी न टूटे) -->
     <div class="page-banner-container">
-        <img src="https://raw.githubusercontent.com/jatsamajbhadra/news-events/main/home/image/home_page_banner.png" alt="जाट समाज संस्थान भादरा - मुख्य बैनर">
+        <img src="home/image/home_page_banner.png" alt="जाट समाज संस्थान भादरा - मुख्य बैनर">
     </div>
 
-    <!-- 🏛️ नेविगेशन बार -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
@@ -147,14 +145,14 @@
 
     <div class="gallery-section">
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/jatsamajbhadra/news-events/main/FB_IMG_1783181660134.jpg')">
+            <div class="gallery-item" onclick="openLightbox('FB_IMG_1783181660134.jpg')">
                 <div class="gallery-img-box">
-                    <img src="https://raw.githubusercontent.com/jatsamajbhadra/news-events/main/FB_IMG_1783181660134.jpg" loading="lazy" alt="जाट समाज जनसभा भादरा">
+                    <img src="FB_IMG_1783181660134.jpg" loading="lazy" alt="जाट समाज जनसभा भादरा">
                 </div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/jatsamajbhadra/news-events/main/FB_IMG_1783181602074.jpg')">
+            <div class="gallery-item" onclick="openLightbox('FB_IMG_1783181602074.jpg')">
                 <div class="gallery-img-box">
-                    <img src="https://raw.githubusercontent.com/jatsamajbhadra/news-events/main/FB_IMG_1783181602074.jpg" loading="lazy" alt="अंतरराष्ट्रीय जाट दिवस समारोह">
+                    <img src="FB_IMG_1783181602074.jpg" loading="lazy" alt="अंतरराष्ट्रीय जाट दिवस समारोह">
                 </div>
             </div>
         </div>
