@@ -10,8 +10,14 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
         :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; --light-bg: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards; }
+        
+        /* ऊपर वाले बैनर से बिल्कुल सटाने के लिए टॉप मार्जिन/पैडिंग 0 */
+        body { background-color: var(--light-bg); color: var(--text-main); padding-top: 0px !important; margin-top: 0px !important; -webkit-font-smoothing: antialiased; animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards; }
         @keyframes pageFadeIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+        /* 🌟 मास्टर स्ट्रेच-प्रूफ इमेज बैनर (PC Beniwal स्पेशल आइडिया) */
+        .page-banner-container { background-color: var(--brand-dark-green); background-image: radial-gradient(circle at center, #11532e 0%, #0a2f1c 100%); border-bottom: 5px solid var(--brand-gold); border-radius: 0 0 12px 12px; margin: 0 auto 15px auto; max-width: 850px; width: 100%; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.15); display: flex; justify-content: center; align-items: center; }
+        .page-banner-container img { width: 100%; max-width: 850px; height: auto; display: block; object-fit: contain; }
 
         /* 🏛️ VIP नेविगेशन बार - बेस स्ट्रक्चर */
         .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
@@ -93,6 +99,11 @@
     </style>
 </head>
 <body>
+
+    <!-- 🌟 मास्टर स्ट्रेच-प्रूफ बैनर (PC Beniwal स्पेशल) -->
+    <div class="page-banner-container">
+        <img src="home/image/home_page_banner.png" alt="जाट समाज संस्थान भादरा - मुख्य बैनर">
+    </div>
 
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
