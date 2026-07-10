@@ -1,73 +1,71 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <link rel="canonical" href="https://jatsamajbhadra.github.io/news-events.html">
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Events - जाट समाज संस्थान भादरा</title>
+    <meta name="description" content="जाट समाज संस्थान, भादरा का आधिकारिक न्यूज़ पोर्टल। समाज के मुख्य समाचार, कार्यक्रमों की लाइव झलकियां और सामाजिक गतिविधियों को यहाँ देखें।">
+    <meta name="keywords" content="जाट समाज संस्थान भादरा, न्यूज़ इवेंट्स, जाट समाज समाचार, Jat Samaj Bhadra News">
+    <meta name="author" content="जाट समाज संस्थान भादरा">
+    <link rel="canonical" href="https://jatsamajbhadra.github.io/news-events.html">
+    
+    <!-- 🌐 सोशल मीडिया लिंक प्रीव्यू (व्हाट्सएप कार्ड हेतु मूल लोगो) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jatsamajbhadra.github.io/news-events.html">
+    <meta property="og:title" content="जाट समाज संस्थान भादरा - News & Events पोर्टल">
+    <meta property="og:description" content="संस्थान की नवीन गतिविधियां, मुख्य समाचार एवं सामाजिक कार्यक्रमों की लाइव रिपोर्ट। फोटो सहित विवरण देखें।">
+    <meta property="og:image" content="https://jatsamajbhadra.github.io/image/jat_samaj_logo.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:type" content="image/png">
+
+    <!-- 🎴 ट्विटर कार्ड्स -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="जाट समाज संस्थान भादरा - News & Events">
+    <meta name="twitter:description" content="संस्थान की नवीन गतिविधियां, मुख्य समाचार एवं सामाजिक कार्यक्रमों की लाइव रिपोर्ट।">
+    <meta name="twitter:image" content="https://jatsamajbhadra.github.io/image/jat_samaj_logo.png">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --brand-green: #11532e;
-            --brand-dark-green: #0b3a20;
-            --brand-gold: #d4af37;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-light: #eef7f1;
-        }
-
-        html { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+        html, body { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; overflow-x: hidden !important; position: relative; width: 100%; }
         html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
-
+        :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; --text-main: #1e293b; --text-muted: #64748b; --bg-light: #eef7f1; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        
-        /* 🔝 ऊपर वाले बैनर से बिल्कुल सटाने के लिए टॉप मार्जिन/पैडिंग 0 */
-        body { 
-            background: linear-gradient(#f8fafc, var(--bg-light)); 
-            background-attachment: fixed; 
-            color: var(--text-main); 
-            padding-top: 0px !important;
-            margin-top: 0px !important;
-            padding-bottom: 30px; 
-            -webkit-font-smoothing: antialiased; 
-        }
-        
-        /* 🌟 मास्टर स्ट्रेच-प्रूफ इमेज बैनर इंजन (PC Beniwal स्पेशल आइडिया) */
-        .page-banner-container {
-            background-color: var(--brand-dark-green);
-            background-image: radial-gradient(circle at center, #11532e 0%, #0a2f1c 100%);
-            border-bottom: 5px solid var(--brand-gold);
-            border-radius: 0 0 12px 12px;
-            margin: 0 auto 15px auto;
-            max-width: 850px;
-            width: 100%;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .page-banner-container img {
-            width: 100%;
-            max-width: 850px; /* डेस्कटॉप पर इमेज को इससे ज्यादा खींचने नहीं देगा */
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
+        body { background: linear-gradient(#f8fafc, var(--bg-light)); background-attachment: fixed; color: var(--text-main); padding-top: 0px !important; margin-top: 0px !important; padding-bottom: 0px; -webkit-font-smoothing: antialiased; }
 
-        .content-container { max-width: 100%; width: 850px; margin: 0 auto; padding: 0 16px; }
+        /* 🌟 टॉप हेडर बार और शाइनिंग बॉर्डर */
+        .top-header-bar { background-color: var(--brand-dark-green); width: 100%; position: relative; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, #d4af37, #fff7c2, #d4af37) 1; }
+        .top-header-content { max-width: 1140px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+        .hamburger-menu-btn { background: none; border: none; color: var(--brand-gold); font-size: 22px; cursor: pointer; transition: transform 0.2s ease; display: flex; align-items: center; justify-content: center; }
+        .hamburger-menu-btn:hover { transform: scale(1.1); }
 
-        /* 🏛️ VIP मास्टर नेविगेशन बार - बैठक सूचना पेज से 100% पिक्सेल सिंक */
-        .master-nav-container { 
-            max-width: 1140px; 
-            margin: 0 auto 20px auto; 
-            padding: 0 20px; 
-            width: 100%; 
-            margin-top: 0px !important; /* बैनर से चिपकाने के लिए */
-            padding-top: 0px !important;
-        }
-        
+        /* 📢 लाइव न्यूज़ टिकर */
+        .ticker-wrap { background-color: #062313; display: flex; align-items: center; overflow: hidden; padding: 6px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .ticker-title { background-color: var(--brand-gold); color: var(--brand-dark-green); padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; margin-right: 15px; flex-shrink: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .ticker { overflow: hidden; white-space: nowrap; flex-grow: 1; position: relative; display: flex; align-items: center; }
+        .ticker-item-holder { display: inline-block; white-space: nowrap; padding-left: 100%; animation: ticker-scroll 18s linear infinite; }
+        .ticker-item-holder:hover { animation-play-state: paused; }
+        @keyframes ticker-scroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+        .ticker-text-link { color: var(--brand-gold); text-decoration: none; font-weight: 700; font-size: 13.5px; transition: color 0.2s ease; }
+        .ticker-text-link:hover { color: #ffffff; text-decoration: underline; }
+
+        /* 📱 आधुनिक स्लाइडिंग साइडबार */
+        .sidebar-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background-color: var(--brand-dark-green); box-shadow: -5px 0 25px rgba(0,0,0,0.4); z-index: 10000; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 70px 20px 20px 20px; border-left: 3px solid var(--brand-gold); }
+        .sidebar-menu.open { right: 0; }
+        .sidebar-close-btn { position: absolute; top: 15px; right: 20px; color: var(--brand-gold); font-size: 32px; cursor: pointer; font-weight: bold; line-height: 1; }
+        .sidebar-links { display: flex; flex-direction: column; gap: 12px; }
+        .sidebar-link { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 16px; border-radius: 8px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.02); }
+        .sidebar-link:hover, .sidebar-link.active { background-color: var(--brand-green); color: var(--brand-gold); transform: translateX(-3px); box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
+
+        /* 🖼️ नया ग्राफिक बैनर (100% पिक्सेल सिंक) */
+        .page-banner-container { background-color: var(--brand-dark-green); width: 100%; display: block; text-align: center; margin-bottom: 20px; margin-top: 0 !important; }
+        .page-banner-container img { width: 100%; max-width: 1140px; height: auto; display: block; margin: 0 auto; }
+
+        .content-container { max-width: 1140px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        /* 🏛️ VIP मास्टर नेविगेशन बार (लोकल लिंक्स के साथ) */
+        .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
         .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
@@ -79,8 +77,6 @@
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
         .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        .more-menu .nav-btn { background: #f8fafc; color: var(--brand-dark-green); border: 1px solid #e2e8f0; box-shadow: none; width: 100%; justify-content: flex-start; padding: 10px 15px; font-size: 13.5px; transform: none; }
-        .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
 
         /* 🔍 सर्च और फ़िल्टर बार कंपोनेंट्स */
         .search-filter-box { background: #ffffff; border-radius: 12px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; margin-bottom: 20px; }
@@ -91,7 +87,8 @@
         .filter-btn { padding: 7px 14px; border-radius: 20px; background: #f1f5f9; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
         .filter-btn.active { background: var(--brand-green); color: #ffffff; box-shadow: 0 3px 8px rgba(11, 58, 32, 0.2); }
 
-        /* 🗂️ न्यूज़ कार्ड्स (थंबनेल ऑप्टिमाइज्ड) */
+        /* 🗂️ न्यूज़ कार्ड्स */
+        .content-wrapper { max-width: 760px; margin: 0 auto; min-height: 300px; width: 100%; }
         .news-portal-card { background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; border-left: 5px solid var(--brand-green); margin-bottom: 16px; overflow: hidden; cursor: pointer; display: flex; transition: all 0.25s ease; -webkit-tap-highlight-color: transparent; }
         .news-portal-card:hover { transform: translate(4px, -2px); border-left-color: var(--brand-gold); box-shadow: 0 8px 22px rgba(11, 58, 32, 0.09); }
         .news-portal-card:active { transform: scale(0.98) translate(2px, 0px); background-color: #f4faf6; box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05); }
@@ -103,7 +100,7 @@
         .card-title-text { font-size: 15px; font-weight: 700; color: var(--brand-dark-green); line-height: 1.4; }
         .card-meta-date { font-size: 11.5px; color: var(--text-muted); margin-top: 5px; display: flex; align-items: center; gap: 6px; }
         
-        /* 🚨 चस्बोज (Blinking/Pulsing) एनिमेशन न्यू बैज */
+        /* 🚨 चस्बोज न्यू बैज */
         .blink-new { background: #ef4444; color: #ffffff; font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; margin-left: 6px; display: inline-block; animation: chasbojPulse 1.2s infinite ease-in-out; }
         @keyframes chasbojPulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
@@ -112,9 +109,9 @@
         }
 
         /* 📄 फुल न्यूज़ फ्रेश पेज */
-        .portal-fresh-page { background: #ffffff; border-radius: 16px; padding: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.03); border: 1px solid #cbd5e1; }
-        .back-to-portal-btn { display: inline-flex; align-items: center; gap: 6px; background-color: var(--brand-green); color: #ffffff; padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; margin-bottom: 16px; transition: background-color 0.2s; -webkit-tap-highlight-color: transparent; }
-        .back-to-portal-btn:hover { background-color: var(--brand-dark-green); }
+        .portal-fresh-page { background: #ffffff; border-radius: 16px; padding: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.03); border: 1px solid #cbd5e1; border-top: 5px solid var(--brand-green); }
+        .back-to-portal-btn { display: inline-flex; align-items: center; gap: 6px; background-color: var(--brand-green); color: #ffffff; border: 1px solid var(--brand-gold); padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 16px; transition: background-color 0.2s; -webkit-tap-highlight-color: transparent; }
+        .back-to-portal-btn:hover { background-color: var(--brand-dark-green); color: var(--brand-gold); }
         .back-to-portal-btn:active { transform: scale(0.95); }
         .main-article-title { font-size: 18px; font-weight: 800; color: var(--brand-dark-green); line-height: 1.35; margin-bottom: 8px; }
         .article-date-bar { font-size: 11.5px; color: var(--text-muted); padding-bottom: 8px; border-bottom: 2px solid #f1f5f9; margin-bottom: 14px; }
@@ -126,7 +123,6 @@
         .share-label-text { font-size: 13px; font-weight: 700; color: #475569; }
         .custom-share-trigger-btn { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #ffffff; padding: 8px 18px; border-radius: 6px; font-size: 13.5px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 2px 5px rgba(37, 211, 102, 0.3); transition: background 0.2s; -webkit-tap-highlight-color: transparent; }
         .custom-share-trigger-btn:hover { background: #20ba5a; }
-        .custom-share-trigger-btn:active { transform: scale(0.95); }
 
         /* 📋 सोशल शेयर पॉप-अप बॉक्स (Modal) */
         .share-modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center; }
@@ -139,7 +135,7 @@
         .share-apps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
         .share-app-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--text-main); font-size: 11px; font-weight: 600; cursor: pointer; }
         
-        /* ⚙️ वीआईपी सोशल लिंक्स स्टाइल (42px सिंक + रोटेशन एनीमेशन) */
+        /* ⚙️ वीआईपी सोशल लिंक्स स्टाइल */
         .share-app-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 20px; margin-bottom: 6px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
         .share-app-icon.wa { background-color: #25d366; }
         .share-app-icon.fb { background-color: #1877f2; }
@@ -160,85 +156,107 @@
         .arrow-left { left: 8px; }
         .arrow-right { right: 8px; }
 
-        /* 🔎 क्लीन लाइटबॉक्स ओवरले */
-        .premium-lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out; opacity: 0; transition: opacity 0.3s ease; }
+        /* 🔎 क्लीन लाइटबॉक्स ओवरले + 'X' बटन अपग्रेड */
+        .premium-lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
         .premium-lightbox.active { display: flex; opacity: 1; }
-        .lightbox-content-wrapper { max-width: 92%; max-height: 92%; display: flex; justify-content: center; align-items: center; border-radius: 4px; overflow: hidden; }
+        .lightbox-content-wrapper { max-width: 92%; max-height: 92%; display: flex; justify-content: center; align-items: center; position: relative; }
         .lightbox-img { width: 100%; height: 100%; object-fit: contain; max-width: 100vw; max-height: 85vh; }
+        /* 👑 सुधार: कोने में बिल्कुल साफ़ दिखने वाला क्रॉस बटन */
+        .lightbox-close-btn { position: absolute; top: -40px; right: 0; color: #ffffff; font-size: 30px; cursor: pointer; background: none; border: none; font-weight: bold; transition: color 0.2s; z-index: 10001; }
+        .lightbox-close-btn:hover { color: var(--brand-gold); }
 
-        /* ⚙️ फुटर सोशल आइकॉन इंजन - 42px साइज, रोटेशन और गोल्डन ग्लो इफ़ेक्ट के साथ अपग्रेड */
-        .social-section { text-align: center; margin: 25px auto 12px auto; }
-        .social-text { font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
-        .social-links { display: flex; justify-content: center; gap: 14px; }
-        .social-icon { 
-            width: 42px; 
-            height: 42px; 
-            border-radius: 50%; 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #ffffff; 
-            text-decoration: none; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
-        .social-icon:hover { 
-            transform: translateY(-5px) rotate(360deg) scale(1.1); 
-            box-shadow: 0 0 15px var(--brand-gold);
-            color: var(--brand-gold);
-        }
+        /* ⚙️ फुटर सोशल आइकॉन इंजन */
+        .social-section { text-align: center; margin: 40px auto; padding: 0 20px; width: 100%; }
+        .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .social-icon { width: 42px; height: 42px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .social-icon:hover { transform: translateY(-5px) rotate(360deg) scale(1.1); box-shadow: 0 0 15px var(--brand-gold); color: var(--brand-gold); }
         .social-icon.fb { background: #1877f2; }
         .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-icon.yt { background: #ff0000; }
         .social-icon.x { background: #000000; }
 
-        /* 🌏 100% फुल-विड्थ वीआईपी फुटर (कंटेनर से आज़ाद और बारीक सिग्नेचर क्रेडिट) */
-        .footer-section { background: #0b3a20; color: #ffffff; padding: 20px 16px; border-top: 4px solid var(--brand-gold); text-align: center; width: 100%; margin-top: 35px; }
+        /* 🌏 वीआईपी फुटर पट्टी */
+        .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; width: 100%; text-align: center; }
 
-        /* 📱 100% परफेक्ट मोबाइल और डेस्कटॉप रिस्पॉन्सिव इंजन */
+        /* 📱 मोबाइल और डेस्कटॉप रिस्पॉन्सिव इंजन (बैठक पेज से पिक्सेल सिंक) */
         @media (max-width: 650px) {
             .news-portal-card { flex-direction: column; }
             .card-thumb-area { width: 100%; height: 160px; }
             .main-article-title { font-size: 15.5px; }
             .article-body-p { font-size: 13px; line-height: 1.45; }
-            
-            /* 🚀 बैठक सूचना पेज से 100% पिक्सेल-सिंक मोबाइल माप */
-            .master-nav-container { padding: 0 8px; margin-bottom: 10px; }
+            .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; display: block !important; }
             .master-navbar { padding: 8px 10px; border-radius: 10px; gap: 4px; }
             .primary-menu { gap: 5px; } 
             .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; gap: 4px; }
             .nav-btn i { font-size: 11px; }
+            .top-logo-text { font-size: 14px; }
+            .content-container { padding: 0 8px; }
+            .lightbox-close-btn { top: -45px; right: 10px; font-size: 35px; }
         }
         ::selection { background: #11532e; color: #fff; }
     </style>
 </head>
 <body>
 
-    <!-- 🌟 1. मास्टर स्ट्रेच-प्रूफ इमेज बैनर (PC Beniwal स्पेशल डिज़ाइन फ़ॉर्मूला) -->
-    <div class="page-banner-container">
-        <img src="images/news-event_banner.png" alt="News & Events Banner">
+    <!-- 🌟 टॉप हेडर बार + हैमबर्गर मेनू + न्यूज़ टिकर -->
+    <div class="top-header-bar">
+        <div class="top-header-content">
+            <div class="top-logo-text">
+                <i class="fa-solid fa-building-columns" style="color: var(--brand-gold);"></i> जाट समाज संस्थान भादरा
+            </div>
+            <button class="hamburger-menu-btn" onclick="toggleSidebar()" aria-label="मुख्य मेनू">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker-title"><i class="fa-solid fa-bullhorn"></i> नवीनतम सूचना</div>
+            <div class="ticker" id="live-news-ticker">
+                <div class="ticker-item-holder" id="ticker-holder">
+                    <span style="color: #ffffff; font-size: 13.5px;">ताज़ा समाचार लोड हो रहे हैं...</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- 🏛️ 2. VIP मास्टर नेविगेशन बार -->
+    <!-- 📱 स्लाइडिंग साइडबार मेनू -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
+        <div class="sidebar-links">
+            <a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i> होम</a>
+            <a href="rjyf.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> RJYF</a>
+            <a href="meetings.html" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+            <a href="news-events.html" class="sidebar-link active"><i class="fa-solid fa-newspaper"></i> News & Events</a>
+            <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+            <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+        </div>
+    </div>
+
+    <!-- 🖼️ नया मास्टर स्ट्रेच-प्रूफ ग्राफिक बैनर -->
+    <div class="page-banner-container">
+        <img src="image/news-event_banner.png" alt="News & Events Banner">
+    </div>
+
+    <!-- 🏛️ VIP मास्टर नेविगेशन बार -->
     <div class="master-nav-container" id="special-news-nav">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
-                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
+                <a href="index.html" class="nav-btn">
                     <i class="fa-solid fa-house"></i> होम
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
+                <a href="rjyf.html" class="nav-btn">
                     <i class="fa-solid fa-users-gear"></i> RJYF
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn active">
-                    <i class="fa-solid fa-newspaper"></i> News & Events
-                </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn">
+                <a href="meetings.html" class="nav-btn">
                     <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn">
-                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                <a href="news-events.html" class="nav-btn active">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
                 </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
+                <a href="calendar-2026.html" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर
+                </a>
+                <a href="contact.html" class="nav-btn">
                     <i class="fa-solid fa-address-book"></i> Contact Us
                 </a>
             </div>
@@ -249,27 +267,29 @@
         </nav>
     </div>
 
+    <!-- 🚀 मुख्य कंटेंट एरिया -->
     <div class="content-container">
-
-        <div id="portal-list-view">
-            <div class="search-filter-box">
-                <div class="search-wrapper">
-                    <i class="fa-solid fa-magnifying-glass search-icon-inside" aria-hidden="true"></i>
-                    <input type="text" id="news-search-input" class="search-input" onkeyup="searchNews()" placeholder="यहाँ खबर या मुख्य शब्द खोजें...">
+        <div class="content-wrapper">
+            <div id="portal-list-view">
+                <div class="search-filter-box">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon-inside" aria-hidden="true"></i>
+                        <input type="text" id="news-search-input" class="search-input" onkeyup="searchNews()" placeholder="यहाँ खबर या मुख्य शब्द खोजें...">
+                    </div>
+                    <div class="filter-tabs">
+                        <span id="btn-main" class="filter-btn active" onclick="filterCategory('main', this)">मुख्य समाचार</span>
+                        <span id="btn-events" class="filter-btn" onclick="filterCategory('events', this)">कार्यक्रम</span>
+                    </div>
                 </div>
-                <div class="filter-tabs">
-                    <span id="btn-main" class="filter-btn active" onclick="filterCategory('main', this)">मुख्य समाचार</span>
-                    <span id="btn-events" class="filter-btn" onclick="filterCategory('events', this)">कार्यक्रम</span>
-                </div>
+                <div id="news-cards-container"><p style="text-align:center; padding:20px; color:var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> खबरें लोड हो रही हैं...</p></div>
             </div>
-            <div id="news-cards-container"><p style="text-align:center; padding:20px; color:var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> खबरें लोड हो रही हैं...</p></div>
+
+            <div id="portal-single-view" style="display: none;"></div>
         </div>
 
-        <div id="portal-single-view" style="display: none;"></div>
-
-        <!-- ⚙️ अपग्रेड वीआईपी सोशल लिंक्स -->
+        <!-- सोशल मीडिया कनेक्ट -->
         <div class="social-section">
-            <p class="social-text">संस्थान के सोशल मीडिया अकाउंट से जुड़ें</p>
+            <p class="social-text">संस्थान के सोशल media अकाउंट से जुड़ें</p>
             <div class="social-links">
                 <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
@@ -277,9 +297,9 @@
                 <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
         </div>
-
     </div> 
     
+    <!-- 🏢 फुटर -->
     <div class="footer-section">
         <div style="text-align: center; line-height: 1.8;">
             <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
@@ -289,12 +309,15 @@
         </div>
     </div>
 
+    <!-- 🔎 क्लोज बटन और बैकग्राउंड स्क्रॉल लॉक से लैस लाइटबॉक्स ओवरले -->
     <div id="premiumLightbox" class="premium-lightbox" onclick="closeLightbox()">
-        <div class="lightbox-content-wrapper">
+        <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
+            <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
             <img id="lightboxImg" class="lightbox-img" src="" alt="Zoomed View">
         </div>
     </div>
 
+    <!-- 📋 शेयर पॉप-अप बॉक्स (Modal) -->
     <div id="shareModal" class="share-modal-overlay" onclick="closeShareModal()">
         <div class="share-modal-card" onclick="event.stopPropagation()">
             <div class="share-modal-title">
@@ -332,6 +355,10 @@
         let allNewsData = [];
         let currentCategory = 'main';
         let currentSlideIndex = 0;
+
+        // 1. मोबाइल साइडबार कंट्रोल
+        function toggleSidebar() { document.getElementById('sidebarMenu').classList.toggle('open'); }
+        function closeSidebar() { document.getElementById('sidebarMenu').classList.remove('open'); }
 
         document.addEventListener("DOMContentLoaded", function() {
             let loc = window.location.href.split('?')[0];
@@ -381,12 +408,18 @@
             });
         }
 
+        // 2. इन-पेज इतिहास ट्रैकिंग इंजन (`popstate` सिंक)
         function openFullNews(id) {
             const item = allNewsData.find(news => news.id === id);
             if (!item) return;
 
             const singleView = document.getElementById('portal-single-view');
             const listView = document.getElementById('portal-list-view');
+            const pageBanner = document.querySelector('.page-banner-container');
+            const masterNavbar = document.querySelector('.master-nav-container');
+
+            if(pageBanner) pageBanner.style.display = 'none';
+            if(masterNavbar) masterNavbar.style.display = 'none';
 
             let liveArticleUrl = window.location.origin + window.location.pathname + '?id=' + item.id;
             let paragraphsHTML = item.paragraphs.map(p => `<p class="article-body-p">${p}</p>`).join('');
@@ -423,7 +456,40 @@
             listView.style.display = 'none'; 
             singleView.style.display = 'block'; 
             currentSlideIndex = 0;
+
+            if (!window.location.hash.includes('news-')) {
+                window.history.pushState({ inDetail: true }, '', '#news-' + item.id);
+            }
             window.scrollTo(0, 0);
+        }
+
+        function closeFullNews() { 
+            window.history.back();
+        }
+
+        // 🔄 फोन बैक बटन नियंत्रण प्रणाली
+        window.addEventListener('popstate', () => {
+            closeLightbox();
+            document.getElementById('portal-single-view').style.display = 'none'; 
+            document.getElementById('portal-list-view').style.display = 'block'; 
+            const pageBanner = document.querySelector('.page-banner-container');
+            const masterNavbar = document.querySelector('.master-nav-container');
+            if(pageBanner) pageBanner.style.display = 'block';
+            if(masterNavbar) masterNavbar.style.display = 'block';
+        });
+
+        // 3. लाइटबॉक्स स्क्रॉल लॉक एवं क्लोज इंजन
+        function openLightbox(imgSrc) { 
+            const lightbox = document.getElementById('premiumLightbox'); 
+            const lightboxImg = document.getElementById('lightboxImg'); 
+            lightboxImg.src = imgSrc; 
+            lightbox.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; // 🔒 स्क्रॉल लॉक चालू
+        }
+        
+        function closeLightbox() { 
+            document.getElementById('premiumLightbox').classList.remove('active'); 
+            document.body.style.overflow = ''; // 🔓 स्क्रॉल वापस अनलॉक
         }
 
         function openShareModal(title, url) {
@@ -442,7 +508,6 @@
             copyBtn.onclick = function() {
                 hiddenInput.select();
                 hiddenInput.setSelectionRange(0, 99999);
-                
                 try {
                     document.execCommand('copy');
                     let oldHTML = copyBtn.innerHTML;
@@ -452,17 +517,12 @@
                         copyBtn.innerHTML = oldHTML;
                         copyBtn.classList.remove('copied');
                     }, 2000);
-                } catch (err) {
-                    console.error("Copy error:", err);
-                }
+                } catch (err) { console.error("Copy error:", err); }
             };
-
             modal.classList.add('active');
         }
 
         function closeShareModal() { document.getElementById('shareModal').classList.remove('active'); }
-        function openLightbox(imgSrc) { const lightbox = document.getElementById('premiumLightbox'); const lightboxImg = document.getElementById('lightboxImg'); lightboxImg.src = imgSrc; lightbox.classList.add('active'); }
-        function closeLightbox() { document.getElementById('premiumLightbox').classList.remove('active'); }
 
         function moveSlide(direction, event) {
             if(event) event.stopPropagation();
@@ -472,28 +532,23 @@
             currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
             container.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
         }
-
-        function closeFullNews() { 
-            window.history.pushState({}, document.title, window.location.pathname);
-            document.getElementById('portal-single-view').style.display = 'none'; 
-            document.getElementById('portal-list-view').style.display = 'block'; 
-            window.scrollTo(0, 0); 
-        }
         
         function searchNews() { let input = document.getElementById('news-search-input').value.toLowerCase(); let cards = document.getElementsByClassName('news-portal-card'); for (let i = 0; i < cards.length; i++) { let title = cards[i].querySelector('.card-title-text').innerText.toLowerCase(); cards[i].style.display = title.includes(input) ? "flex" : "none"; } }
         function filterCategory(category, element) { currentCategory = category; document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); element.classList.add('active'); renderNewsCards(); }
 
+        // 4. प्रायोरिटी+ मेनू ओवरफ्लो लॉजिक
         const primaryMenu = document.getElementById('primary-menu');
         const moreMenuContainer = document.getElementById('more-menu-container');
         const moreMenu = document.getElementById('more-menu');
 
         function adaptNav() {
+            if (!primaryMenu || !moreMenu || !moreMenuContainer) return;
             while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
             moreMenuContainer.style.display = 'none';
             let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
             if (isOverflow) {
                 moreMenuContainer.style.display = 'block';
-                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 3) {
+                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 1) {
                     moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
                 }
             }
@@ -503,8 +558,38 @@
         window.addEventListener('load', adaptNav);
         function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
         document.addEventListener('click', function(event) {
-            if (!moreMenuContainer.contains(event.target)) moreMenu.classList.remove('show');
+            if (moreMenuContainer && !moreMenuContainer.contains(event.target)) moreMenu.classList.remove('show');
         });
+
+        // 5. यूनिवर्सल लाइव न्यूज़ टिकर इंजन
+        async function loadLiveNews() {
+            let combinedNews = [];
+            try {
+                const responseNews = await fetch('news.json');
+                if (responseNews.ok) {
+                    const dataNews = await responseNews.json();
+                    const newsItems = Array.isArray(dataNews) ? dataNews : (dataNews.news || []);
+                    const topMukhya = newsItems.find(item => (item.category === 'main' || item.category === 'मुख्य समाचार')) || newsItems[0];
+                    if (topMukhya) {
+                        const headline = topMukhya.title || topMukhya.heading || '';
+                        if (headline) combinedNews.push(`⭐ मुख्य समाचार: ${headline}`);
+                    }
+                }
+            } catch (error) { console.error('न्यूज़ टिकर एरर:', error); }
+
+            const holder = document.getElementById('ticker-holder');
+            if (combinedNews.length > 0) {
+                holder.innerHTML = '';
+                combinedNews.forEach((text, index) => {
+                    const span = document.createElement('span');
+                    span.innerHTML = `<a href="news-events.html" class="ticker-text-link">${text}</a>`;
+                    holder.appendChild(span);
+                });
+            } else {
+                holder.innerHTML = '<span style="color: #ffffff; font-size: 13.5px;"><a href="news-events.html" class="ticker-text-link">⭐ जाट समाज संस्थान भादरा - समाज की नवीन गतिविधियां एवं समाचार यहाँ देखें।</a></span>';
+            }
+        }
+        window.addEventListener('DOMContentLoaded', loadLiveNews);
     </script>
 </body> 
 </html>
