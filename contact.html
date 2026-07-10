@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - जाट समाज संस्थान भादरा</title>
+    <!-- Font Awesome Icons 6.6.0 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- EmailJS SDK Script (सुरक्षित बैकग्राउंड इंजन) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // आपकी असली पब्लिक की (Public Key) यहाँ लॉक है
+            emailjs.init("wkfbjNUVewGl2Ek1u");
+        })();
+    </script>
+    
+    <style>
+        /* स्मूथ स्क्रोलिंग और अतिरिक्त वाइट गैप रिमूवर */
+        html, body { scroll-behavior: smooth; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        
+        :root {
+            --brand-green: #11532e;
+            --brand-dark-green: #0a2f1c;
+            --brand-gold: #d4af37;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #eef7f1;
+            --bg-color: #f4f7f6;
+        }
+
+        * { box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        body { background-color: var(--bg-color); color: var(--text-main); padding-bottom: 0px; }
+
+        /* 🌟 1. ओरिजिनल प्रीमियम बैनर (कैलेंडर पेज की तरह भव्य डिज़ाइन) */
+        .page-banner {
+            background-color: var(--brand-dark-green);
+            background-image: radial-gradient(circle at center, #11532e 0%, #0a2f1c 100%);
+            border-bottom: 5px solid var(--brand-gold);
+            border-radius: 0 0 12px 12px;
+            padding: 25px 20px;
+            text-align: center;
+            margin: 0 auto 15px auto;
+            max-width: 850px;
+            color: white;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .banner-title { font-size: 26px; font-weight: 900; margin: 0 0 8px 0; letter-spacing: 0.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); color: var(--brand-gold); }
+        .banner-subtitle { font-size: 15px; margin: 0; opacity: 0.95; font-weight: 600; color: #ffffff; }
+
+        /* 🏛️ 2. VIP मास्टर नेविगेशन बार (बैठक सूचना लेआउट के अनुसार - 4 बटन रूल) */
+        .master-nav-container { max-width: 850px; margin: 0 auto 20px auto; padding: 0 15px; width: 100%; }
+        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 8px; position: relative; }
+        .primary-menu { display: flex; gap: 8px; flex-grow: 1; align-items: center; justify-content: center; }
+        
+        .nav-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 8px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s ease; white-space: nowrap; flex: 1; text-align: center; }
+        .nav-btn:hover { color: var(--brand-gold); box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1); transform: translateY(-1px); }
+        
+        /* Contact Us बटन दबा हुआ (Active) रखने के लिए */
+        .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); transform: translateY(1px); border: 1px solid rgba(0,0,0,0.3); }
+        .nav-btn i { font-size: 14px; }
+        
+        .more-menu-container { position: relative; flex: 1; display: flex; justify-content: center; }
+        .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; cursor: pointer; width: 100%; border: none; }
+        
+        /* अन्य ड्रॉपडाउन मेनू */
+        .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 8px; z-index: 1000; flex-direction: column; gap: 4px; border: 2px solid var(--brand-gold); min-width: 180px; }
+        .more-menu.show { display: flex; animation: fadeInDown 0.2s ease forwards; }
+        .dropdown-item { text-decoration: none; color: var(--brand-dark-green); font-weight: 700; font-size: 13px; padding: 10px 12px; border-radius: 6px; display: flex; align-items: center; gap: 8px; transition: 0.2s; background: #f8fafc; }
+        .dropdown-item:hover { background: var(--bg-light); color: var(--brand-green); transform: translateX(3px); }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 🗂️ 3. मुख्य लेआउट ग्रिड (संपर्क सूत्र ऊपर, फॉर्म नीचे का परफेक्ट सीक्वेंस) */
+        .contact-layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 850px; margin: 0 auto; padding: 0 15px; }
+        .contact-master-card { background: #ffffff; border-radius: 12px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; border-top: 4px solid var(--brand-green); }
+        .contact-main-heading { font-size: 18px; font-weight: 800; color: var(--brand-dark-green); margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; border-bottom: 2px dashed #e2e8f0; padding-bottom: 10px; }
+        .contact-sub-text { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.5; font-weight: 500; }
+
+        .contact-info-grid { display: flex; flex-direction: column; gap: 12px; }
+        .info-row-box { display: flex; align-items: center; padding: 12px; background: #f8fafc; border-radius: 10px; border: 1px solid #f1f5f9; transition: all 0.2s ease; }
+        .info-row-box:hover { background: #ffffff; border-color: var(--brand-gold); box-shadow: 0 4px 10px rgba(11, 83, 46, 0.04); }
+        
+        .info-icon-circle { width: 38px; height: 38px; border-radius: 50%; background: var(--bg-light); color: var(--brand-green); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; margin-right: 12px; }
+        .info-text-side { flex: 1; min-width: 0; }
+        .info-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 3px; letter-spacing: 0.5px; }
+        
+        /* 🛠️ पते का शब्द टूटना रोकने के लिए फिक्स (Word-Break Normal) */
+        .info-value-text { font-size: 14px; font-weight: 700; color: var(--brand-dark-green); text-decoration: none; line-height: 1.4; display: block; word-break: normal; overflow-wrap: break-word; }
+        a.info-value-text:hover { color: var(--brand-green); text-decoration: underline; }
+        
+        /* स्पेशल ईमेल क्लास - डेस्कटॉप व्यू */
+        .email-text { word-break: break-all; }
+
+        /* 📝 4. ऑनलाइन सुझाव एवं शिकायत फॉर्म */
+        .form-group { margin-bottom: 15px; display: flex; flex-direction: column; gap: 6px; }
+        .form-label { font-size: 13px; font-weight: 700; color: var(--brand-dark-green); display: flex; align-items: center; gap: 6px; }
+        .form-control { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 14px; font-weight: 600; color: var(--text-main); background: #f8fafc; outline: none; transition: 0.2s; }
+        .form-control:focus { border-color: var(--brand-green); background: #ffffff; box-shadow: 0 0 0 3px rgba(17, 83, 46, 0.1); }
+        select.form-control { cursor: pointer; font-weight: 700; }
+        textarea.form-control { resize: none; min-height: 90px; }
+        
+        .submit-btn { width: 100%; padding: 14px; background: var(--brand-green); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: 0.2s; -webkit-tap-highlight-color: transparent; margin-top: 5px; }
+        .submit-btn:hover { background: var(--brand-dark-green); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        .submit-btn:active { transform: translateY(1px); }
+        
+        .form-alert { font-size: 14px; font-weight: 700; text-align: center; padding: 12px; border-radius: 6px; display: none; margin-top: 15px; }
+        .form-alert.success { display: block; background: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+        .form-alert.error { display: block; background: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+
+        /* 📱 5. सोशल मीडिया - मास्टर रोटेशन एवं ग्लोइंग एनीमेशन फिक्स */
+        .social-section { text-align: center; margin: 35px auto 10px auto; padding: 0 15px; }
+        .social-text { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; }
+        
+        .social-icon { display: flex; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 50%; color: #ffffff; text-decoration: none; font-size: 18px; box-shadow: 0 3px 8px rgba(0,0,0,0.15); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease; }
+        
+        /* वीआईपी रोटेशन और चमक इफेक्ट */
+        .social-icon:hover, .social-icon:active { transform: rotate(360deg) scale(1.08); box-shadow: 0 0 15px var(--brand-gold); }
+        .social-icon.fb { background: #1877f2; }
+        .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .social-icon.yt { background: #ff0000; }
+        .social-icon.x { background: #000000; }
+
+        /* 🏢 6. फुल-विड्थ फुटर (PC Beniwal सिग्नेचर - स्टैंडर्ड साइज फिक्स) */
+        .footer-section { background: #0a2f1c; color: #ffffff; padding: 25px 15px; border-top: 4px solid var(--brand-gold); text-align: center; margin-top: 40px; width: 100%; }
+        .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.8); margin: 0 0 4px 0; font-weight: 600; letter-spacing: 0.2px; }
+        .footer-attribution { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: normal; margin: 0; }
+        .footer-attribution a { color: var(--brand-gold); text-decoration: none; font-weight: bold; letter-spacing: 0.5px; transition: color 0.2s; }
+        .footer-attribution a:hover { color: #ffffff; text-decoration: underline; }
+
+        /* 📱 मोबाइल रिस्पॉन्सिव इंजन (स्क्रीनशॉट कमियाँ पूरी तरह फिक्स) */
+        @media (max-width: 720px) {
+            .page-banner { border-radius: 0 0 12px 12px; padding: 20px 10px; margin-bottom: 15px; }
+            .banner-title { font-size: 22px; }
+            .banner-subtitle { font-size: 13px; }
+            .master-nav-container { padding: 0 10px; margin-bottom: 15px; }
+            .master-navbar { padding: 8px; border-radius: 10px; gap: 6px; }
+            .primary-menu { gap: 6px; } 
+            .nav-btn { padding: 8px 6px; font-size: 11px; border-radius: 6px; gap: 4px; } 
+            .nav-btn i { font-size: 12px; }
+            
+            /* ग्रिड को सिंगल कॉलम में बदला */
+            .contact-layout-grid { grid-template-columns: 1fr; gap: 20px; padding: 0 10px; }
+            .contact-master-card { padding: 18px; }
+            
+            /* 🛠️ ईमेल अक्षर टूटना रोकने के लिए फॉन्ट साइज छोटा किया */
+            .email-text { font-size: 11.5px !important; word-break: normal; letter-spacing: -0.2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌟 1. ओरिजिनल प्रीमियम बैनर -->
+    <div class="page-banner">
+        <h1 class="banner-title">जाट समाज संस्थान भादरा</h1>
+        <p class="banner-subtitle">🤝 ऑनलाइन सुझाव, शिकायत एवं संपर्क केंद्र</p>
+    </div>
+
+    <!-- 🏛️ 2. VIP मास्टर नेविगेशन बार (4 बटन नियम - कांटेक्ट अस एक्टिव) -->
+    <div class="master-nav-container">
+        <nav class="master-navbar" id="master-navbar">
+            <div class="primary-menu">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn active">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+                
+                <!-- अन्य बटन जो ड्रॉपडाउन के अंदर रहेंगे -->
+                <div class="more-menu-container" id="more-menu-container">
+                    <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="more-menu" id="more-menu">
+                        <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="dropdown-item">
+                            <i class="fa-solid fa-calendar-days"></i> 📅 कैलेंडर
+                        </a>
+                        <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="dropdown-item">
+                            <i class="fa-solid fa-newspaper"></i> News
+                        </a>
+                        <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="dropdown-item">
+                            <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 🗂️ 3. मुख्य लेआउट ग्रिड -->
+    <div class="contact-layout-grid">
+        
+        <!-- बायाँ भाग: संपर्क सूत्र (हमेशा ऊपर रहेगा) -->
+        <div class="contact-master-card">
+            <h2 class="contact-main-heading">
+                <i class="fa-solid fa-address-book"></i> हमसे संपर्क करें
+            </h2>
+            <p class="contact-sub-text">संस्थान से संबंधित किसी भी सामान्य जानकारी या सहयोग के लिए आप नीचे दिए गए आधिकारिक माध्यमों का उपयोग कर सकते हैं।</p>
+            
+            <div class="contact-info-grid">
+                <div class="info-row-box">
+                    <div class="info-icon-circle"><i class="fa-solid fa-phone-volume"></i></div>
+                    <div class="info-text-side">
+                        <div class="info-label">मोबाइल नंबर</div>
+                        <a href="tel:+917427014160" class="info-value-text">+91 7427014160</a>
+                    </div>
+                </div>
+
+                <div class="info-row-box">
+                    <div class="info-icon-circle"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <div class="info-text-side">
+                        <div class="info-label">ईमेल आईडी</div>
+                        <!-- मोबाइल पर एक लाइन में समेटने के लिए स्पेशल क्लास -->
+                        <a href="mailto:jatsamajsansthanbhadra@gmail.com" class="info-value-text email-text">jatsamajsansthanbhadra@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="info-row-box">
+                    <div class="info-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text-side">
+                        <div class="info-label">कार्यालय का पता</div>
+                        <div class="info-value-text">जाट समाज संस्थान भादरा, जिला हनुमानगढ़, राजस्थान</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- दायाँ भाग: ऑनलाइन सुझाव एवं शिकायत पत्र -->
+        <div class="contact-master-card">
+            <h2 class="contact-main-heading">
+                <i class="fa-solid fa-pen-to-square"></i> ऑनलाइन सुझाव एवं शिकायत पत्र
+            </h2>
+            <p class="contact-sub-text">वेबसाइट या कैलेंडर में किसी भी त्रुटि के सुधार अथवा अपने महत्वपूर्ण सुझाव को सीधे संस्थान तक पहुँचाने के लिए नीचे फॉर्म भरें।</p>
+            
+            <form id="vipContactForm" onsubmit="sendFeedback(event)">
+                
+                <!-- नाम इनपुट बॉक्स -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fa-solid fa-user"></i> आपका नाम:</label>
+                    <input type="text" id="userName" class="form-control" placeholder="यहाँ अपना नाम लिखें" required>
+                </div>
+                
+                <!-- 📍 पता इनपुट बॉक्स (गांव/शहर का नाम) -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fa-solid fa-location-dot"></i> आपका पता (गांव/शहर का नाम):</label>
+                    <input type="text" id="userAddress" class="form-control" placeholder="यहाँ अपने गांव या शहर का नाम लिखें" required>
+                </div>
+                
+                <!-- मोबाइल इनपुट बॉक्स -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fa-solid fa-phone"></i> मोबाइल नंबर:</label>
+                    <input type="tel" id="userPhone" class="form-control" placeholder="यहाँ अपना मोबाइल नंबर लिखें" required>
+                </div>
+                
+                <!-- विषय ड्रॉपडाउन (केवल 3 फाइनल विकल्प) -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fa-solid fa-layer-group"></i> विषय (Topic):</label>
+                    <select id="userSubject" class="form-control" required>
+                        <option value="" disabled selected>मैसेज का प्रकार चुनें ▾</option>
+                        <option value="📅 कैलेंडर में त्रुटि सुधार / सुझाव">📅 कैलेंडर में त्रुटि सुधार / सुझाव</option>
+                        <option value="🏛️ संस्थान संबंधी सुझाव">🏛️ संस्थान संबंधी सुझाव</option>
+                        <option value="✨ अन्य (Other)">✨ अन्य (Other)</option>
+                    </select>
+                </div>
+                
+                <!-- संदेश इनपुट बॉक्स -->
+                <div class="form-group">
+                    <label class="form-label"><i class="fa-solid fa-comment-dots"></i> आपका संदेश / सुझाव:</label>
+                    <textarea id="userMessage" class="form-control" placeholder="अपनी बात यहाँ विस्तार से लिखें..." required></textarea>
+                </div>
+                
+                <!-- सबमिट बटन -->
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> संदेश भेजें
+                </button>
+                
+                <div id="formResponse" class="form-alert"></div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- 📱 सोशल मीडिया लिंक (VIP एनीमेशन इफ़ेक्ट के साथ) -->
+    <div class="social-section">
+        <p class="social-text">संस्थान के आधिकारिक सोशल मीडिया अकाउंट से जुड़ें</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- 🏢 फुल-विड्थ फुटर (PC Beniwal सिग्नेचर - 13px & 11px स्टैंडर्ड साइज लॉक) -->
+    <div class="footer-section">
+        <p class="footer-copyright">&copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
+        <p class="footer-attribution">
+            Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer">PC Beniwal</a>
+        </p>
+    </div>
+
+    <!-- 🚀 रिस्पॉन्सिव नेविगेशन और वीआईपी ईमेल जेएस स्क्रिप्ट इंजन -->
+    <script>
+        // ⚙️ "अन्य" ड्रॉपडाउन मेनू फंक्शन
+        const moreMenuContainer = document.getElementById('more-menu-container');
+        const moreMenu = document.getElementById('more-menu');
+        
+        function toggleMoreMenu(event) { 
+            moreMenu.classList.toggle('show'); 
+            event.stopPropagation(); 
+        }
+        
+        document.addEventListener('click', function(event) {
+            if (!moreMenuContainer.contains(event.target)) {
+                moreMenu.classList.remove('show');
+            }
+        });
+
+        // 📧 EmailJS लाइव सेंडिंग इंजन (आपकी असली IDs के साथ 100% लॉक्ड)
+        function sendFeedback(event) {
+            event.preventDefault(); 
+            
+            const btn = document.getElementById('submitBtn');
+            const alertBox = document.getElementById('formResponse');
+            
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> संदेश भेजा जा रहा है...';
+            btn.disabled = true;
+
+            // फॉर्म से वेरिएबल्स का डेटा मैपिंग
+            const templateParams = {
+                from_name: document.getElementById('userName').value,
+                from_address: document.getElementById('userAddress').value, // आपका नया पता बॉक्स
+                from_phone: document.getElementById('userPhone').value,
+                message_subject: document.getElementById('userSubject').value,
+                message: document.getElementById('userMessage').value
+            };
+
+            // ✅ आपकी अपनी सर्विस आईडी (service_d6cxwwh) और टेम्पलेट आईडी (template_99es7vd) यहाँ लाइव सेट है
+            emailjs.send('service_d6cxwwh', 'template_99es7vd', templateParams)
+                .then(function() {
+                    alertBox.innerText = "✓ आपका संदेश सफलतापूर्वक संस्थान तक पहुँचा दिया गया है!";
+                    alertBox.className = "form-alert success";
+                    document.getElementById('vipContactForm').reset(); 
+                }, function(error) {
+                    alertBox.innerText = "✕ संदेश भेजने में त्रुटि हुई। कृपया दोबारा प्रयास करें या सीधा कॉल करें।";
+                    alertBox.className = "form-alert error";
+                    console.log('FAILED...', error);
+                })
+                .finally(function() {
+                    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> संदेश भेजें';
+                    btn.disabled = false;
+                    
+                    // 5 सेकंड बाद अलर्ट बॉक्स को गायब करने के लिए
+                    setTimeout(() => {
+                        alertBox.style.display = 'none';
+                    }, 5000);
+                });
+        }
+    </script>
+</body>
+</html>
