@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events - जाट समाज संस्थान भादरा</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #11532e;
+            --brand-dark-green: #0b3a20;
+            --brand-gold: #d4af37;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #eef7f1;
+        }
+
+        html { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+        html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        /* 🔝 ऊपर वाले बैनर से बिल्कुल सटाने के लिए टॉप मार्जिन/पैडिंग 0 */
+        body { 
+            background: linear-gradient(#f8fafc, var(--bg-light)); 
+            background-attachment: fixed; 
+            color: var(--text-main); 
+            padding-top: 0px !important;
+            margin-top: 0px !important;
+            padding-bottom: 30px; 
+            -webkit-font-smoothing: antialiased; 
+        }
+        
+        /* 🌟 मास्टर स्ट्रेच-प्रूफ इमेज बैनर इंजन (PC Beniwal स्पेशल आइडिया) */
+        .page-banner-container {
+            background-color: var(--brand-dark-green);
+            background-image: radial-gradient(circle at center, #11532e 0%, #0a2f1c 100%);
+            border-bottom: 5px solid var(--brand-gold);
+            border-radius: 0 0 12px 12px;
+            margin: 0 auto 15px auto;
+            max-width: 850px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-banner-container img {
+            width: 100%;
+            max-width: 850px; /* डेस्कटॉप पर इमेज को इससे ज्यादा खींचने नहीं देगा */
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .content-container { max-width: 100%; width: 850px; margin: 0 auto; padding: 0 16px; }
+
+        /* 🏛️ VIP मास्टर नेविगेशन बार - बैठक सूचना पेज से 100% पिक्सेल सिंक */
+        .master-nav-container { 
+            max-width: 1140px; 
+            margin: 0 auto 20px auto; 
+            padding: 0 20px; 
+            width: 100%; 
+            margin-top: 0px !important; /* बैनर से चिपकाने के लिए */
+            padding-top: 0px !important;
+        }
+        
+        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
+        .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .nav-btn:hover { color: var(--brand-gold); box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1); transform: translateY(-1px); }
+        .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); transform: translateY(1px); border: 1px solid rgba(0,0,0,0.3); }
+        .nav-btn i { font-size: 14px; }
+        .more-menu-container { position: relative; flex-shrink: 0; display: none; }
+        .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; cursor: pointer; }
+        .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
+        .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .more-menu .nav-btn { background: #f8fafc; color: var(--brand-dark-green); border: 1px solid #e2e8f0; box-shadow: none; width: 100%; justify-content: flex-start; padding: 10px 15px; font-size: 13.5px; transform: none; }
+        .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
+
+        /* 🔍 सर्च और फ़िल्टर बार कंपोनेंट्स */
+        .search-filter-box { background: #ffffff; border-radius: 12px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; margin-bottom: 20px; }
+        .search-wrapper { position: relative; margin-bottom: 14px; }
+        .search-input { width: 100%; padding: 12px 16px 12px 42px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14.5px; color: var(--text-main); outline: none; }
+        .search-icon-inside { position: absolute; left: 15px; top: 14px; color: var(--text-muted); }
+        .filter-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+        .filter-btn { padding: 7px 14px; border-radius: 20px; background: #f1f5f9; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .filter-btn.active { background: var(--brand-green); color: #ffffff; box-shadow: 0 3px 8px rgba(11, 58, 32, 0.2); }
+
+        /* 🗂️ न्यूज़ कार्ड्स (थंबनेल ऑप्टिमाइज्ड) */
+        .news-portal-card { background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; border-left: 5px solid var(--brand-green); margin-bottom: 16px; overflow: hidden; cursor: pointer; display: flex; transition: all 0.25s ease; -webkit-tap-highlight-color: transparent; }
+        .news-portal-card:hover { transform: translate(4px, -2px); border-left-color: var(--brand-gold); box-shadow: 0 8px 22px rgba(11, 58, 32, 0.09); }
+        .news-portal-card:active { transform: scale(0.98) translate(2px, 0px); background-color: #f4faf6; box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05); }
+
+        .card-thumb-area { width: 140px; min-width: 140px; position: relative; background: #f1f5f9; height: 105px; overflow: hidden; }
+        .card-thumb-area img { width: 100%; height: 100%; object-fit: cover; }
+        .card-tag-overlay { position: absolute; top: 6px; left: 6px; background: rgba(11, 83, 46, 0.85); color: var(--brand-gold); font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+        .card-info-area { padding: 12px 16px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .card-title-text { font-size: 15px; font-weight: 700; color: var(--brand-dark-green); line-height: 1.4; }
+        .card-meta-date { font-size: 11.5px; color: var(--text-muted); margin-top: 5px; display: flex; align-items: center; gap: 6px; }
+        
+        /* 🚨 चस्बोज (Blinking/Pulsing) एनिमेशन न्यू बैज */
+        .blink-new { background: #ef4444; color: #ffffff; font-size: 9px; font-weight: 800; padding: 1px 5px; border-radius: 4px; margin-left: 6px; display: inline-block; animation: chasbojPulse 1.2s infinite ease-in-out; }
+        @keyframes chasbojPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            50% { transform: scale(1.08); box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* 📄 फुल न्यूज़ फ्रेश पेज */
+        .portal-fresh-page { background: #ffffff; border-radius: 16px; padding: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.03); border: 1px solid #cbd5e1; }
+        .back-to-portal-btn { display: inline-flex; align-items: center; gap: 6px; background-color: var(--brand-green); color: #ffffff; padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; margin-bottom: 16px; transition: background-color 0.2s; -webkit-tap-highlight-color: transparent; }
+        .back-to-portal-btn:hover { background-color: var(--brand-dark-green); }
+        .back-to-portal-btn:active { transform: scale(0.95); }
+        .main-article-title { font-size: 18px; font-weight: 800; color: var(--brand-dark-green); line-height: 1.35; margin-bottom: 8px; }
+        .article-date-bar { font-size: 11.5px; color: var(--text-muted); padding-bottom: 8px; border-bottom: 2px solid #f1f5f9; margin-bottom: 14px; }
+        .article-featured-img { width: 100%; max-height: 360px; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
+        .article-body-p { font-size: 14px; line-height: 1.5; color: #334155; margin-bottom: 10px; text-align: justify; }
+
+        /* 🔗 "शेयर करें" बटन */
+        .share-container { margin: 18px 0; padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px dashed #cbd5e1; display: flex; align-items: center; gap: 12px; }
+        .share-label-text { font-size: 13px; font-weight: 700; color: #475569; }
+        .custom-share-trigger-btn { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #ffffff; padding: 8px 18px; border-radius: 6px; font-size: 13.5px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 2px 5px rgba(37, 211, 102, 0.3); transition: background 0.2s; -webkit-tap-highlight-color: transparent; }
+        .custom-share-trigger-btn:hover { background: #20ba5a; }
+        .custom-share-trigger-btn:active { transform: scale(0.95); }
+
+        /* 📋 सोशल शेयर पॉप-अप बॉक्स (Modal) */
+        .share-modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center; }
+        .share-modal-overlay.active { display: flex; }
+        .share-modal-card { background: #ffffff; border-radius: 14px; width: 90%; max-width: 400px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 1px solid #e2e8f0; position: relative; animation: slideUp 0.25s ease-out; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .share-modal-title { font-size: 15px; font-weight: 800; color: var(--brand-dark-green); margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .share-modal-close { background: none; border: none; font-size: 18px; color: var(--text-muted); cursor: pointer; }
+        
+        .share-apps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+        .share-app-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--text-main); font-size: 11px; font-weight: 600; cursor: pointer; }
+        
+        /* ⚙️ वीआईपी सोशल लिंक्स स्टाइल (42px सिंक + रोटेशन एनीमेशन) */
+        .share-app-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 20px; margin-bottom: 6px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+        .share-app-icon.wa { background-color: #25d366; }
+        .share-app-icon.fb { background-color: #1877f2; }
+        .share-app-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .share-app-icon.x { background-color: #000000; }
+        .modal-copy-link-wrapper { border-top: 1px solid #f1f5f9; padding-top: 12px; }
+        .modal-copy-btn { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #64748b; color: #ffffff; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 700; border: none; cursor: pointer; transition: background 0.2s; }
+        .modal-copy-btn.copied { background: #11532e; }
+
+        /* 📸 गैलरी स्लाइडर डिज़ाइन */
+        .gallery-heading { font-size: 14.5px; font-weight: 800; color: var(--brand-dark-green); margin: 22px 0 10px 0; border-bottom: 2px solid var(--brand-gold); padding-bottom: 6px; }
+        .slider-wrapper { position: relative; max-width: 100%; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 1px solid #e2e8f0; aspect-ratio: 4 / 3; background: #f8fafc; }
+        .slider-container { display: flex; width: 100%; height: 100%; transition: transform 0.4s ease-in-out; }
+        .slider-slide { min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: zoom-in; }
+        .slider-slide img { width: 100%; height: 100%; object-fit: contain; background: #000; }
+        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(11, 83, 46, 0.85); color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; -webkit-tap-highlight-color: transparent; }
+        .slider-arrow:hover { background: var(--brand-dark-green); color: var(--brand-gold); }
+        .arrow-left { left: 8px; }
+        .arrow-right { right: 8px; }
+
+        /* 🔎 क्लीन लाइटबॉक्स ओवरले */
+        .premium-lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out; opacity: 0; transition: opacity 0.3s ease; }
+        .premium-lightbox.active { display: flex; opacity: 1; }
+        .lightbox-content-wrapper { max-width: 92%; max-height: 92%; display: flex; justify-content: center; align-items: center; border-radius: 4px; overflow: hidden; }
+        .lightbox-img { width: 100%; height: 100%; object-fit: contain; max-width: 100vw; max-height: 85vh; }
+
+        /* ⚙️ फुटर सोशल आइकॉन इंजन - 42px साइज, रोटेशन और गोल्डन ग्लो इफ़ेक्ट के साथ अपग्रेड */
+        .social-section { text-align: center; margin: 25px auto 12px auto; }
+        .social-text { font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 14px; }
+        .social-icon { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #ffffff; 
+            text-decoration: none; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .social-icon:hover { 
+            transform: translateY(-5px) rotate(360deg) scale(1.1); 
+            box-shadow: 0 0 15px var(--brand-gold);
+            color: var(--brand-gold);
+        }
+        .social-icon.fb { background: #1877f2; }
+        .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .social-icon.yt { background: #ff0000; }
+        .social-icon.x { background: #000000; }
+
+        /* 🌏 100% फुल-विड्थ वीआईपी फुटर (कंटेनर से आज़ाद और बारीक सिग्नेचर क्रेडिट) */
+        .footer-section { background: #0b3a20; color: #ffffff; padding: 20px 16px; border-top: 4px solid var(--brand-gold); text-align: center; width: 100%; margin-top: 35px; }
+
+        /* 📱 100% परफेक्ट मोबाइल और डेस्कटॉप रिस्पॉन्सिव इंजन */
+        @media (max-width: 650px) {
+            .news-portal-card { flex-direction: column; }
+            .card-thumb-area { width: 100%; height: 160px; }
+            .main-article-title { font-size: 15.5px; }
+            .article-body-p { font-size: 13px; line-height: 1.45; }
+            
+            /* 🚀 बैठक सूचना पेज से 100% पिक्सेल-सिंक मोबाइल माप */
+            .master-nav-container { padding: 0 8px; margin-bottom: 10px; }
+            .master-navbar { padding: 8px 10px; border-radius: 10px; gap: 4px; }
+            .primary-menu { gap: 5px; } 
+            .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; gap: 4px; }
+            .nav-btn i { font-size: 11px; }
+        }
+        ::selection { background: #11532e; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <!-- 🌟 1. मास्टर स्ट्रेच-प्रूफ इमेज बैनर (PC Beniwal स्पेशल डिज़ाइन फ़ॉर्मूला) -->
+    <div class="page-banner-container">
+        <img src="images/news-event_banner.png" alt="News & Events Banner">
+    </div>
+
+    <!-- 🏛️ 2. VIP मास्टर नेविगेशन बार -->
+    <div class="master-nav-container" id="special-news-nav">
+        <nav class="master-navbar" id="master-navbar">
+            <div class="primary-menu" id="primary-menu">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn active">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+            </div>
+            <div class="more-menu-container" id="more-menu-container">
+                <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                <div class="more-menu" id="more-menu"></div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="content-container">
+
+        <div id="portal-list-view">
+            <div class="search-filter-box">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon-inside" aria-hidden="true"></i>
+                    <input type="text" id="news-search-input" class="search-input" onkeyup="searchNews()" placeholder="यहाँ खबर या मुख्य शब्द खोजें...">
+                </div>
+                <div class="filter-tabs">
+                    <span id="btn-main" class="filter-btn active" onclick="filterCategory('main', this)">मुख्य समाचार</span>
+                    <span id="btn-events" class="filter-btn" onclick="filterCategory('events', this)">कार्यक्रम</span>
+                </div>
+            </div>
+            <div id="news-cards-container"><p style="text-align:center; padding:20px; color:var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> खबरें लोड हो रही हैं...</p></div>
+        </div>
+
+        <div id="portal-single-view" style="display: none;"></div>
+
+        <!-- ⚙️ अपग्रेड वीआईपी सोशल लिंक्स -->
+        <div class="social-section">
+            <p class="social-text">संस्थान के सोशल मीडिया अकाउंट से जुड़ें</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+    </div> 
+    
+    <div class="footer-section">
+        <div style="text-align: center; line-height: 1.8;">
+            <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
+            <p style="font-size: 11px; color: rgba(255,255,255,0.7); font-weight: normal;">
+                Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none; font-weight: bold; letter-spacing: 0.5px;">PC Beniwal</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="premiumLightbox" class="premium-lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content-wrapper">
+            <img id="lightboxImg" class="lightbox-img" src="" alt="Zoomed View">
+        </div>
+    </div>
+
+    <div id="shareModal" class="share-modal-overlay" onclick="closeShareModal()">
+        <div class="share-modal-card" onclick="event.stopPropagation()">
+            <div class="share-modal-title">
+               <span>खबर शेयर करें</span>
+                <button class="share-modal-close" onclick="closeShareModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="share-apps-grid">
+                <a id="shareWA" href="" target="_blank" class="share-app-item">
+                    <div class="share-app-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+                    <span>व्हाट्सएप</span>
+                </a>
+                <a id="shareFB" href="" target="_blank" class="share-app-item">
+                    <div class="share-app-icon fb"><i class="fa-brands fa-facebook-f"></i></div>
+                    <span>फेसबुक</span>
+                </a>
+                <a id="shareInsta" href="https://www.instagram.com/" target="_blank" class="share-app-item">
+                    <div class="share-app-icon insta"><i class="fa-brands fa-instagram"></i></div>
+                    <span>इंस्टाग्राम</span>
+                </a>
+                <a id="shareX" href="" target="_blank" class="share-app-item">
+                    <div class="share-app-icon x"><i class="fa-brands fa-x-twitter"></i></div>
+                    <span>ट्विटर (X)</span>
+                </a>
+            </div>
+            <input type="text" id="hiddenCopyField" style="position: absolute; left: -9999px;" readonly>
+            <div class="modal-copy-link-wrapper">
+                <button id="modalCopyBtn" class="modal-copy-btn" onclick="">
+                    <i class="fa-solid fa-link"></i> लिंक कॉपी करें
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allNewsData = [];
+        let currentCategory = 'main';
+        let currentSlideIndex = 0;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let loc = window.location.href.split('?')[0];
+            if (loc.endsWith('.html')) { loc = loc.substring(0, loc.lastIndexOf('/')); }
+            if (!loc.endsWith('/')) { loc += '/'; }
+            const finalJsonUrl = loc + 'news.json?v=' + new Date().getTime();
+
+            fetch(finalJsonUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network error');
+                    return response.json();
+                })
+                .then(data => {
+                    allNewsData = data;
+                    renderNewsCards();
+                    
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const newsId = urlParams.get('id');
+                    if (newsId) openFullNews(newsId);
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById('news-cards-container').innerHTML = 
+                        '<p style="text-align:center; color:#ef4444; padding:20px; font-weight:600;"><i class="fa-solid fa-circle-xmark"></i> खबरें लोड करने में समस्या आई। कृपया पेज रिफ्रेश करें।</p>';
+                });
+        });
+
+        function renderNewsCards() {
+            const container = document.getElementById('news-cards-container');
+            container.innerHTML = '';
+            let filtered = allNewsData.filter(item => item.category === currentCategory);
+
+            if(!filtered || filtered.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:var(--text-muted); padding:20px;">कोई समाचार नहीं मिला।</p>';
+                return;
+            }
+
+            filtered.forEach((item, index) => {
+                let catName = item.category === 'main' ? 'मुख्य समाचार' : 'कार्यक्रम';
+                let isNew = index === 0 ? '<span class="blink-new">New</span>' : '';
+                let cardHTML = `
+                    <div class="news-portal-card" onclick="openFullNews('${item.id}')">
+                        <div class="card-thumb-area"><img src="${item.main_image}" loading="lazy"><span class="card-tag-overlay">${catName}</span></div>
+                        <div class="card-info-area"><h3 class="card-title-text">${item.title} ${isNew}</h3><div class="card-meta-date"><i class="fa-regular fa-calendar-days"></i> ${item.date}</div></div>
+                    </div>`;
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        function openFullNews(id) {
+            const item = allNewsData.find(news => news.id === id);
+            if (!item) return;
+
+            const singleView = document.getElementById('portal-single-view');
+            const listView = document.getElementById('portal-list-view');
+
+            let liveArticleUrl = window.location.origin + window.location.pathname + '?id=' + item.id;
+            let paragraphsHTML = item.paragraphs.map(p => `<p class="article-body-p">${p}</p>`).join('');
+            
+            let galleryHTML = '';
+            if (item.gallery && item.gallery.length > 0) {
+                let slides = item.gallery.map(img => `<div class="slider-slide" onclick="openLightbox('${img}')"><img src="${img}"></div>`).join('');
+                galleryHTML = `
+                    <div class="gallery-heading"><i class="fa-solid fa-images"></i> कार्यक्रम की अन्य झलकियां (गैलरी)</div>
+                    <div class="slider-wrapper">
+                        <button class="slider-arrow arrow-left" onclick="moveSlide(-1, event)"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="slider-container" id="sliderContainer">${slides}</div>
+                        <button class="slider-arrow arrow-right" onclick="moveSlide(1, event)"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>`;
+            }
+            
+            singleView.innerHTML = `
+                <div class="portal-fresh-page">
+                    <button class="back-to-portal-btn" onclick="closeFullNews()"><i class="fa-solid fa-arrow-left"></i> वापस जाएँ</button>
+                    <h2 class="main-article-title">${item.title}</h2>
+                    <div class="article-date-bar"><i class="fa-regular fa-calendar-days"></i> प्रकाशित तिथि: ${item.date}</div>
+                    <img src="${item.main_image}" class="article-featured-img" onclick="openLightbox('${item.main_image}')" style="cursor:zoom-in;">
+                    <div class="article-real-text-content">${paragraphsHTML}</div>
+                    
+                    <div class="share-container">
+                        <span class="share-label-text"><i class="fa-solid fa-share-nodes"></i> खबर शेयर करें:</span>
+                        <button class="custom-share-trigger-btn" onclick="openShareModal('${item.title}', '${liveArticleUrl}')">
+                            <i class="fa-solid fa-share-nodes"></i> शेयर करें
+                        </button>
+                    </div>
+                    ${galleryHTML}
+                </div>`;
+            
+            listView.style.display = 'none'; 
+            singleView.style.display = 'block'; 
+            currentSlideIndex = 0;
+            window.scrollTo(0, 0);
+        }
+
+        function openShareModal(title, url) {
+            const modal = document.getElementById('shareModal');
+            const encodedTitle = encodeURIComponent(title + "\n\n👉 पूरी खबर फ़ोटो सहित देखने के लिए इस लिंक पर क्लिक करें:\n");
+            const encodedUrl = encodeURIComponent(url);
+
+            document.getElementById('shareWA').href = `https://api.whatsapp.com/send?text=${encodedTitle}${encodedUrl}`;
+            document.getElementById('shareFB').href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+            document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+            
+            const hiddenInput = document.getElementById('hiddenCopyField');
+            hiddenInput.value = url;
+
+            const copyBtn = document.getElementById('modalCopyBtn');
+            copyBtn.onclick = function() {
+                hiddenInput.select();
+                hiddenInput.setSelectionRange(0, 99999);
+                
+                try {
+                    document.execCommand('copy');
+                    let oldHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> लिंक कॉपी हो गया!';
+                    copyBtn.classList.add('copied');
+                    setTimeout(() => {
+                        copyBtn.innerHTML = oldHTML;
+                        copyBtn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error("Copy error:", err);
+                }
+            };
+
+            modal.classList.add('active');
+        }
+
+        function closeShareModal() { document.getElementById('shareModal').classList.remove('active'); }
+        function openLightbox(imgSrc) { const lightbox = document.getElementById('premiumLightbox'); const lightboxImg = document.getElementById('lightboxImg'); lightboxImg.src = imgSrc; lightbox.classList.add('active'); }
+        function closeLightbox() { document.getElementById('premiumLightbox').classList.remove('active'); }
+
+        function moveSlide(direction, event) {
+            if(event) event.stopPropagation();
+            const container = document.getElementById('sliderContainer');
+            if (!container) return;
+            const totalSlides = container.children.length;
+            currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+            container.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        }
+
+        function closeFullNews() { 
+            window.history.pushState({}, document.title, window.location.pathname);
+            document.getElementById('portal-single-view').style.display = 'none'; 
+            document.getElementById('portal-list-view').style.display = 'block'; 
+            window.scrollTo(0, 0); 
+        }
+        
+        function searchNews() { let input = document.getElementById('news-search-input').value.toLowerCase(); let cards = document.getElementsByClassName('news-portal-card'); for (let i = 0; i < cards.length; i++) { let title = cards[i].querySelector('.card-title-text').innerText.toLowerCase(); cards[i].style.display = title.includes(input) ? "flex" : "none"; } }
+        function filterCategory(category, element) { currentCategory = category; document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); element.classList.add('active'); renderNewsCards(); }
+
+        const primaryMenu = document.getElementById('primary-menu');
+        const moreMenuContainer = document.getElementById('more-menu-container');
+        const moreMenu = document.getElementById('more-menu');
+
+        function adaptNav() {
+            while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
+            moreMenuContainer.style.display = 'none';
+            let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
+            if (isOverflow) {
+                moreMenuContainer.style.display = 'block';
+                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 3) {
+                    moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
+                }
+            }
+        }
+
+        window.addEventListener('resize', adaptNav);
+        window.addEventListener('load', adaptNav);
+        function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
+        document.addEventListener('click', function(event) {
+            if (!moreMenuContainer.contains(event.target)) moreMenu.classList.remove('show');
+        });
+    </script>
+</body> 
+</html>

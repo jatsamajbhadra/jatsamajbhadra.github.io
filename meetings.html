@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जाट समाज संस्थान भादरा - बैठक सूचना</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html, body { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+        html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+        :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; --light-bg: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; animation: pageFadeIn 1s cubic-bezier(0.15, 0.85, 0.45, 1) forwards; }
+        @keyframes pageFadeIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+        /* 🔝 प्रीमियर कैप्सूल बैनर - सबसे ऊपर */
+        .main-container { max-width: 1140px; margin: 0 auto; padding: 0 20px; width: 100%; }
+        .capsule-banner { background: linear-gradient(135deg, var(--brand-dark-green) 0%, #052114 100%); border: 2px solid var(--brand-gold); border-radius: 14px; padding: 22px 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.12); margin: 20px auto 15px auto; max-width: 760px; }
+        .capsule-banner h1 { margin: 0; font-size: 1.9rem; color: var(--brand-gold); font-weight: bold; letter-spacing: 0.5px; }
+        .capsule-banner p { margin: 6px 0 0 0; font-size: 0.95rem; color: white; opacity: 0.95; }
+
+        /* 🏛️ VIP नेविगेशन बार - बैनर के ठीक नीचे */
+        .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
+        .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
+        .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .nav-btn:hover { color: var(--brand-gold); box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1); transform: translateY(-1px); }
+        .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); transform: translateY(1px); border: 1px solid rgba(0,0,0,0.3); }
+        .nav-btn i { font-size: 14px; }
+        .more-menu-container { position: relative; flex-shrink: 0; display: none; }
+        .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; cursor: pointer; }
+        .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
+        .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
+
+        /* 🎴 मुख्य लेआउट और टच रेस्पॉन्सिव कार्ड्स */
+        .content-wrapper { max-width: 760px; margin: 0 auto; min-height: 300px; width: 100%; }
+        .notice-card { background: white; border-radius: 14px; padding: 18px 22px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border-left: 6px solid var(--brand-green); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s ease; border-top: 1px solid #f1f5f9; border-right: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; -webkit-tap-highlight-color: transparent; }
+        
+        /* डेस्कटॉप होवर इफेक्ट */
+        .notice-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(17,83,46,0.08); }
+        
+        /* 📱 मोबाइल टच / एक्टिव फीडबैक (3D दबता हुआ प्रीमियम इफेक्ट) */
+        .notice-card:active { transform: scale(0.97) translateY(1px); background-color: #f4faf6; box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05), 0 2px 5px rgba(0,0,0,0.02); border-left-color: var(--brand-dark-green); }
+        
+        .card-left { flex: 1; }
+        .notice-title { font-size: 1.1rem; font-weight: 700; color: #0f2d1d; margin-bottom: 8px; line-height: 1.4; }
+        .notice-date { font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; font-weight: 500; }
+        
+        /* 🚨 चस्बोज (Blinking/Pulsing) एनिमेशन न्यू बैज के लिए */
+        .new-badge { background-color: #ff3b30; color: white; padding: 2px 7px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; margin-left: 8px; display: inline-block; animation: chasbojPulse 1.2s infinite ease-in-out; }
+        @keyframes chasbojPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+            50% { transform: scale(1.08); box-shadow: 0 0 0 6px rgba(255, 59, 48, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+        }
+        
+        .arrow-icon { color: var(--brand-gold); font-size: 1.3rem; font-weight: bold; transition: transform 0.2s; }
+        .notice-card:hover .arrow-icon { transform: translateX(4px); }
+
+        /* अंदरूनी बॉक्स (Detail View) */
+        #detail-view { display: none; background: white; border-radius: 16px; padding: 25px; box-shadow: 0 6px 22px rgba(0,0,0,0.05); margin-bottom: 25px; border-top: 5px solid var(--brand-green); width: 100%; }
+        .back-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--brand-green); color: white; border: 1px solid var(--brand-gold); padding: 8px 18px; border-radius: 25px; font-size: 0.9rem; font-weight: bold; cursor: pointer; margin-bottom: 20px; box-shadow: 0 3px 8px rgba(11,58,32,0.25); transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
+        .back-btn:hover { background: var(--brand-dark-green); color: var(--brand-gold); }
+        .back-btn:active { transform: scale(0.95); }
+        .detail-header-title { font-size: 1.3rem; font-weight: bold; color: var(--brand-dark-green); margin-bottom: 15px; line-height: 1.4; }
+
+        /* वीआईपी डिस्प्ले बॉक्स प्रणालियां */
+        .event-info-box { background-color: #f0f7f3; border: 1px solid #d1ebd9; border-radius: 12px; padding: 15px; margin: 15px 0; }
+        .info-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.95rem; color: #2c3e50; font-weight: 500; }
+        .info-row:last-child { margin-bottom: 0; }
+        .info-row i { color: #e67e22; width: 20px; text-align: center; font-size: 1.05rem; }
+        
+        /* 📧 ईमेल आईडी फॉन्ट छोटा और इन-लाइन फिटिंग कस्टमाइजेशन */
+        .info-row a { color: #11532e; font-weight: bold; text-decoration: none; word-break: keep-all; white-space: nowrap; transition: color 0.2s; }
+        .info-row a:hover { color: var(--brand-gold); }
+        
+        .agenda-list { list-style: none; margin: 15px 0; padding-left: 5px; }
+        .agenda-list li { position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 0.95rem; line-height: 1.5; color: #334155; }
+        .agenda-list li::before { content: "✔"; position: absolute; left: 0; top: 1px; color: var(--brand-green); font-weight: bold; font-size: 1rem; }
+        .agenda-strong { font-weight: 700; color: var(--brand-dark-green); }
+        .alert-note-box { background-color: #fef9e7; border-left: 5px solid #f1c40f; border-top: 1px solid #fcf3cf; border-right: 1px solid #fcf3cf; border-bottom: 1px solid #fcf3cf; border-radius: 8px; padding: 15px; margin: 15px 0; font-size: 0.95rem; line-height: 1.5; color: #7f8c8d; }
+        .alert-note-box strong { color: #d35400; }
+
+        /* सोशल लिंक्स */
+        .social-section { text-align: center; margin: 40px auto; padding: 0 20px; width: 100%; }
+        .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .social-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; font-size: 18px; transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .social-icon.fb { background: #1877f2; }
+        .social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .social-icon.yt { background: #ff0000; }
+        .social-icon.x { background: #000000; }
+        .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        
+        /* स्लीक वीआईपी फुटर पट्टी */
+        .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; width: 100%; }
+        .footer-bottom { text-align: center; }
+
+        /* 📱 100% फुल स्क्रीन चौड़ाई मोबाइल रिस्पॉन्सिव इंजन */
+        @media (max-width: 650px) {
+            .main-container, .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
+            .capsule-banner { max-width: 100%; margin: 8px auto; padding: 18px 10px; border-radius: 10px; }
+            .capsule-banner h1 { font-size: 1.5rem; }
+            .capsule-banner p { font-size: 0.85rem; }
+            .master-navbar { padding: 8px 10px; border-radius: 10px; }
+            .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; }
+            .content-wrapper { max-width: 100%; }
+            .notice-card { padding: 16px 14px; margin-bottom: 10px; border-radius: 10px; }
+            .notice-title { font-size: 1rem; }
+            #detail-view { padding: 18px 14px; border-radius: 12px; }
+            .detail-header-title { font-size: 1.15rem; }
+            
+            /* 📝 मोबाइल स्क्रीन के अंदर ईमेल आईडी का फॉन्ट साइज छोटा और फिट करने का नियम */
+            .info-row a { font-size: 11.5px; letter-spacing: -0.2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div id="main-banner" class="capsule-banner">
+            <h1>Meeting Notice</h1>
+            <p>जाट समाज संस्थान भादरा - आधिकारिक सूचना बोर्ड</p>
+        </div>
+    </div>
+
+    <div class="master-nav-container">
+        <nav class="master-navbar" id="master-navbar">
+            <div class="primary-menu" id="primary-menu">
+                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn active">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+            </div>
+            <div class="more-menu-container" id="more-menu-container">
+                <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                <div class="more-menu" id="more-menu"></div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <div id="list-view"></div>
+
+            <div id="detail-view">
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fa-solid fa-arrow-left"></i> वापस जाएं
+                </button>
+                <div id="detail-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-section">
+        <p class="social-text">नीचे दिए बटन पर क्लिक कर संस्थान के सोशल मीडिया अकाउंट से जुड़ सकते हैं</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-bottom">
+            <div style="text-align: center; line-height: 1.8;">
+                <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
+                <p style="font-size: 12px; color: rgba(255,255,255,0.7); font-weight: normal;">
+                    Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none; font-weight: bold; letter-spacing: 0.5px;">PC Beniwal</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="meetings-data.js"></script>
+
+    <script>
+        const listView = document.getElementById('list-view');
+        const detailView = document.getElementById('detail-view');
+        const detailContent = document.getElementById('detail-content');
+        const mainBanner = document.getElementById('main-banner');
+        const masterNavbar = document.querySelector('.master-nav-container');
+
+        function renderListView() {
+            listView.innerHTML = '';
+            if (typeof meetingsData !== 'undefined' && meetingsData.length > 0) {
+                meetingsData.forEach(item => {
+                    const badge = item.isNew ? `<span class="new-badge">New</span>` : '';
+                    const card = document.createElement('div');
+                    card.className = 'notice-card';
+                    card.onclick = () => openNoticeDetail(item);
+                    card.innerHTML = `
+                        <div class="card-left">
+                            <div class="notice-title">${item.title} ${badge}</div>
+                            <div class="notice-date"><i class="fa-solid fa-calendar-day" style="color:var(--brand-gold)"></i> जारी तिथि: ${item.publishDate}</div>
+                        </div>
+                        <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    `;
+                    listView.appendChild(card);
+                });
+            } else {
+                listView.innerHTML = '<div style="color:red; text-align:center; padding:20px; font-weight:bold;">सूचनाएं लोड करने में तकनीकी समस्या। कृपया कुछ देर बाद रिफ्रेश करें।</div>';
+            }
+        }
+
+        function openNoticeDetail(item) {
+            listView.style.display = 'none';
+            mainBanner.style.display = 'none'; 
+            masterNavbar.style.display = 'none'; 
+            detailView.style.display = 'block';
+            let headingDateStr = item.fullDateStr ? ` : (${item.fullDateStr})` : '';
+
+            detailContent.innerHTML = `
+                <h3 class="detail-header-title">${item.title}${headingDateStr}</h3>
+                <div>${item.htmlContent}</div>
+            `;
+            window.history.pushState({ inDetail: true }, '', '#notice-' + item.id);
+            window.scrollTo(0, 0);
+        }
+
+        function goBack() { window.history.back(); }
+
+        window.addEventListener('popstate', () => {
+            detailView.style.display = 'none';
+            listView.style.display = 'block';
+            mainBanner.style.display = 'block';
+            masterNavbar.style.display = 'block';
+        });
+
+        // नेविगेशन रिस्पॉन्सिव लॉजिक (Priority+ Menu)
+        const primaryMenu = document.getElementById('primary-menu');
+        const moreMenuContainer = document.getElementById('more-menu-container');
+        const moreMenu = document.getElementById('more-menu');
+
+        function adaptNav() {
+            while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
+            moreMenuContainer.style.display = 'none';
+            let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
+            if (isOverflow) {
+                moreMenuContainer.style.display = 'block';
+                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 1) {
+                    moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
+                }
+            }
+        }
+
+        window.addEventListener('resize', adaptNav);
+        window.addEventListener('load', () => {
+            renderListView();
+            adaptNav();
+        });
+
+        function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
+        document.addEventListener('click', function(event) {
+            if (!moreMenuContainer.contains(event.target)) moreMenu.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
