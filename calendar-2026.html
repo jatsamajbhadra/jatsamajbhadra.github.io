@@ -2,10 +2,14 @@
 <html lang="hi">
 <head>
     <link rel="canonical" href="https://jatsamajbhadra.github.io/calendar-2026.html">
-    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>जाट कैलेंडर 2026 - जाट समाज संस्थान भादरा</title>
+    
+    <meta property="og:title" content="जाट कैलेंडर 2026 - जाट समाज संस्थान भादरा">
+    <meta property="og:description" content="जाट समाज के महापुरुषों, ऐतिहासिक तिथियों और गौरवशाली इतिहास का डिजिटल कैलेंडर।">
+    <meta property="og:image" content="image/calendar-banner.png">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
         /* स्मूथ स्क्रोलिंग और इनविजिबल स्क्रोलबार */
@@ -16,14 +20,13 @@
             --brand-green: #11532e; 
             --brand-dark-green: #0a2f1c; 
             --brand-gold: #d4af37; 
+            --brand-light-gold: #fdf5d3;
             --bg-color: #f4f7f6;
             --text-main: #1e293b;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        
-        /* ऊपर के सफेद गैप को जड़ से ख़त्म करने के लिए */
-        body { background-color: var(--bg-color); color: var(--text-main); -webkit-font-smoothing: antialiased; padding-top: 0px !important; margin-top: 0px !important; padding-bottom: 30px; }
+        body { background-color: var(--bg-color); color: var(--text-main); -webkit-font-smoothing: antialiased; padding-top: 0px !important; margin-top: 0px !important; }
         
         /* 🌟 1. ओरिजिनल प्रीमियम बैनर (नो सफेद गैप) */
         .page-banner {
@@ -41,130 +44,111 @@
         .banner-title { font-size: 26px; font-weight: 900; margin: 0 0 8px 0; letter-spacing: 0.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); color: var(--brand-gold); }
         .banner-subtitle { font-size: 15px; margin: 0; opacity: 0.95; font-weight: 500; }
 
-        /* 🏛️ 2. VIP मास्टर नेविगेशन बार (सेम साइज और लुक) */
+        /* 🏛️ 2. VIP मास्टर नेविगेशन बार (लोकल गिटहब लिंक्स) */
         .master-nav-container { max-width: 850px; margin: 0 auto 20px auto; padding: 0 15px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
         .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
         .nav-btn:hover { color: var(--brand-gold); box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1); transform: translateY(-1px); }
-        .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); transform: translateY(1px); border: 1px solid rgba(0,0,0,0.3); }
-        .nav-btn i { font-size: 14px; }
+        .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); border: 1px solid rgba(0,0,0,0.3); }
         .more-menu-container { position: relative; flex-shrink: 0; display: none; }
-        .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; cursor: pointer; }
+        .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; cursor: pointer; }
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
-        .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        .more-menu .nav-btn { background: #f8fafc; color: var(--brand-dark-green); border: 1px solid #e2e8f0; box-shadow: none; width: 100%; justify-content: flex-start; padding: 10px 15px; font-size: 13.5px; transform: none; }
-        .more-menu .nav-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); }
+        .more-menu.show { display: flex; }
+        .more-menu .nav-btn { background: #f8fafc; color: var(--brand-dark-green); border: 1px solid #e2e8f0; width: 100%; justify-content: flex-start; padding: 10px 15px; font-size: 13.5px; }
 
-        /* ✨ 3. 'आज का दिन' और 'जाट दिवस विशेष' लाइव बॉक्स */
+        /* ✨ 3. 'आज का दिन' लाइव बॉक्स (ओरिजिनल) */
         .today-highlight-wrapper { max-width: 850px; margin: 0 auto 20px auto; padding: 0 15px; width: 100%; }
         .today-box { background: #ffffff; border-left: 5px solid var(--brand-gold); border-radius: 12px; padding: 16px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 14px; }
-        
         .section-block { display: flex; flex-direction: column; gap: 6px; }
         .today-header { font-size: 15.5px; font-weight: 800; color: var(--brand-dark-green); display: flex; align-items: center; gap: 8px; border-bottom: 2px dashed #e2e8f0; padding-bottom: 8px; }
-        
-        .sub-heading { font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+        .sub-heading { font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
         .sub-heading.holiday-color { color: #dc2626; }
         .sub-heading.jat-color { color: var(--brand-green); }
-        
         .info-content { padding-left: 22px; }
         .holiday-text-style { font-size: 13.5px; font-weight: 600; color: #475569; }
         .holiday-text-style.active-holiday { color: #dc2626; font-weight: 700; }
-        
-        /* सीरीज़ लिस्ट (1, 2, 3) का डिज़ाइन */
         .jat-series-list { list-style-type: decimal; padding-left: 38px; display: flex; flex-direction: column; gap: 5px; }
         .jat-series-list li { font-size: 13px; font-weight: 600; color: #334155; line-height: 1.5; }
 
-        /* 🎛️ 4. ड्रॉपडाउन मेनू बार (Side-by-Side Layout) */
-        .filter-bar { max-width: 820px; margin: 15px auto 10px auto; padding: 10px 16px; background: white; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
-        .year-label { font-weight: 800; color: var(--brand-dark-green); font-size: 15px; display: flex; align-items: center; gap: 6px; }
-        .month-select { padding: 8px 12px; border-radius: 6px; border: 2px solid var(--brand-green); font-size: 14px; font-weight: bold; color: var(--brand-dark-green); background-color: #f8fafc; cursor: pointer; outline: none; transition: 0.2s; }
-        .month-select:focus { border-color: var(--brand-gold); }
+        /* 🔎 4. नया प्रेडिक्टिव सर्च इंजन */
+        .search-section { max-width: 820px; margin: 0 auto 15px auto; background: white; padding: 12px 16px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; position: relative; }
+        .search-heading { font-size: 14px; font-weight: 800; color: var(--brand-dark-green); margin-bottom: 8px; display: flex; align-items: center; }
+        .search-heading::before { content: '•'; color: var(--brand-gold); font-size: 20px; margin-right: 6px; line-height: 0; }
+        .search-box-wrapper { position: relative; display: flex; align-items: center; }
+        .search-input { width: 100%; padding: 10px 35px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 14px; outline: none; transition: 0.3s; }
+        .search-input:focus { border-color: var(--brand-gold); }
+        .search-icon { position: absolute; left: 12px; color: #888; font-size: 14px; }
+        .clear-btn { position: absolute; right: 12px; color: #888; font-size: 14px; cursor: pointer; display: none; background: none; border: none; }
+        
+        .suggestion-box { position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); margin-top: 5px; max-height: 180px; overflow-y: auto; z-index: 100; display: none; border: 1px solid #e2e8f0; }
+        .suggestion-item { padding: 8px 12px; font-size: 13px; color: var(--text-main); border-bottom: 1px solid #f0f0f0; cursor: pointer; display: flex; align-items: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .suggestion-item:hover { background-color: var(--brand-light-gold); }
+        .suggestion-date { background: var(--brand-dark-green); color: var(--brand-gold); padding: 2px 5px; border-radius: 4px; font-size: 11px; margin-right: 8px; font-weight: bold; }
+        
+        .chips-container { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; scrollbar-width: none; }
+        .chips-container::-webkit-scrollbar { display: none; }
+        .chip { background: #f8fafc; color: var(--brand-dark-green); padding: 4px 10px; border-radius: 12px; font-size: 11.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 1px solid #cbd5e1; }
 
-        /* 📅 5. कैलेंडर इमेज स्लाइडर */
+        /* 🎛️ 5. ड्रॉपडाउन मेनू बार */
+        .filter-bar { max-width: 820px; margin: 0 auto 10px auto; padding: 10px 16px; background: white; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .year-label { font-weight: 800; color: var(--brand-dark-green); font-size: 15px; display: flex; align-items: center; gap: 6px; }
+        .month-select { padding: 8px 12px; border-radius: 6px; border: 2px solid var(--brand-green); font-size: 14px; font-weight: bold; color: var(--brand-dark-green); background-color: #f8fafc; cursor: pointer; outline: none; }
+
+        /* 📅 6. कैलेंडर इमेज स्लाइडर (स्वाइप एरिया) */
         .slider-container { max-width: 850px; margin: 15px auto; padding: 0 15px; position: relative; perspective: 1500px; }
         .slide { display: none; text-align: center; }
-        .slide img { width: 100%; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border: 3px solid var(--brand-gold); display: block; }
-        
+        .slide img { width: 100%; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border: 3px solid var(--brand-gold); display: block; user-select: none; }
         .flip-effect { animation: flipInLeft 0.6s cubic-bezier(0.25, 1, 0.5, 1) both; }
         @keyframes flipInLeft {
             0% { transform: perspective(1200px) rotateY(-90deg); transform-origin: left center; opacity: 0; }
             100% { transform: perspective(1200px) rotateY(0deg); transform-origin: left center; opacity: 1; }
         }
 
-        /* ⚙️ 6. कंट्रोल लेआउट */
+        /* ⚙️ 7. कंट्रोल लेआउट */
         .month-nav-bar { display: flex; justify-content: space-between; max-width: 820px; margin: 20px auto 10px auto; padding: 0 15px; gap: 15px; }
-        .nav-arrow-btn { flex: 1; background: var(--brand-green); color: white; border: none; padding: 12px 15px; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; -webkit-tap-highlight-color: transparent; }
-        .nav-arrow-btn:hover { background: var(--brand-dark-green); transform: translateY(-2px); }
-        .nav-arrow-btn:active { transform: scale(0.96); }
+        .nav-arrow-btn { flex: 1; background: var(--brand-green); color: white; border: none; padding: 12px 15px; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; }
+        .nav-arrow-btn:hover { background: var(--brand-dark-green); }
         
         .download-bar { max-width: 820px; margin: 0 auto 20px auto; padding: 0 15px; }
-        .download-btn { width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 15px; background: var(--brand-gold); color: var(--brand-dark-green); text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: 0.2s; -webkit-tap-highlight-color: transparent; }
-        .download-btn:hover { background: #c5a030; transform: translateY(-2px); }
+        .download-btn { width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 15px; background: var(--brand-gold); color: var(--brand-dark-green); text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); }
         
-        /* 📝 7. डिस्क्लेमर */
         .disclaimer { font-size: 13px; color: #444; text-align: justify; text-align-last: center; margin: 25px auto; max-width: 820px; padding: 18px; background: white; border-radius: 8px; border-left: 4px solid var(--brand-gold); box-shadow: 0 2px 8px rgba(0,0,0,0.05); line-height: 1.6; }
         
-        /* 🏢 8. फुल-विड्थ फुटर (PC Beniwal सिग्नेचर) */
-        .footer-section { background: #0a2f1c; color: #ffffff; padding: 20px 15px; border-top: 4px solid var(--brand-gold); text-align: center; margin-top: 40px; width: 100%; }
+        /* 🏢 8. फुल-विड्थ फुटर (सोशल लिंक्स के साथ) */
+        .footer-section { background: var(--brand-dark-green); color: #ffffff; padding: 20px 15px; border-top: 4px solid var(--brand-gold); text-align: center; margin-top: 40px; width: 100%; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 12px; }
+        .social-btn { color: var(--brand-dark-green); background: var(--brand-gold); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; transition: transform 0.3s; }
+        .social-btn:hover { transform: scale(1.1); }
 
-        /* 📱 मोबाइल रिस्पॉन्सिव इंजन (सुरक्षित 4 फिक्स बटन) */
         @media (max-width: 650px) {
-            .page-banner { border-radius: 0 0 12px 12px; padding: 20px 10px; margin-bottom: 10px; }
-            .banner-title { font-size: 22px; }
-            .banner-subtitle { font-size: 14px; }
-            
-            .master-nav-container { padding: 0 8px; margin-bottom: 10px; }
-            .master-navbar { padding: 8px 8px; border-radius: 10px; gap: 4px; }
-            .primary-menu { gap: 4px; } 
-            .nav-btn { padding: 6px 8px; font-size: 11.5px; border-radius: 6px; gap: 4px; } 
-            .nav-btn i { font-size: 11px; }
-            
-            .today-highlight-wrapper { padding: 0 8px; }
-            .today-box { padding: 14px 16px; gap: 12px; }
-            
-            .filter-bar { padding: 10px 14px; margin: 10px 8px; }
-            .year-label { font-size: 14px; }
-            .month-select { font-size: 13px; padding: 6px 10px; }
-            
-            .slider-container { padding: 0 8px; }
-            .month-nav-bar { padding: 0 8px; }
-            .download-bar { padding: 0 8px; }
-            .disclaimer { margin: 15px 8px; }
+            .page-banner { padding: 20px 10px; margin-bottom: 10px; }
+            .master-nav-container, .today-highlight-wrapper, .search-section, .filter-bar, .slider-container, .month-nav-bar, .download-bar { padding: 0 8px; margin-left: 8px; margin-right: 8px; }
+            .master-navbar { padding: 8px; border-radius: 10px; gap: 4px; }
+            .nav-btn { padding: 6px 8px; font-size: 11.5px; }
+            .today-box { padding: 14px 16px; }
+            .search-section { padding: 10px 12px; margin-bottom: 10px; }
+            .filter-bar { padding: 10px 14px; margin-bottom: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 🌟 1. ओरिजINAL प्रीमियम बैनर (चिपका हुआ लुक) -->
     <div class="page-banner">
         <h1 class="banner-title">जाट कैलेंडर 2026</h1>
         <p class="banner-subtitle">जाट समाज संस्थान भादरा - आधिकारिक वार्षिक कैलेंडर</p>
     </div>
 
-    <!-- 🏛️ 2. VIP मास्टर नेविगेशन बार (कैलेंडर बटन एक्टिव) -->
+    <!-- लोकल लिंक्स वाला नेविगेशन -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
-                <a href="https://sites.google.com/view/jatsamajbhadra/" target="_blank" class="nav-btn">
-                    <i class="fa-solid fa-house"></i> होम
-                </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/rjyf" target="_blank" class="nav-btn">
-                    <i class="fa-solid fa-users-gear"></i> RJYF
-                </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/jat-calendar" target="_blank" class="nav-btn active">
-                    <i class="fa-solid fa-calendar-days"></i> 📅 कैलेंडर
-                </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/news-events" target="_blank" class="nav-btn">
-                    <i class="fa-solid fa-newspaper"></i> News
-                </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/meetings" target="_blank" class="nav-btn">
-                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
-                </a>
-                <a href="https://sites.google.com/view/jatsamajbhadra/contact-us" target="_blank" class="nav-btn">
-                    <i class="fa-solid fa-address-book"></i> Contact Us
-                </a>
+                <a href="index.html" class="nav-btn"><i class="fa-solid fa-house"></i> होम</a>
+                <a href="rjyf.html" class="nav-btn"><i class="fa-solid fa-users-gear"></i> RJYF</a>
+                <a href="calendar-2026.html" class="nav-btn active"><i class="fa-solid fa-calendar-days"></i> 📅 कैलेंडर</a>
+                <a href="news-events.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> News</a>
+                <a href="meetings.html" class="nav-btn"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+                <a href="contact-us.html" class="nav-btn"><i class="fa-solid fa-address-book"></i> Contact Us</a>
             </div>
             <div class="more-menu-container" id="more-menu-container">
                 <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
@@ -173,37 +157,41 @@
         </nav>
     </div>
 
-    <!-- ✨ 3. 'आज का दिन' एवं 'जाट दिवस विशेष' सुव्यवस्थित लाइव बॉक्स -->
+    <!-- ओरिजिनल आज का दिन बॉक्स -->
     <div class="today-highlight-wrapper">
         <div class="today-box" id="todayBox">
-            <!-- मुख्य हेडिंग -->
             <div class="today-header">
                 <i class="fa-solid fa-calendar-day"></i> आज का दिन: &nbsp;<span id="liveDateDisplay">लोड हो रहा है...</span>
             </div>
-            
-            <!-- अवकाश ब्लॉक (स्थायी) -->
             <div class="section-block">
-                <div class="sub-heading holiday-color">
-                    <i class="fa-solid fa-umbrella-beach"></i> अवकाश / ऐच्छिक अवकाश:
-                </div>
-                <div class="info-content">
-                    <span id="holidayDisplay" class="holiday-text-style">चेक किया जा रहा है...</span>
-                </div>
+                <div class="sub-heading holiday-color"><i class="fa-solid fa-umbrella-beach"></i> अवकाश / ऐच्छिक अवकाश:</div>
+                <div class="info-content"><span id="holidayDisplay" class="holiday-text-style">चेक किया जा रहा है...</span></div>
             </div>
-            
-            <!-- जाट दिवस विशेष ब्लॉक (स्थायी) -->
             <div class="section-block">
-                <div class="sub-heading jat-color">
-                    <i class="fa-solid fa-wheat-awn"></i> जाट दिवस विशेष:
-                </div>
-                <div id="jatDisplayContainer">
-                    <!-- जावास्क्रिप्ट यहाँ नंबरिंग वाली सूची (1, 2, 3) बनाएगा -->
-                </div>
+                <div class="sub-heading jat-color"><i class="fa-solid fa-wheat-awn"></i> जाट दिवस विशेष:</div>
+                <div id="jatDisplayContainer"></div>
             </div>
         </div>
     </div>
 
-    <!-- 🎛️ 4. ड्रॉपडाउन मेनू बार (Side-by-Side) -->
+    <!-- नया प्रेडिक्टिव सर्च बॉक्स -->
+    <div class="search-section">
+        <div class="search-heading">विशेष तिथियां एवं दिवस खोजे</div>
+        <div class="search-box-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="" autocomplete="off">
+            <button class="clear-btn" id="clearBtn"><i class="fas fa-times"></i></button>
+            <div class="suggestion-box" id="suggestionBox"></div>
+        </div>
+        <div class="chips-container">
+            <span class="chip" onclick="fillSearch('सूरजमल')">जैसे: सूरजमल</span>
+            <span class="chip" onclick="fillSearch('तेजाजी')">जैसे: तेजाजी</span>
+            <span class="chip" onclick="fillSearch('25 Dec')">जैसे: 25 Dec</span>
+            <span class="chip" onclick="fillSearch('अवकाश')">जैसे: अवकाश</span>
+        </div>
+    </div>
+
+    <!-- ड्रॉपडाउन फ़िल्टर -->
     <div class="filter-bar">
         <div class="year-label"><i class="fa-regular fa-calendar-check" style="color: var(--brand-gold);"></i> वर्ष: 2026</div>
         <select id="monthDropdown" class="month-select" onchange="jumpToSlide(this.value)">
@@ -223,23 +211,22 @@
         </select>
     </div>
 
-    <!-- 📅 5. कैलेंडर इमेज कंटेनर (सटीक 'image/' पाथ के साथ फिक्स) -->
-    <div class="slider-container" id="calendarSlider">
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_01.png" loading="lazy" alt="January 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_02.png" loading="lazy" alt="February 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_03.png" loading="lazy" alt="March 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_04.png" loading="lazy" alt="April 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_05.png" loading="lazy" alt="May 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_06.png" loading="lazy" alt="June 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_07.png" loading="lazy" alt="July 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_08.png" loading="lazy" alt="August 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_09.png" loading="lazy" alt="September 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_10.png" loading="lazy" alt="October 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_11.png" loading="lazy" alt="November 2026"></div>
-        <div class="slide"><img src="image/Calendar_Bhadra_2026_12.png" loading="lazy" alt="December 2026"></div>
+    <!-- कैलेंडर इमेजेस (स्वाइप एरिया) -->
+    <div class="slider-container" id="swipeArea">
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_01.png" loading="lazy" alt="January"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_02.png" loading="lazy" alt="February"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_03.png" loading="lazy" alt="March"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_04.png" loading="lazy" alt="April"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_05.png" loading="lazy" alt="May"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_06.png" loading="lazy" alt="June"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_07.png" loading="lazy" alt="July"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_08.png" loading="lazy" alt="August"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_09.png" loading="lazy" alt="September"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_10.png" loading="lazy" alt="October"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_11.png" loading="lazy" alt="November"></div>
+        <div class="slide"><img src="image/Calendar_Bhadra_2026_12.png" loading="lazy" alt="December"></div>
     </div>
 
-    <!-- ⚙️ 6. कंट्रोल लेआउट -->
     <div class="month-nav-bar">
         <button class="nav-arrow-btn" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i> पिछला महीना</button>
         <button class="nav-arrow-btn" onclick="plusSlides(1)">अगला महीना <i class="fa-solid fa-chevron-right"></i></button>
@@ -253,8 +240,13 @@
         <strong>नोट:</strong> इस कैलेंडर को तैयार करने में पूरी सावधानी बरती गई है, फिर भी किसी प्रकार की मानवीय त्रुटि की संभावना हो सकती है। यदि आपको किसी तिथि या जानकारी में त्रुटि दिखाई दे, तो कृपया हमें 'Contact Us' के माध्यम से अवश्य सूचित करें ताकि हम उसमें सुधार कर सकें।
     </p>
 
-    <!-- 🏢 7. फुल-विड्थ फुटर (PC Beniwal सिग्नेचर) -->
+    <!-- सोशल लिंक्स के साथ फुटर -->
     <div class="footer-section">
+        <div class="social-links">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+        </div>
         <div style="text-align: center; line-height: 1.8;">
             <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
             <p style="font-size: 11px; color: rgba(255,255,255,0.7); font-weight: normal;">
@@ -263,9 +255,9 @@
         </div>
     </div>
 
-    <!-- 🚀 डायनेमिक जावास्क्रिप्ट (Instant Run, सीरीज़ मेकर, और क्रैश प्रूफ) -->
+    <!-- डायनेमिक जावास्क्रिप्ट -->
     <script>
-        // --- 1. मास्टर डेटाबेस (पूरे 12 महीने - पूरी जानकारियों के साथ) ---
+        // --- 1. आपका 100% ओरिजिनल डेटाबेस (MM-DD फॉर्मेट) ---
         const calendarData = {
             "01-01": { h: "क्रिश्चियन नव वर्ष दिवस", j: ["वीर गोकुला जाट – बलिदान दिवस"] },
             "01-06": { h: "", j: ["सूबेदार छोटूराम श्योराण – पुण्यतिथि"] },
@@ -438,7 +430,7 @@
             "10-26": { h: "", j: ["चौधरी कुंभाराम आर्य (सुंडा गोत्र) – पुण्यतिथि", "चौधरी रामनारायण जिंदा (मायला गोत्र) – पुण्यतिथि"] },
             "10-29": { h: "करवाचौथ", j: [] },
             
-            "11-05": { h: "", j: ["वीर पुष्कर सिंह पाखरिया (कुंतल توमर) – बलिदान दिवस (कार्तिक पूर्णिमा विशेष)"] },
+            "11-05": { h: "", j: ["वीर पुष्कर सिंह पाखरिया (कुंतल तोमर) – बलिदान दिवस (कार्तिक पूर्णिमा विशेष)"] },
             "11-08": { h: "दीपावली", j: [] },
             "11-09": { h: "गोवर्धन पूजा", j: ["मास्टर चंदगीराम पहलवान कालीरामण – जयंती"] },
             "11-11": { h: " भाई दूज", j: [] },
@@ -472,7 +464,7 @@
             "12-31": { h: "", j: ["बलवीर सिंह सीनियर (दोसांझ गोत्र, हॉकी दिग्गज) – जयंती"] }
         };
 
-        // --- 2. लाइव अपडेट, अलर्ट, और सीरीज़ मेकर इंजन ---
+        // --- 2. आपका ओरिजिनल 'आज का दिन' लाइव अपडेट सिस्टम ---
         function checkTodayHighlight() {
             const today = new Date();
             const day = today.getDate();
@@ -481,13 +473,11 @@
             
             const daysOfWeek = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
             const dayName = daysOfWeek[today.getDay()];
-            
             const monthNames = ["", "जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
             document.getElementById("liveDateDisplay").innerText = `${day} ${monthNames[month]} ${year}, ${dayName}`;
 
             const key = (month < 10 ? '0' : '') + month + "-" + (day < 10 ? '0' : '') + day;
             
-            // अवकाश कैलकुलेशन
             const holidayLabel = document.getElementById("holidayDisplay");
             if (calendarData[key] && calendarData[key].h) {
                 holidayLabel.innerText = calendarData[key].h;
@@ -497,14 +487,12 @@
                 holidayLabel.className = "holiday-text-style";
             }
 
-            // जाट दिवस विशेष (सीरीज़ मेकर लॉजिक)
             const jatContainer = document.getElementById("jatDisplayContainer");
-            jatContainer.innerHTML = ""; // पुराना साफ़ करें
+            jatContainer.innerHTML = ""; 
 
             if (calendarData[key] && calendarData[key].j && calendarData[key].j.length > 0) {
                 const ol = document.createElement("ol");
                 ol.className = "jat-series-list";
-                
                 calendarData[key].j.forEach(function(item) {
                     const li = document.createElement("li");
                     li.innerText = item;
@@ -519,6 +507,7 @@
             }
         }
 
+        // --- 3. स्लाइडर और नेविगेशन कंट्रोल्स ---
         let slideIndex = 1;
         let slides = document.getElementsByClassName("slide");
         let dropdown = document.getElementById("monthDropdown");
@@ -544,13 +533,158 @@
             }
             if(slides[n-1]) {
                 slides[n-1].style.display = "block";
-                setTimeout(() => {
-                    slides[n-1].classList.add("flip-effect");
-                }, 10);
+                setTimeout(() => { slides[n-1].classList.add("flip-effect"); }, 10);
             }
         }
 
-        // ⚙️ वीआईपी मास्टर नेविगेशन रिस्पॉन्सिव इंजन (फिक्स 3 बटन + 1 अन्य)
+        // --- 4. हिडन स्वाइप जेस्चर (बिना बटन्स छुपाए) ---
+        let startX = 0;
+        let endX = 0;
+        const swipeArea = document.getElementById('swipeArea');
+
+        swipeArea.addEventListener('touchstart', (e) => { startX = e.changedTouches[0].screenX; }, {passive: true});
+        swipeArea.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].screenX;
+            if (startX - endX > 50) { plusSlides(1); } // Swipe Left
+            if (endX - startX > 50) { plusSlides(-1); } // Swipe Right
+        }, {passive: true});
+
+        // --- 5. नया प्रेडिक्टिव सर्च इंजन (MM-DD फॉर्मेट सपोर्टेड) ---
+        const aliasMap = {
+            'amrita': ['खेजड़ली'], 'अमृता': ['खेजड़ली'], 'khejarli': ['खेजड़ली'],
+            'suraj': ['सूरजमल', 'आगरा'], 'sooraj': ['सूरजमल', 'आगरा'], 'सूरज': ['सूरजमल', 'आगरा'],
+            'tau': ['सिहाग', 'देवीलाल'], 'ताऊ': ['सिहाग', 'देवीलाल'], 'sihag': ['सिहाग'],
+            'deenbandhu': ['छोटूराम', 'ओहल्याण', 'श्योराण'], 'दीनबंधु': ['छोटूराम', 'ओहल्याण', 'श्योराण'],
+            'chot': ['छोटूराम'], 'chhot': ['छोटूराम'],
+            'sandhawalia': ['शेर-ए-पंजाब', 'रणजीत'], 'ranjit': ['रणजीत'],
+            'pvc': ['परमवीर चक्र', 'सेखों', 'होशियार सिंह दहिया'],
+            'pehalwan': ['पहलवान'], 'पहलवान': ['पहलवान'],
+            'historian': ['इतिहासकार'], 'इतिहासकार': ['इतिहासकार'],
+            'artist': ['कलाकार', 'गायक', 'संगीत'], 'singer': ['गायक', 'संगीत'],
+            'reservation': ['आरक्षण'], 'आरक्षण': ['आरक्षण'],
+            'bhadra': ['भादरा'], 'भादरा': ['भादरा'],
+            'bhagat': ['भगत सिंह', 'संधू'], 'teja': ['तेजा']
+        };
+        const engMonthShort = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+        const mNamesHindi = ["जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
+
+        const searchInput = document.getElementById('searchInput');
+        const suggestionBox = document.getElementById('suggestionBox');
+        const clearBtn = document.getElementById('clearBtn');
+
+        const placeholders = ["खोजें: सूरजमल...", "खोजें: 25 Dec...", "खोजें: अवकाश...", "खोजें: आरक्षण..."];
+        let phIndex = 0;
+        setInterval(() => {
+            if(document.activeElement !== searchInput && searchInput.value === "") {
+                searchInput.placeholder = placeholders[phIndex];
+                phIndex = (phIndex + 1) % placeholders.length;
+            }
+        }, 2500);
+
+        function fillSearch(txt) {
+            searchInput.value = txt;
+            searchInput.focus();
+            processSearch(txt);
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+            processSearch(query);
+        });
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            suggestionBox.style.display = 'none';
+        });
+
+        function parseDateQuery(query) {
+            query = query.toLowerCase().trim();
+            let match = query.match(/^(\d{1,2})[\/\s-]+(\d{1,2})$/);
+            if(match) return { d: parseInt(match[1]), m: parseInt(match[2]) };
+            
+            for(let i=0; i<12; i++) {
+                if(query.includes(engMonthShort[i]) || query.includes(mNamesHindi[i].toLowerCase())) {
+                    let dMatch = query.match(/(\d{1,2})/);
+                    if(dMatch) return { d: parseInt(dMatch[1]), m: i + 1 };
+                }
+            }
+            return null;
+        }
+
+        function processSearch(query) {
+            if(query.trim().length < 2) { suggestionBox.style.display = 'none'; return; }
+            let q = query.toLowerCase().trim();
+            let results = [];
+            const dateObj = parseDateQuery(q);
+
+            if(dateObj && dateObj.m >= 1 && dateObj.m <= 12) {
+                let key = (dateObj.m < 10 ? '0' : '') + dateObj.m + "-" + (dateObj.d < 10 ? '0' : '') + dateObj.d;
+                if(calendarData[key]) {
+                    if(calendarData[key].h) results.push({ month: dateObj.m, dateLabel: `${dateObj.d} ${engMonthShort[dateObj.m-1].toUpperCase()}`, text: calendarData[key].h });
+                    if(calendarData[key].j) calendarData[key].j.forEach(ev => { results.push({ month: dateObj.m, dateLabel: `${dateObj.d} ${engMonthShort[dateObj.m-1].toUpperCase()}`, text: ev }); });
+                }
+            } else {
+                let searchTerms = [q];
+                for (const [k, aliases] of Object.entries(aliasMap)) {
+                    if (q.includes(k)) searchTerms = searchTerms.concat(aliases);
+                }
+
+                for(let key in calendarData) {
+                    let monthNum = parseInt(key.split('-')[0]);
+                    let dayNum = parseInt(key.split('-')[1]);
+                    let dLabel = `${dayNum} ${engMonthShort[monthNum-1].toUpperCase()}`;
+                    
+                    if(calendarData[key].h) {
+                        if(searchTerms.some(term => calendarData[key].h.toLowerCase().includes(term))) {
+                            results.push({ month: monthNum, dateLabel: dLabel, text: calendarData[key].h });
+                        }
+                    }
+                    if(calendarData[key].j) {
+                        calendarData[key].j.forEach(ev => {
+                            if(searchTerms.some(term => ev.toLowerCase().includes(term))) {
+                                results.push({ month: monthNum, dateLabel: dLabel, text: ev });
+                            }
+                        });
+                    }
+                }
+            }
+            renderSuggestions(results);
+        }
+
+        function renderSuggestions(results) {
+            if(results.length === 0) {
+                suggestionBox.innerHTML = `<div class="suggestion-item" style="color:red; justify-content:center;">कोई परिणाम नहीं मिला</div>`;
+                suggestionBox.style.display = 'block';
+                return;
+            }
+            let html = '';
+            results.slice(0, 6).forEach(res => {
+                html += `<div class="suggestion-item" onclick="triggerJump(${res.month})">
+                            <span class="suggestion-date">${res.dateLabel}</span>
+                            <i class="fas fa-hand-point-right" style="color:var(--brand-gold); margin-right:5px; font-size:12px;"></i>
+                            ${res.text}
+                         </div>`;
+            });
+            suggestionBox.innerHTML = html;
+            suggestionBox.style.display = 'block';
+        }
+
+        function triggerJump(monthNum) {
+            dropdown.value = monthNum;
+            jumpToSlide(monthNum);
+            suggestionBox.style.display = 'none';
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            document.getElementById('swipeArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.search-box-wrapper')) suggestionBox.style.display = 'none';
+        });
+
+        // --- 6. मास्टर नेविगेशन रिस्पॉन्सिव इंजन ---
         const primaryMenu = document.getElementById('primary-menu');
         const moreMenuContainer = document.getElementById('more-menu-container');
         const moreMenu = document.getElementById('more-menu');
@@ -558,30 +692,29 @@
         function adaptNav() {
             while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
             moreMenuContainer.style.display = 'none';
-            let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
-            if (isOverflow) {
+            if (primaryMenu.scrollWidth > primaryMenu.clientWidth) {
                 moreMenuContainer.style.display = 'block';
                 while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 3) {
                     moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
                 }
             }
         }
-
         window.addEventListener('resize', adaptNav);
         function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
         document.addEventListener('click', function(event) {
             if (!moreMenuContainer.contains(event.target)) moreMenu.classList.remove('show');
         });
 
-        // 🚀 INSTANT RUN: गूगल साइट्स क्रैश प्रूफ इंजन (DOMContentLoaded)
+        // --- 7. इंस्टेंट रन (पेज लोड इंजन) ---
         document.addEventListener('DOMContentLoaded', function() {
             checkTodayHighlight();
             const today = new Date();
             let currentMonth = today.getMonth() + 1;
             slideIndex = currentMonth;
-            dropdown.value = "0"; 
+            dropdown.value = slideIndex.toString(); 
             showSlides(slideIndex);
             adaptNav(); 
+            searchInput.placeholder = placeholders[0];
         });
     </script>
 </body>
