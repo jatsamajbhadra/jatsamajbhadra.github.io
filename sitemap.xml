@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://jatsamajbhadra.github.io/</loc>
+       <loc>https://jatsamajbhadra.github.io/</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
   </url>
   <url>
-    <loc>https://jatsamajbhadra.github.io/index.html</loc>
+       <loc>https://jatsamajbhadra.github.io/rjyf.html</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://jatsamajbhadra.github.io/calendar-2026.html</loc>
+       <loc>https://jatsamajbhadra.github.io/meetings.html</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://jatsamajbhadra.github.io/rjyf.html</loc>
+       <loc>https://jatsamajbhadra.github.io/news-events.html</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://jatsamajbhadra.github.io/meetings.html</loc>
+       <loc>https://jatsamajbhadra.github.io/calendar-2026.html</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://jatsamajbhadra.github.io/contact.html</loc>
+       <loc>https://jatsamajbhadra.github.io/contact.html</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://jatsamajbhadra.github.io/news-events.html</loc>
+       <loc>https://jatsamajbhadra.github.io/Jat_Samaj_Calendar_Bhadra_2026.pdf</loc>
+       <lastmod>2026-07-11T19:17:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
 </urlset>
