@@ -43,14 +43,12 @@
         
         body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; padding-top: 0px !important; margin-top: 0px !important; }
         
-        /* 🌟 टॉप हेडर बार और शाइनिंग बॉर्डर */
         .top-header-bar { background-color: var(--brand-dark-green); width: 100%; position: relative; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, #d4af37, #fff7c2, #d4af37) 1; }
         .top-header-content { max-width: 1140px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
         .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
         .hamburger-menu-btn { background: none; border: none; color: var(--brand-gold); font-size: 22px; cursor: pointer; transition: transform 0.2s ease; display: flex; align-items: center; justify-content: center; }
         .hamburger-menu-btn:hover { transform: scale(1.1); }
 
-        /* 📢 सिनेमैटिक लाइव न्यूज़ टिकर */
         .ticker-wrap { background-color: #062313; display: flex; align-items: center; overflow: hidden; padding: 6px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
         .ticker-title { background-color: var(--brand-gold); color: var(--brand-dark-green); padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; margin-right: 15px; flex-shrink: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .ticker { overflow: hidden; white-space: nowrap; flex-grow: 1; position: relative; display: flex; align-items: center; }
@@ -62,7 +60,6 @@
         .ticker-text-link { color: var(--brand-gold); text-decoration: none; font-weight: 700; font-size: 13.5px; transition: color 0.2s ease; }
         .ticker-text-link:hover { color: #ffffff; text-decoration: underline; }
 
-        /* 📱 आधुनिक स्लाइडिंग साइडबार */
         .sidebar-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background-color: var(--brand-dark-green); box-shadow: -5px 0 25px rgba(0,0,0,0.4); z-index: 10000; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 70px 20px 20px 20px; border-left: 3px solid var(--brand-gold); }
         .sidebar-menu.open { right: 0; }
         .sidebar-close-btn { position: absolute; top: 15px; right: 20px; color: var(--brand-gold); font-size: 32px; cursor: pointer; font-weight: bold; line-height: 1; }
@@ -70,11 +67,9 @@
         .sidebar-link { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 16px; border-radius: 8px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.02); }
         .sidebar-link:hover, .sidebar-link.active { background-color: var(--brand-green); color: var(--brand-gold); transform: translateX(-3px); box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
 
-        /* 🌟 मास्टर बैनर (सटा हुआ) */
         .page-banner-container { background-color: var(--brand-dark-green); width: 100%; display: block; text-align: center; margin-bottom: 20px; margin-top: 0 !important; }
         .page-banner-container img { width: 100%; max-width: 1140px; height: auto; display: block; margin: 0 auto; }
 
-        /* 🏛️ सुरक्षित ओरिजिनल नेविगेशन बार */
         .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
@@ -87,7 +82,6 @@
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
         .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
 
-        /* संस्थान परिचय */
         .intro-section { max-width: 1140px; margin: 25px auto; padding: 0 20px; }
         .intro-card { background: #ffffff; border-radius: 16px; padding: 22px 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-left: 5px solid var(--brand-green); border-top: 1px solid #f1f5f9; border-right: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; transition: all 0.4s ease; }
         .intro-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(17, 83, 46, 0.08); }
@@ -95,7 +89,6 @@
         .intro-text { font-size: 14px; color: #334155; line-height: 1.6; text-align: justify; }
         .intro-highlight { font-weight: 700; color: var(--brand-dark-green); }
 
-        /* इमेज गैलरी */
         .gallery-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
         .gallery-item { background: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); }
@@ -104,7 +97,6 @@
         .gallery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.15, 0.85, 0.45, 1); }
         .gallery-item:hover .gallery-img-box img { transform: scale(1.06); }
 
-        /* लिंक स्ट्रिप और एनीमेशन */
         .link-strip { background: linear-gradient(135deg, #11532e, #1a7442); padding: 15px 20px; text-align: center; margin: 30px 0; box-shadow: 0 4px 12px rgba(17,83,46,0.12); }
         .strip-btn { display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: var(--brand-green); text-decoration: none; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 13.5px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); position: relative; overflow: hidden; animation: buttonPulse 2s infinite; transition: all 0.3s ease; }
         @keyframes buttonPulse { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
@@ -112,13 +104,11 @@
         @keyframes shine { 0% { left: -60%; } 15% { left: 140%; } 100% { left: 140%; } }
         .strip-btn:hover { background: var(--brand-dark-green); color: #ffffff; transform: scale(1.03); }
 
-        /* वीडियो सेक्शन */
         .video-section { max-width: 800px; margin: 35px auto; padding: 0 20px; text-align: center; }
         .video-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--brand-dark-green); }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 4px solid #ffffff; transition: transform 0.4s ease; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* सोशल मीडिया */
         .social-section { text-align: center; margin: 40px auto; padding: 0 20px; }
         .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
@@ -129,18 +119,15 @@
         .social-icon.x { background: #000000; }
         .social-icon:hover { transform: translateY(-5px) rotate(360deg); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
 
-        /* फुटर पट्टी */
         .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; width: 100%; }
         .footer-bottom { text-align: center; }
 
-        /* 🖼️ लाइटबॉक्स (नो-स्क्रॉल, क्रॉस बटन पूरी तरह फ्रेम से बाहर और ऊपर) */
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 20px; overflow: hidden; }
         .lightbox-content { position: relative; max-width: 95%; max-height: 82vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .lightbox-img { max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 8px; box-shadow: 0 5px 30px rgba(0,0,0,0.7); }
         .lightbox-close { position: absolute; bottom: 100%; right: 0; color: #ffffff; font-size: 42px; cursor: pointer; font-weight: bold; line-height: 1; margin-bottom: 10px; transition: color 0.2s ease; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .lightbox-close:hover { color: var(--brand-gold); }
 
-        /* 📱 मोबाइल रिस्पॉन्सिव इंजन */
         @media (max-width: 650px) {
             .gallery-grid { grid-template-columns: 1fr; gap: 15px; }
             .gallery-img-box { height: 190px; }
@@ -247,12 +234,14 @@
         </div>
     </div>
 
-    <!-- 📜 संस्थान स्थापना  (गैलरी के ठीक नीचे) -->
+    <!-- 📜 संस्थान स्थापना एवं कार्यकारिणी विवरण (गैलरी के ठीक नीचे) -->
     <div class="intro-section" style="margin-top: 10px;">
         <div class="intro-card" style="border-left: 5px solid var(--brand-gold);">
             <h2 class="intro-title" style="color: var(--brand-dark-green);"><i class="fa-solid fa-file-contract"></i> संस्थान स्थापना एवं कार्यकारिणी विवरण</h2>
             <p class="intro-text" style="margin-bottom: 20px;">
-                जाट समाज संस्थान, भादरा की स्थापना समाज के प्रबुद्ध जनों और समाजसेवियों के एक सामूहिक संकल्प का परिणाम है। इस सोच और विचार को धरातल पर साकार रूप देते हुए, संस्थान को राजस्थान सरकार के सहकारिता विभाग के अंतर्गत 'राजस्थान सोसाइटीज रजिस्ट्रेशन एक्ट, 1958 (राजस्थान एक्ट नंबर 28, 1958)' के तहत दिनांक 14-10-2020 को विधिवत पंजीकृत करवाया गया (पंजीकरण क्रमांक: COOP/2020/HANUMANGARH/200219)[cite: 1]। संस्थान के सुचारू संचालन हेतु संस्थान के पंजीकरण के समय गठित प्रारम्भिक संस्थापन कार्यकारिणी सदस्यों की सूची निम्नलिखित है[cite: 1]:
+                जाट समाज संस्थान, भादरा की स्थापना जाट समाज के प्रबुद्ध जनों और समाजसेवियों के एक सामूहिक संकल्प का परिणाम है। इस सोच और विचार को धरातल पर साकार रूप देते हुए, संस्थान का विधिवत पंजीकरण सहकारिता विभाग द्वारा 'द राजस्थान सोसाइटीज़ रजिस्ट्रेशन एक्ट, 1958' के अंतर्गत दिनांक 14 अक्टूबर, 2020 को करवाया गया । <br>
+                <strong>पंजीकरण क्रमांक:</strong> COOP/2020/HANUMANGARH/200219<br><br>
+                संस्थान के सुचारू संचालन हेतु संस्थान के पंजीकरण के समय गठित की गई प्रारम्भिक संस्थापन कार्यकारिणी सदस्यों की सूची निम्नलिखित है:
             </p>
             
             <div style="overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
@@ -265,27 +254,27 @@
                         </tr>
                     </thead>
                     <tbody style="color: #334155;">
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">1</td> <td>श्री  बलवंत सिंह</td> <td>अध्यक्ष / चेयरमैन[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">2</td> <td>श्री राजेंद्र</td> <td>उपाध्यक्ष 1[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">3</td> <td>श्री जगदीश पुनिया</td> <td>उपाध्यक्ष 2[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">4</td> <td>श्री राम स्वरूप कस्वां</td> <td>सचिव[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">5</td> <td>श्री सुनील कुमार बेनीवाल</td> <td>सह-सचिव[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">6</td> <td>श्री वीरेंद्र सिंह</td> <td>कानूनी सलाहकार एवं सह-सचिव[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">7</td> <td>श्री धर्मपाल सिंह भांभू</td> <td>कोषाध्यक्ष[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">8</td> <td>श्री जय प्रकाश कस्वां</td> <td>सह-कोषाध्यक्ष[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">9</td> <td>श्री सुनील कुमार</td> <td>प्रवक्ता[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">10</td> <td>श्री राजेंद्र प्रसाद कुलड़िया</td> <td>संरक्षक 1[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">11</td> <td>श्री राजेंद्र सिंह बेनीवाल</td> <td>संरक्षक 2[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">12</td> <td> श्री सूर्यपाल कस्वां</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">13</td> <td>श्री अमर सिंह</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">14</td> <td> श्री दीपक चौधरी</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">15</td> <td>श्री सुल्तान सिंह मावलिया</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">16</td> <td>श्री करण सिंह बेनीवाल</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">17</td> <td>श्री धर्मपाल सिंह गोदारा</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">18</td> <td>श्री अमर सिंह बेनीवाल</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">19</td> <td>श्री वेदपाल सिंह</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">20</td> <td>श्री नवीन झाझड़िया</td> <td>सदस्य[cite: 1]</td> </tr>
-                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">21</td> <td>श्री जगमाल सिंह भांभू</td> <td>सदस्य[cite: 1]</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">1</td> <td>श्री बलवंत सिंह</td> <td>अध्यक्ष / चेयरमैन</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">2</td> <td>श्री राजेंद्र</td> <td>उपाध्यक्ष 1</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">3</td> <td>श्री जगदीश पुनिया</td> <td>उपाध्यक्ष 2</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">4</td> <td>श्री राम स्वरूप कस्वां</td> <td>सचिव</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">5</td> <td>श्री सुनील कुमार बेनीवाल</td> <td>सह-सचिव</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">6</td> <td>श्री वीरेंद्र सिंह</td> <td>कानूनी सलाहकार एवं सह-सचिव</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">7</td> <td>श्री धर्मपाल सिंह भांभू</td> <td>कोषाध्यक्ष</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">8</td> <td>श्री जय प्रकाश कस्वां</td> <td>सह-कोषाध्यक्ष</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">9</td> <td>श्री सुनील कुमार</td> <td>प्रवक्ता</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">10</td> <td>श्री राजेंद्र प्रसाद कुलड़िया</td> <td>संरक्षक 1</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">11</td> <td>श्री राजेंद्र सिंह बेनीवाल</td> <td>संरक्षक 2</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">12</td> <td>श्री सूर्यपाल कस्वां</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">13</td> <td>श्री अमर सिंह</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">14</td> <td>श्री दीपक चौधरी</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">15</td> <td>श्री सुल्तान सिंह मावलिया</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">16</td> <td>श्री करण सिंह बेनीवाल</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">17</td> <td>श्री धर्मपाल सिंह गोदारा</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">18</td> <td>श्री अमर सिंह बेनीवाल</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">19</td> <td>श्री वेदपाल सिंह</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">20</td> <td>श्री नवीन झाझड़िया</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">21</td> <td>श्री जगमाल सिंह भांभू</td> <td>सदस्य</td> </tr>
                     </tbody>
                 </table>
             </div>
