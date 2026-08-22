@@ -2,22 +2,23 @@
 <html lang="hi">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPW8K809DN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RPW8K809DN');
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RPW8K809DN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RPW8K809DN');
+</script>
     <meta name="google-site-verification" content="zE4t1W4gFN0UkYUrjvChAlaCm-fjbEQAyMovN9vLChc" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>भादरा के प्रमुख स्मारक, चौक एवं प्रवेश द्वार - जाट समाज संस्थान</title>
+    <title>जाट समाज संस्थान भादरा - मुख्य होम पेज</title>
     
-    <meta name="description" content="भादरा शहर और ग्रामीण क्षेत्रों में स्थापित प्रमुख जाट स्मारकों, चौकों और प्रवेश द्वारों की विस्तृत जानकारी।">
-    <meta name="keywords" content="Jat Smarak Bhadra, जाट स्मारक भादरा, Jat Chowk Bhadra, Surajmal Chowk Bhadra, Tejaji Gate Bhadra">
+    <meta name="description" content="जाट समाज संस्थान, भादरा की आधिकारिक वेबसाइट। RJYF पंजीकरण, बैठक सूचना, न्यूज़, 2026 कैलेंडर और समाज के विकास कार्यों की जानकारी।">
+    <meta name="keywords" content="जाट समाज संस्थान भादरा, जाट समाज भादरा, Jat Samaj Sansthan Bhadra, Jat Samaj Bhadra, RJYF Bhadra, jaat Samaj Bhadra, Jaat Samaj Sansthan Bhadra">
     <meta name="author" content="जाट समाज संस्थान भादरा">
-    <link rel="canonical" href="https://jatsamajbhadra.github.io/jat-smarak.html">
+    <link rel="canonical" href="https://jatsamajbhadra.github.io/">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -26,13 +27,24 @@
         :root { --brand-green: #11532e; --brand-dark-green: #0b3a20; --brand-gold: #d4af37; --light-bg: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
         
-        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--light-bg); color: var(--text-main); -webkit-font-smoothing: antialiased; padding-top: 0px !important; margin-top: 0px !important; }
         
         .top-header-bar { background-color: var(--brand-dark-green); width: 100%; position: relative; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, #d4af37, #fff7c2, #d4af37) 1; }
         .top-header-content { max-width: 1140px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
         .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .hamburger-menu-btn { background: none; border: none; color: var(--brand-gold); font-size: 22px; cursor: pointer; transition: transform 0.2s ease; display: flex; align-items: center; justify-content: center; }
         .hamburger-menu-btn:hover { transform: scale(1.1); }
+
+        .ticker-wrap { background-color: #062313; display: flex; align-items: center; overflow: hidden; padding: 6px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .ticker-title { background-color: var(--brand-gold); color: var(--brand-dark-green); padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; margin-right: 15px; flex-shrink: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .ticker { overflow: hidden; white-space: nowrap; flex-grow: 1; position: relative; display: flex; align-items: center; }
+        
+        .ticker-item-holder { display: inline-block; white-space: nowrap; padding-left: 100%; animation: ticker-scroll 18s linear infinite; }
+        .ticker-item-holder:hover { animation-play-state: paused; }
+        @keyframes ticker-scroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+        
+        .ticker-text-link { color: var(--brand-gold); text-decoration: none; font-weight: 700; font-size: 13.5px; transition: color 0.2s ease; }
+        .ticker-text-link:hover { color: #ffffff; text-decoration: underline; }
 
         .sidebar-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background-color: var(--brand-dark-green); box-shadow: -5px 0 25px rgba(0,0,0,0.4); z-index: 10000; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 70px 20px 20px 20px; border-left: 3px solid var(--brand-gold); }
         .sidebar-menu.open { right: 0; }
@@ -41,7 +53,10 @@
         .sidebar-link { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 16px; border-radius: 8px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.02); }
         .sidebar-link:hover, .sidebar-link.active { background-color: var(--brand-green); color: var(--brand-gold); transform: translateX(-3px); box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
 
-        .master-nav-container { max-width: 1140px; margin: 20px auto 20px auto; padding: 0 20px; width: 100%; }
+        .page-banner-container { background-color: var(--brand-dark-green); width: 100%; display: block; text-align: center; margin-bottom: 20px; margin-top: 0 !important; }
+        .page-banner-container img { width: 100%; max-width: 1140px; height: auto; display: block; margin: 0 auto; }
+
+        .master-nav-container { max-width: 1140px; margin: 0 auto 20px auto; padding: 0 20px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
         .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
@@ -53,45 +68,32 @@
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
         .more-menu.show { display: flex; }
 
-        .content-container { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
-        
-        /* Heading & Intro */
-        .page-main-title { text-align: center; font-size: 26px; color: var(--brand-dark-green); font-weight: 800; margin-bottom: 15px; position: relative; padding-bottom: 10px; }
-        .page-main-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 3px; background: var(--brand-gold); border-radius: 2px; }
-        
-        .intro-box { background: #ffffff; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-left: 5px solid var(--brand-green); margin-bottom: 35px; border: 1px solid #e2e8f0; }
-        .intro-text { font-size: 15px; color: #334155; line-height: 1.8; text-align: justify; }
+        .intro-section { max-width: 1140px; margin: 25px auto; padding: 0 20px; }
+        .intro-card { background: #ffffff; border-radius: 16px; padding: 22px 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-left: 5px solid var(--brand-green); border-top: 1px solid #f1f5f9; border-right: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; transition: all 0.4s ease; }
+        .intro-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(17, 83, 46, 0.08); }
+        .intro-title { font-size: 19px; color: var(--brand-green); font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .intro-text { font-size: 14px; color: #334155; line-height: 1.6; text-align: justify; }
+        .intro-highlight { font-weight: 700; color: var(--brand-dark-green); }
 
-        /* Cards Grid with Golden Glow Effect */
-        .smarak-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .smarak-card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.04); border: 2px solid rgba(212, 175, 55, 0.3); transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); display: flex; flex-direction: column; position: relative; }
-        .smarak-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35); border-color: var(--brand-gold); }
-        
-        .smarak-img-box { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #000; }
-        .smarak-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .smarak-card:hover .smarak-img-box img { transform: scale(1.05); }
+        .gallery-section { max-width: 1140px; margin: 30px auto; padding: 0 20px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .gallery-item { background: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.4s cubic-bezier(0.15, 0.85, 0.45, 1); }
+        .gallery-item:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(17,83,46,0.1); border-color: var(--brand-green); }
+        .gallery-img-box { width: 100%; height: 230px; overflow: hidden; }
+        .gallery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.15, 0.85, 0.45, 1); }
+        .gallery-item:hover .gallery-img-box img { transform: scale(1.06); }
 
-        .smarak-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .smarak-name { font-size: 18px; font-weight: 700; color: var(--brand-dark-green); margin-bottom: 8px; }
-        .smarak-location { font-size: 13.5px; color: var(--text-muted); margin-bottom: 15px; display: flex; align-items: center; gap: 6px; }
-        .smarak-location i { color: var(--brand-gold); }
-        
-        .detail-btn { margin-top: auto; background: linear-gradient(135deg, var(--brand-green), var(--brand-dark-green)); color: #ffffff; border: none; padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 13.5px; cursor: pointer; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 10px rgba(17,83,46,0.2); }
-        .detail-btn:hover { background: var(--brand-gold); color: var(--brand-dark-green); box-shadow: 0 6px 15px rgba(212,175,55,0.4); }
+        .link-strip { background: linear-gradient(135deg, #11532e, #1a7442); padding: 15px 20px; text-align: center; margin: 30px 0; box-shadow: 0 4px 12px rgba(17,83,46,0.12); }
+        .strip-btn { display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: var(--brand-green); text-decoration: none; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 13.5px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); position: relative; overflow: hidden; animation: buttonPulse 2s infinite; transition: all 0.3s ease; }
+        @keyframes buttonPulse { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
+        .strip-btn::after { content: ''; position: absolute; top: -50%; left: -60%; width: 30%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(25deg); animation: shine 3.5s infinite; }
+        @keyframes shine { 0% { left: -60%; } 15% { left: 140%; } 100% { left: 140%; } }
+        .strip-btn:hover { background: var(--brand-dark-green); color: #ffffff; transform: scale(1.03); }
 
-        /* Detail View Section */
-        .detail-view-container { display: none; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 2px solid var(--brand-gold); animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .back-nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px; }
-        .back-btn { background: var(--brand-dark-green); color: var(--brand-gold); border: none; padding: 8px 18px; border-radius: 30px; font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-        .back-btn:hover { background: var(--brand-green); transform: translateX(-3px); }
-
-        .detail-content-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: start; }
-        .detail-img-large { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border: 3px solid var(--brand-gold); }
-        .detail-text-box h2 { font-size: 22px; color: var(--brand-dark-green); margin-bottom: 10px; }
-        .detail-text-box .loc-tag { font-size: 14px; color: var(--text-muted); margin-bottom: 15px; font-weight: 600; display: block; }
-        .detail-text-box p { font-size: 15px; color: #334155; line-height: 1.8; text-align: justify; }
+        .video-section { max-width: 800px; margin: 35px auto; padding: 0 20px; text-align: center; }
+        .video-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--brand-dark-green); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 4px solid #ffffff; transition: transform 0.4s ease; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
         .social-section { text-align: center; margin: 40px auto; padding: 0 20px; }
         .social-text { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
@@ -106,51 +108,92 @@
         .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; width: 100%; }
         .footer-bottom { text-align: center; }
 
-        @media (max-width: 768px) {
-            .detail-content-wrapper { grid-template-columns: 1fr; gap: 20px; }
-            .page-main-title { font-size: 21px; }
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999; display: none; justify-content: center; align-items: center; padding: 20px; overflow: hidden; }
+        .lightbox-content { position: relative; max-width: 95%; max-height: 82vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .lightbox-img { max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 8px; box-shadow: 0 5px 30px rgba(0,0,0,0.7); }
+        .lightbox-close { position: absolute; bottom: 100%; right: 0; color: #ffffff; font-size: 42px; cursor: pointer; font-weight: bold; line-height: 1; margin-bottom: 10px; transition: color 0.2s ease; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .lightbox-close:hover { color: var(--brand-gold); }
+
+        @media (max-width: 650px) {
+            .gallery-grid { grid-template-columns: 1fr; gap: 15px; }
+            .gallery-img-box { height: 190px; }
+            .intro-card { padding: 18px; }
+            .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
+            .master-navbar { padding: 8px 10px; border-radius: 10px; }
+            .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; }
+            .top-logo-text { font-size: 14px; }
+            .lightbox-close { font-size: 38px; margin-bottom: 6px; }
         }
+        ::selection { background: #11532e; color: #fff; }
     </style>
+    
+    <script src="meetings-data.js"></script>
 </head>
 <body>
 
-    <!-- टॉप हेडर बार -->
+    <!-- टॉप हेडर और टिकर बार -->
     <div class="top-header-bar">
         <div class="top-header-content">
-            <a href="index.html" class="top-logo-text">
+            <div class="top-logo-text">
                 <i class="fa-solid fa-building-columns" style="color: var(--brand-gold);"></i> जाट समाज संस्थान भादरा
-            </a>
+            </div>
             <button class="hamburger-menu-btn" onclick="toggleSidebar()" aria-label="मुख्य मेनू">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
+        <div class="ticker-wrap">
+            <div class="ticker-title"><i class="fa-solid fa-bullhorn"></i> नवीनतम सूचना</div>
+            <div class="ticker" id="live-news-ticker">
+                <div class="ticker-item-holder" id="ticker-holder">
+                    <span style="color: #ffffff; font-size: 13.5px;">ताज़ा समाचार लोड हो रहे हैं...</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- साइडबार मेनू -->
+    <!-- साइडबार मेनू (इसमें 'जाट स्मारक' का लिंक जुड़ा है) -->
     <div class="sidebar-menu" id="sidebarMenu">
         <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
         <div class="sidebar-links">
-            <a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i> होम</a>
+            <a href="index.html" class="sidebar-link active"><i class="fa-solid fa-house"></i> होम</a>
             <a href="rjyf.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> RJYF</a>
             <a href="meetings.html" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
             <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
             <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
-            <a href="jat-smarak.html" class="sidebar-link active"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
+            <a href="jat-smarak.html" class="sidebar-link"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
             <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-address-book"></i> Contact Us</a>
         </div>
     </div>
 
-    <!-- मास्टर नेविगेशन बार -->
+    <div class="page-banner-container">
+        <img src="image/home_page_banner.png" alt="जाट समाज संस्थान भादरा - मुख्य बैनर">
+    </div>
+
+    <!-- मास्टर नेविगेशन बार (इसमें भी 'जाट स्मारक' का बटन जुड़ा है) -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
-                <a href="index.html" class="nav-btn"><i class="fa-solid fa-house"></i> होम</a>
-                <a href="rjyf.html" class="nav-btn"><i class="fa-solid fa-users-gear"></i> RJYF</a>
-                <a href="meetings.html" class="nav-btn"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
-                <a href="news-events.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> News & Events</a>
-                <a href="calendar-2026.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
-                <a href="jat-smarak.html" class="nav-btn active"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
-                <a href="contact.html" class="nav-btn"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+                <a href="index.html" class="nav-btn active">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="rjyf.html" class="nav-btn">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="meetings.html" class="nav-btn">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="news-events.html" class="nav-btn">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="calendar-2026.html" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="jat-smarak.html" class="nav-btn">
+                    <i class="fa-solid fa-landmark"></i> जाट स्मारक
+                </a>
+                <a href="contact.html" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
             </div>
             <div class="more-menu-container" id="more-menu-container">
                 <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
@@ -159,105 +202,90 @@
         </nav>
     </div>
 
-    <div class="content-container">
-        <!-- मुख्य हेडिंग -->
-        <h1 class="page-main-title">भादरा की गौरवशाली पहचान: प्रमुख स्मारक, चौक एवं प्रवेश द्वार</h1>
-
-        <!-- संक्षिप्त परिचय -->
-        <div class="intro-box">
+    <div class="intro-section">
+        <div class="intro-card">
+            <h2 class="intro-title"><i class="fa-solid fa-building-columns"></i> संस्थान परिचय:</h2>
             <p class="intro-text">
-                यह डिजिटल पृष्ठ भादरा शहर और उसके आसपास के ग्रामीण क्षेत्रों में स्थापित उन सभी ऐतिहासिक स्मारकों, चौकों और प्रवेश द्वारों को आदरपूर्वक समर्पित है, जो हमारे महान महापुरुषों, किसानों के मसीहाओं और लोक देवताओं के अदम्य शौर्य, बलिदान, संघर्ष एवं उच्च आदर्शों के जीवंत प्रतीक हैं। ये सभी स्थल न केवल हमारी समृद्ध सांस्कृतिक विरासत को संजोए हुए हैं, बल्कि आने वाली पीढ़ियों के लिए निरंतर प्रेरणा का मुख्य स्त्रोत भी हैं। यहाँ आप समाज के सामूहिक प्रयासों और सहयोग से निर्मित इन सभी प्रमुख और दर्शनीय स्थलों के बारे में संपूर्ण एवं विस्तृत जानकारी प्राप्त कर सकते हैं।
+                <span class="intro-highlight">जाट समाज संस्थान, भादरा</span> सामाजिक एकता, शिक्षा, संस्कृति एवं सामुदायिक विकास को समर्पित एक प्रतिष्ठित संस्था है। संस्थान का उद्देश्य जाट समाज के सामाजिक, शैक्षणिक, सांस्कृतिक एवं आर्थिक उत्थान के लिए सार्थक प्रयास करना तथा समाज में भाईचारे, सहयोग और जागरूकता को बढ़ावा देना है。<br><br>
+                संस्थान द्वारा समय-समय पर प्रतिभा सम्मान समारोह, शैक्षणिक प्रोत्साहन कार्यक्रम, सांस्कृतिक आयोजन एवं जनकल्याणकारी गतिविधियों का आयोजन किया जाता है। हम समाज की गौरवशाली परंपराओं और मूल्यों को सुरक्षित रखते हुए नई पीढ़ी को शिक्षा, नेतृत्व और सामाजिक जिम्मेदारी के लिए प्रेरित करने का कार्य करते हैं। जाट समाज संस्थान, भादरा समाज सेवा, संगठन, प्रगति और विकास के माध्यम से एक स्वस्थ एवं प्रगतिशील समाज के निर्माण हेतु निरंतर प्रतिबद्ध है।
             </p>
         </div>
-
-        <!-- मुख्य कार्ड ग्रिड (सूची) -->
-        <div id="listView">
-            <div class="smarak-grid">
-                
-                <!-- 1. जाट चौक -->
-                <div class="smarak-card">
-                    <div class="smarak-img-box">
-                        <img src="image/smarak-01.png" loading="lazy" alt="जाट चौक भादरा">
-                    </div>
-                    <div class="smarak-info">
-                        <h2 class="smarak-name">1. जाट चौक, भादरा</h2>
-                        <p class="smarak-location"><i class="fa-solid fa-location-dot"></i> नगरपालिका के समीप, रेलवे स्टेशन रोड, भादरा</p>
-                        <button class="detail-btn" onclick="showDetail(1)">अधिक विवरण देखें</button>
-                    </div>
-                </div>
-
-                <!-- 2. महाराजा सूरजमल चौक -->
-                <div class="smarak-card">
-                    <div class="smarak-img-box">
-                        <img src="image/smarak-02.png" loading="lazy" alt="महाराजा सूरजमल चौक भादरा">
-                    </div>
-                    <div class="smarak-info">
-                        <h2 class="smarak-name">2. महाराजा सूरजमल चौक, भादरा</h2>
-                        <p class="smarak-location"><i class="fa-solid fa-location-dot"></i> अनाज मंडी के समीप, सिरसा रोड, भादरा</p>
-                        <button class="detail-btn" onclick="showDetail(2)">अधिक विवरण देखें</button>
-                    </div>
-                </div>
-
-                <!-- 3. शहीद भगत सिंह चौक -->
-                <div class="smarak-card">
-                    <div class="smarak-img-box">
-                        <img src="image/smarak-03.png" loading="lazy" alt="शहीद भगत सिंह चौक भादरा">
-                    </div>
-                    <div class="smarak-info">
-                        <h2 class="smarak-name">3. शहीद भगत सिंह चौक, भादरा</h2>
-                        <p class="smarak-location"><i class="fa-solid fa-location-dot"></i> वीडीएस पैलेस के समीप, भादरा</p>
-                        <button class="detail-btn" onclick="showDetail(3)">अधिक विवरण देखें</button>
-                    </div>
-                </div>
-
-                <!-- 4. चौधरी चरण सिंह चौक -->
-                <div class="smarak-card">
-                    <div class="smarak-img-box">
-                        <img src="image/smarak-04.png" loading="lazy" alt="चौधरी चरण सिंह चौक घेऊ">
-                    </div>
-                    <div class="smarak-info">
-                        <h2 class="smarak-name">4. चौधरी चरण सिंह चौक, गाँव घेऊ</h2>
-                        <p class="smarak-location"><i class="fa-solid fa-location-dot"></i> घेऊ जाटण मोड़ के पास, गाँव घेऊ</p>
-                        <button class="detail-btn" onclick="showDetail(4)">अधिक विवरण देखें</button>
-                    </div>
-                </div>
-
-                <!-- 5. वीर तेजाजी प्रवेश द्वार -->
-                <div class="smarak-card">
-                    <div class="smarak-img-box">
-                        <img src="image/smarak-05.png" loading="lazy" alt="वीर तेजाजी प्रवेश द्वार घेऊ">
-                    </div>
-                    <div class="smarak-info">
-                        <h2 class="smarak-name">5. वीर तेजाजी प्रवेश द्वार, गाँव घेऊ</h2>
-                        <p class="smarak-location"><i class="fa-solid fa-location-dot"></i> मुख्य प्रवेश द्वार, गाँव घेऊ</p>
-                        <button class="detail-btn" onclick="showDetail(5)">अधिक विवरण देखें</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- विस्तृत विवरण व्यू -->
-        <div id="detailView" class="detail-view-container">
-            <div class="back-nav-bar">
-                <button class="back-btn" onclick="showList()"><i class="fa-solid fa-arrow-left"></i> वापस जाएं</button>
-                <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">विस्तृत जानकारी</span>
-            </div>
-            <div class="detail-content-wrapper">
-                <div>
-                    <img id="detailImg" class="detail-img-large" src="" alt="स्मारक विवरण तस्वीर">
-                </div>
-                <div class="detail-text-box">
-                    <h2 id="detailTitle"></h2>
-                    <span id="detailLoc" class="loc-tag"></span>
-                    <p id="detailDesc"></p>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- सोशल मीडिया सेक्शन -->
+    <div class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('image/home_gallery_01.jpg')">
+                <div class="gallery-img-box">
+                    <img src="image/home_gallery_01.jpg" loading="lazy" alt="जाट समाज जनसभा भादरा">
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('image/home_gallery_02.jpg')">
+                <div class="gallery-img-box">
+                    <img src="image/home_gallery_02.jpg" loading="lazy" alt="अंतरराष्ट्रीय जाट दिवस समारोह">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📜 संस्थान स्थापना एवं कार्यकारिणी विवरण (गैलरी के ठीक नीचे) -->
+    <div class="intro-section" style="margin-top: 10px;">
+        <div class="intro-card" style="border-left: 5px solid var(--brand-gold);">
+            <h2 class="intro-title" style="color: var(--brand-dark-green);"><i class="fa-solid fa-file-contract"></i> संस्थान स्थापना एवं कार्यकारिणी विवरण</h2>
+            <p class="intro-text" style="margin-bottom: 20px;">
+                जाट समाज संस्थान, भादरा की स्थापना जाट समाज के प्रबुद्ध जनों और समाजसेवियों के एक सामूहिक संकल्प का परिणाम है। इस सोच और विचार को धरातल पर साकार रूप देते हुए, संस्थान का विधिवत पंजीकरण सहकारिता विभाग द्वारा 'द राजस्थान सोसाइटीज़ रजिस्ट्रेशन एक्ट, 1958' के अंतर्गत दिनांक 14 अक्टूबर, 2020 वार बुधवार (अधिक आश्विन मास, कृष्ण पक्ष, त्रयोदशी तिथि) को करवाया गया । <strong>पंजीकरण क्रमांक:</strong> COOP/2020/HANUMANGARH/200219<br><br>
+                संस्थान के सुचारू संचालन हेतु संस्थान के पंजीकरण के समय गठित की गई प्रारम्भिक संस्थापन कार्यकारिणी सदस्यों की सूची निम्नलिखित है:
+            </p>
+            
+            <div style="overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
+                    <thead>
+                        <tr style="background-color: var(--brand-green); color: white;">
+                            <th style="padding: 12px; width: 15%;">क्र.सं.</th>
+                            <th style="padding: 12px; width: 45%;">सदस्य का नाम</th>
+                            <th style="padding: 12px; width: 40%;">पद</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #334155;">
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">1</td> <td>श्री बलवंत सिंह सहू</td> <td>अध्यक्ष</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">2</td> <td>श्री राजेंद्र</td> <td>उपाध्यक्ष 1</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">3</td> <td>श्री जगदीश पुनिया</td> <td>उपाध्यक्ष 2</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">4</td> <td>श्री राम स्वरूप कस्वां</td> <td>सचिव</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">5</td> <td>श्री सुनील कुमार बेनीवाल</td> <td>सह-सचिव</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">6</td> <td>श्री वीरेंद्र सिंह</td> <td>कानूनी सलाहकार एवं सह-सचिव</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">7</td> <td>श्री धर्मपाल सिंह भांभू</td> <td>कोषाध्यक्ष</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">8</td> <td>श्री जय प्रकाश कस्वां</td> <td>सह-कोषाध्यक्ष</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">9</td> <td>श्री सुनील कुमार</td> <td>प्रवक्ता</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">10</td> <td>श्री राजेंद्र प्रसाद कुलड़िया</td> <td>संरक्षक 1</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">11</td> <td>श्री राजेंद्र सिंह बेनीवाल</td> <td>संरक्षक 2</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">12</td> <td>श्री सूर्यपाल कस्वां</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">13</td> <td>श्री अमर सिंह</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">14</td> <td>श्री दीपक चौधरी</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">15</td> <td>श्री सुल्तान सिंह मावलिया</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">16</td> <td>श्री करण सिंह बेनीवाल</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">17</td> <td>श्री धर्मपाल सिंह गोदारा</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">18</td> <td>श्री अमर सिंह बेनीवाल</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">19</td> <td>श्री वेदपाल सिंह</td> <td>सदस्य</td> </tr>
+                        <tr style="background-color: #f8fafc; border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">20</td> <td>श्री नवीन झाझड़िया</td> <td>सदस्य</td> </tr>
+                        <tr style="border-bottom: 1px solid #f1f5f9;"> <td style="padding: 10px 12px;">21</td> <td>श्री जगमाल सिंह भांभू</td> <td>सदस्य</td> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="link-strip">
+        <a href="https://forms.gle/9vamSkStgjZPdUUz8" target="_blank" rel="noopener noreferrer" class="strip-btn">
+            <i class="fa-solid fa-user-plus"></i> राइजिंग जाट यूथ फाउंडेशन (RJYF) पंजीकरण लिंक
+        </a>
+    </div>
+
+    <div class="video-section">
+        <h3 class="video-title"><i class="fa-solid fa-video"></i> किसान मसीहा चौधरी कुंभाराम आर्य - शॉर्ट फिल्म</h3>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/QJrT_F44jzE" title="YouTube video player" loading="lazy" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <div class="social-section">
         <p class="social-text">नीचे दिए बटन पर क्लिक कर संस्थान के सोशल मीडिया अकाउंट से जुड़ सकते हैं</p>
         <div class="social-links">
@@ -268,7 +296,6 @@
         </div>
     </div>
 
-    <!-- फुटर सेक्शन -->
     <div class="footer-section">
         <div class="footer-bottom">
             <div style="text-align: center; line-height: 1.8;">
@@ -280,6 +307,13 @@
         </div>
     </div>
 
+    <div class="lightbox" id="imageLightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+            <img class="lightbox-img" id="lightboxTarget" src="" alt="Zoomed Image">
+        </div>
+    </div>
+
     <script>
         function toggleSidebar() {
             document.getElementById('sidebarMenu').classList.toggle('open');
@@ -288,68 +322,88 @@
             document.getElementById('sidebarMenu').classList.remove('open');
         }
 
-        // स्मारकों का विस्तृत डेटा
-        const smarakData = {
-            1: {
-                title: "1. जाट चौक, भादरा",
-                location: "नगरपालिका के समीप, रेलवे स्टेशन रोड, भादरा",
-                img: "image/smarak-01.png",
-                desc: "भादरा शहर के मुख्य मार्ग पर नगरपालिका के समीप स्थित 'जाट चौक' समाज की एकता, स्वाभिमान और सामाजिक जागरूकता का प्रमुख केंद्र है। शहर के हृदय स्थल पर स्थित यह चौक आवागमन के साथ-साथ सामाजिक आयोजनों और मेल-मिलाप का एक महत्वपूर्ण स्थल है, जो स्थानीय नागरिकों और आने-जाने वाले पर्यटकों के लिए विशेष आकर्षण का केंद्र रहता है।"
-            },
-            2: {
-                title: "2. महाराजा सूरजमल चौक, भादरा",
-                location: "अनाज मंडी के समीप, सिरसा रोड, भादरा",
-                img: "image/smarak-02.png",
-                desc: "अनाज मंडी के पास सिरसा रोड पर सुशोभित 'महाराजा सूरजमल चौक' ब्रजराज सुजान सिंह (महाराजा सूरजमल) के अदम्य शौर्य, न्यायप्रियता, कूटनीति और महान बलिदान की याद दिलाता है। 'जाटों के प्लेटो' के रूप में विख्यात महाराजा सूरजमल के आदर्शों को समर्पित यह चौक भादरा की माटी की शान को और अधिक प्रखर बनाता है।"
-            },
-            3: {
-                title: "3. शहीद भगत सिंह चौक, भादरा",
-                location: "वीडीएस पैलेस के समीप, भादरा",
-                img: "image/smarak-03.png",
-                desc: "वीडीएस पैलेस के समीप स्थित 'शहीद भगत सिंह चौक' देश के महान क्रांतिकारी और अमर शहीद भगत सिंह के क्रांतिकारी विचारों व राष्ट्रप्रेम को समर्पित है। यह चौक युवाओं को देशसेवा, साहस और सर्वोच्च बलिदान के मार्ग पर चलने के लिए निरंतर प्रेरित करता है।"
-            },
-            4: {
-                title: "4. चौधरी चरण सिंह चौक, गाँव घेऊ",
-                location: "घेऊ जाटण मोड़ के पास, गाँव घेऊ",
-                img: "image/smarak-04.png",
-                desc: "गाँव घेऊ में स्थित 'चौधरी चरण सिंह चौक' देश के पूर्व प्रधानमंत्री एवं किसानों के मसीहा भारत रत्न चौधरी चरण सिंह जी के किसानों के उत्थान, सादगी और ग्रामीण अर्थव्यवस्था के सुदृढ़ीकरण के सपनों को समर्पित है। यह स्मारक ग्रामीण अंचल में किसानों के सम्मान और एकता का प्रतीक है।"
-            },
-            5: {
-                title: "5. वीर तेजाजी प्रवेश द्वार, गाँव घेऊ",
-                location: "मुख्य प्रवेश द्वार, गाँव घेऊ",
-                img: "image/smarak-05.png",
-                desc: "गाँव घेऊ का 'वीर तेजाजी प्रवेश द्वार' वचनबद्धता, धर्म रक्षा, गौसेवा और वीरता के प्रतीक लोक देवता श्री वीर तेजाजी महाराज के आशीर्वाद व उनके पवित्र स्मरण स्वरूप निर्मित किया गया है। यह भव्य प्रवेश द्वार गाँव में आने वाले हर आगंतुक का स्वागत करता है और क्षेत्र में सांस्कृतिक आस्था व सकारात्मक ऊर्जा का संचार करता है।"
+        async function loadLiveNews() {
+            let combinedNews = [];
+            try {
+                const responseNews = await fetch('news.json');
+                if (responseNews.ok) {
+                    const dataNews = await responseNews.json();
+                    const newsItems = Array.isArray(dataNews) ? dataNews : (dataNews.news || []);
+                    const topMukhya = newsItems.find(item => (item.category === 'मुख्य समाचार' || item.type === 'मुख्य समाचार')) || newsItems[0];
+                    if (topMukhya) {
+                        const headline = topMukhya.title || topMukhya.heading || (typeof topMukhya === 'string' ? topMukhya : '');
+                        if (headline) combinedNews.push(`⭐ मुख्य समाचार: ${headline}`);
+                    }
+                    const topKaryakram = newsItems.find(item => (item.category === 'कार्यक्रम' || item.type === 'कार्यक्रम'));
+                    if (topKaryakram) {
+                        const headline = topKaryakram.title || topKaryakram.heading || (typeof topKaryakram === 'string' ? topKaryakram : '');
+                        if (headline) combinedNews.push(`⭐ आगामी कार्यक्रम: ${headline}`);
+                    }
+                }
+            } catch (error) { console.error('न्यूज़ फ़ेच एरर:', error); }
+
+            try {
+                if (typeof meetingsData !== 'undefined' && Array.isArray(meetingsData) && meetingsData.length > 0) {
+                    const topMeeting = meetingsData[0];
+                    const headline = topMeeting.title || topMeeting.heading || (typeof topMeeting === 'string' ? topMeeting : '');
+                    if (headline) combinedNews.push(`⭐ बैठक सूचना: ${headline}`);
+                } else if (typeof meetings !== 'undefined' && Array.isArray(meetings) && meetings.length > 0) {
+                    const topMeeting = meetings[0];
+                    const headline = topMeeting.title || topMeeting.heading || (typeof topMeeting === 'string' ? topMeeting : '');
+                    if (headline) combinedNews.push(`⭐ बैठक सूचना: ${headline}`);
+                }
+            } catch (error) { console.error('बैठक डेटा पढ़ने में एरर:', error); }
+
+            const holder = document.getElementById('ticker-holder');
+            if (combinedNews.length > 0) {
+                holder.innerHTML = '';
+                combinedNews.forEach((text, index) => {
+                    const span = document.createElement('span');
+                    let targetPage = text.includes('बैठक सूचना') ? 'meetings.html' : 'news-events.html';
+                    span.innerHTML = `<a href="${targetPage}" class="ticker-text-link">${text}</a>`;
+                    holder.appendChild(span);
+                    if (index < combinedNews.length - 1) {
+                        const separator = document.createElement('span');
+                        separator.style.color = '#ffffff';
+                        separator.style.margin = '0 60px';
+                        separator.innerHTML = ' • ';
+                        holder.appendChild(separator);
+                    }
+                });
+            } else {
+                holder.innerHTML = '<span style="color: #ffffff; font-size: 13.5px;"><a href="news-events.html" class="ticker-text-link">⭐ जाट समाज संस्थान, भादरा की आधिकारिक वेबसाइट पर आपका स्वागत है।</a></span>';
             }
-        };
+        }
 
-        function showDetail(id) {
-            const data = smarakData[id];
-            if(data) {
-                document.getElementById('detailTitle').innerText = data.title;
-                document.getElementById('detailLoc').innerHTML = `<i class="fa-solid fa-location-dot" style="color: var(--brand-gold);"></i> ${data.location}`;
-                document.getElementById('detailImg').src = data.img;
-                document.getElementById('detailDesc').innerText = data.desc;
+        window.addEventListener('DOMContentLoaded', loadLiveNews);
 
-                document.getElementById('listView').style.display = 'none';
-                document.getElementById('detailView').style.display = 'block';
-                window.scrollTo({ top: 200, behavior: 'smooth' });
+        function preventMobileScroll(e) { e.preventDefault(); }
 
-                if (window.history && window.history.pushState) {
-                    window.history.pushState({ detailOpen: true }, '');
+        function openLightbox(imgUrl) {
+            document.getElementById('lightboxTarget').src = imgUrl;
+            document.getElementById('imageLightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            window.addEventListener('touchmove', preventMobileScroll, { passive: false });
+            if (window.history && window.history.pushState) {
+                window.history.pushState({ lightboxOpen: true }, '');
+            }
+        }
+
+        function closeLightbox(event) {
+            if (!event || event.target.id === 'imageLightbox' || event.target.classList.contains('lightbox-close') || event.isBackAction) {
+                document.getElementById('imageLightbox').style.display = 'none';
+                document.body.style.overflow = '';
+                window.removeEventListener('touchmove', preventMobileScroll, { passive: false });
+                if (event && !event.isBackAction && window.history.state && window.history.state.lightboxOpen) {
+                    window.history.back();
                 }
             }
         }
 
-        function showList() {
-            document.getElementById('detailView').style.display = 'none';
-            document.getElementById('listView').style.display = 'block';
-            window.scrollTo({ top: 200, behavior: 'smooth' });
-        }
-
         window.addEventListener('popstate', function(event) {
-            const detailView = document.getElementById('detailView');
-            if (detailView && detailView.style.display === 'block') {
-                showList();
+            const lightbox = document.getElementById('imageLightbox');
+            if (lightbox && lightbox.style.display === 'flex') {
+                closeLightbox({ isBackAction: true });
             }
         });
 
