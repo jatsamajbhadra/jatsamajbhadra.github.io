@@ -145,11 +145,75 @@
 </head>
 <body>
 
-    <!-- कॉमन हेडर यहाँ ऑटोमैटिक लोड होगा -->
-    <div id="header-placeholder"></div>
+    <!-- टॉप हेडर और टिकर बार -->
+    <div class="top-header-bar">
+        <div class="top-header-content">
+            <div class="top-logo-text">
+                <i class="fa-solid fa-building-columns" style="color: var(--brand-gold);"></i> जाट समाज संस्थान भादरा
+            </div>
+            <button class="hamburger-menu-btn" onclick="toggleSidebar()" aria-label="मुख्य मेनू">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker-title"><i class="fa-solid fa-bullhorn"></i> नवीनतम सूचना</div>
+            <div class="ticker" id="live-news-ticker">
+                <div class="ticker-item-holder" id="ticker-holder">
+                    <span style="color: #ffffff; font-size: 13.5px;">ताज़ा समाचार लोड हो रहे हैं...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- साइडबार मेनू (इसमें 'प्रमुख स्मारक' का लिंक जोड़ा गया है) -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
+        <div class="sidebar-links">
+            <a href="index.html" class="sidebar-link active"><i class="fa-solid fa-house"></i> होम</a>
+            <a href="rjyf.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> RJYF</a>
+            <a href="meetings.html" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+            <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
+            <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+            <a href="smarak.html" class="sidebar-link"><i class="fa-solid fa-landmark"></i> प्रमुख स्मारक</a>
+            <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+        </div>
+    </div>
 
     <div class="page-banner-container">
         <img src="image/home_page_banner.png" alt="जाट समाज संस्थान भादरा - मुख्य बैनर">
+    </div>
+
+    <!-- मास्टर नेविगेशन बार (इसमें भी 'प्रमुख स्मारक' का बटन जोड़ा गया है) -->
+    <div class="master-nav-container">
+        <nav class="master-navbar" id="master-navbar">
+            <div class="primary-menu" id="primary-menu">
+                <a href="index.html" class="nav-btn active">
+                    <i class="fa-solid fa-house"></i> होम
+                </a>
+                <a href="rjyf.html" class="nav-btn">
+                    <i class="fa-solid fa-users-gear"></i> RJYF
+                </a>
+                <a href="meetings.html" class="nav-btn">
+                    <i class="fa-solid fa-calendar-check"></i> बैठक सूचना
+                </a>
+                <a href="news-events.html" class="nav-btn">
+                    <i class="fa-solid fa-newspaper"></i> News & Events
+                </a>
+                <a href="calendar-2026.html" class="nav-btn">
+                    <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="smarak.html" class="nav-btn">
+                    <i class="fa-solid fa-landmark"></i> प्रमुख स्मारक
+                </a>
+                <a href="contact.html" class="nav-btn">
+                    <i class="fa-solid fa-address-book"></i> Contact Us
+                </a>
+            </div>
+            <div class="more-menu-container" id="more-menu-container">
+                <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+                <div class="more-menu" id="more-menu"></div>
+            </div>
+        </nav>
     </div>
 
     <div class="intro-section">
@@ -236,8 +300,28 @@
         </div>
     </div>
 
-    <!-- कॉमन फुटर यहाँ ऑटोमैटिक लोड होगा -->
-    <div id="footer-placeholder"></div>
+    <!-- सोशल मीडिया सेक्शन -->
+    <div class="social-section">
+        <p class="social-text">नीचे दिए बटन पर क्लिक कर संस्थान के सोशल मीडिया अकाउंट से जुड़ सकते हैं</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1HNXS2kwGy/" target="_blank" rel="noopener noreferrer" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jatsamajbhadra?igsh=aGVvZG82ZXdjdHFw" target="_blank" rel="noopener noreferrer" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@jatsamajbhadra?si=WNf8LOE0ijt57WKV" target="_blank" rel="noopener noreferrer" class="social-icon yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/jatsamajbhadra" target="_blank" rel="noopener noreferrer" class="social-icon x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- फुटर सेक्शन -->
+    <div class="footer-section">
+        <div class="footer-bottom">
+            <div style="text-align: center; line-height: 1.8;">
+                <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 2px;">&copy; 2025-2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
+                <p style="font-size: 11px; color: rgba(255,255,255,0.7); font-weight: normal;">
+                    Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer" style="color: var(--brand-gold); text-decoration: none; font-weight: bold; letter-spacing: 0.5px;">PC Beniwal</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <div class="lightbox" id="imageLightbox" onclick="closeLightbox(event)">
         <div class="lightbox-content">
@@ -247,28 +331,11 @@
     </div>
 
     <script>
-        // हेडर और फुटर को डायनामिक लोड करने के लिए फेच स्क्रिप्ट
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                if(typeof loadLiveNews === 'function') loadLiveNews();
-                if(typeof adaptNav === 'function') adaptNav();
-            });
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebarMenu');
-            if(sidebar) sidebar.classList.toggle('open');
+            document.getElementById('sidebarMenu').classList.toggle('open');
         }
         function closeSidebar() {
-            const sidebar = document.getElementById('sidebarMenu');
-            if(sidebar) sidebar.classList.remove('open');
+            document.getElementById('sidebarMenu').classList.remove('open');
         }
 
         async function loadLiveNews() {
@@ -307,7 +374,7 @@
             } catch (error) { console.error('बैठक डेटा पढ़ने में एरर:', error); }
 
             const holder = document.getElementById('ticker-holder');
-            if (holder && combinedNews.length > 0) {
+            if (combinedNews.length > 0) {
                 holder.innerHTML = '';
                 combinedNews.forEach((text, index) => {
                     const span = document.createElement('span');
@@ -323,10 +390,12 @@
                         holder.appendChild(separator);
                     }
                 });
-            } else if (holder) {
+            } else {
                 holder.innerHTML = '<span style="color: #ffffff; font-size: 13.5px;"><a href="news-events.html" class="ticker-text-link">⭐ जाट समाज संस्थान, भादरा की आधिकारिक वेबसाइट पर आपका स्वागत है।</a></span>';
             }
         }
+
+        window.addEventListener('DOMContentLoaded', loadLiveNews);
 
         function preventMobileScroll(e) {
             e.preventDefault();
@@ -345,9 +414,8 @@
         }
 
         function closeLightbox(event) {
-            if (!event || event.target.id === 'imageLightbox' || event.target.classList.0 === 'lightbox-close' || event.isBackAction) {
-                const lightbox = document.getElementById('imageLightbox');
-                if(lightbox) lightbox.style.display = 'none';
+            if (!event || event.target.id === 'imageLightbox' || event.target.classList.contains('lightbox-close') || event.isBackAction) {
+                document.getElementById('imageLightbox').style.display = 'none';
                 
                 document.body.style.overflow = '';
                 window.removeEventListener('touchmove', preventMobileScroll, { passive: false });
@@ -365,12 +433,11 @@
             }
         });
 
-        function adaptNav() {
-            const primaryMenu = document.getElementById('primary-menu');
-            const moreMenuContainer = document.getElementById('more-menu-container');
-            const moreMenu = document.getElementById('more-menu');
-            if(!primaryMenu || !moreMenu || !moreMenuContainer) return;
+        const primaryMenu = document.getElementById('primary-menu');
+        const moreMenuContainer = document.getElementById('more-menu-container');
+        const moreMenu = document.getElementById('more-menu');
 
+        function adaptNav() {
             while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
             moreMenuContainer.style.display = 'none';
             let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
@@ -383,15 +450,10 @@
         }
 
         window.addEventListener('resize', adaptNav);
-        function toggleMoreMenu(event) { 
-            const moreMenu = document.getElementById('more-menu');
-            if(moreMenu) moreMenu.classList.toggle('show'); 
-            event.stopPropagation(); 
-        }
+        window.addEventListener('load', adaptNav);
+        function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
         document.addEventListener('click', function(event) {
-            const moreMenuContainer = document.getElementById('more-menu-container');
-            const moreMenu = document.getElementById('more-menu');
-            if (moreMenuContainer && moreMenu && !moreMenuContainer.contains(event.target)) {
+            if (!moreMenuContainer.contains(event.target)) {
                 moreMenu.classList.remove('show');
             }
         });
