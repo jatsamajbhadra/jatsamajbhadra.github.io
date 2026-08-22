@@ -1,1 +1,52 @@
+<!-- Top Header & Ticker Bar -->
+<div class="top-header-bar">
+    <div class="top-header-content">
+        <a href="index.html" class="top-logo-text">
+            <i class="fa-solid fa-building-columns" style="color: var(--brand-gold);"></i> जाट समाज संस्थान भादरा
+        </a>
+        <button class="hamburger-menu-btn" onclick="toggleSidebar()" aria-label="मुख्य मेनू">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+    <div class="ticker-wrap">
+        <div class="ticker-title"><i class="fa-solid fa-bullhorn"></i> नवीनतम सूचना</div>
+        <div class="ticker" id="live-news-ticker">
+            <div class="ticker-item-holder" id="ticker-holder">
+                <span style="color: #ffffff; font-size: 13.5px;">ताज़ा समाचार लोड हो रहे हैं...</span>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Sidebar Menu -->
+<div class="sidebar-menu" id="sidebarMenu">
+    <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
+    <div class="sidebar-links">
+        <a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i> होम</a>
+        <a href="rjyf.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> RJYF</a>
+        <a href="meetings.html" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+        <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
+        <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+        <a href="smarak.html" class="sidebar-link"><i class="fa-solid fa-landmark"></i> प्रमुख स्मारक</a>
+        <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+    </div>
+</div>
+
+<!-- Master Navbar -->
+<div class="master-nav-container">
+    <nav class="master-navbar" id="master-navbar">
+        <div class="primary-menu" id="primary-menu">
+            <a href="index.html" class="nav-btn"><i class="fa-solid fa-house"></i> होम</a>
+            <a href="rjyf.html" class="nav-btn"><i class="fa-solid fa-users-gear"></i> RJYF</a>
+            <a href="meetings.html" class="nav-btn"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+            <a href="news-events.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> News & Events</a>
+            <a href="calendar-2026.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+            <a href="smarak.html" class="nav-btn"><i class="fa-solid fa-landmark"></i> प्रमुख स्मारक</a>
+            <a href="contact.html" class="nav-btn"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+        </div>
+        <div class="more-menu-container" id="more-menu-container">
+            <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
+            <div class="more-menu" id="more-menu"></div>
+        </div>
+    </nav>
+</div>
