@@ -99,6 +99,11 @@
 
         .detail-content-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: start; }
         .detail-img-large { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border: 3px solid var(--brand-gold); }
+        
+        /* Multiple Images Container for 6th Smarak */
+        .detail-images-container { display: flex; flex-direction: column; gap: 15px; }
+        .detail-img-secondary { width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 2px solid var(--brand-gold); }
+
         .detail-text-box h2 { font-size: 22px; color: var(--brand-dark-green); margin-bottom: 10px; }
         .detail-text-box .loc-tag { font-size: 14px; color: var(--text-muted); margin-bottom: 15px; font-weight: 600; display: block; }
         .detail-text-box p { font-size: 15px; color: #334155; line-height: 1.8; text-align: justify; margin-bottom: 20px; }
@@ -286,7 +291,7 @@
                 <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">विस्तृत जानकारी</span>
             </div>
             <div class="detail-content-wrapper">
-                <div>
+                <div id="detailImagesContainer" class="detail-images-container">
                     <img id="detailImg" class="detail-img-large" src="" alt="स्मारक विवरण तस्वीर">
                 </div>
                 <div class="detail-text-box">
@@ -372,8 +377,9 @@
                 title: "6. शहीद भगत सिंह चौक, डूंगराना",
                 location: "डूंगराना, तहसील भादरा, जिला - हनुमानगढ़",
                 img: "image/smarak-06.png",
+                img2: "image/smarak-06.1.png",
                 map: "https://maps.app.goo.gl/1ynKeE1VHn8TTDX86",
-                desc: "भादरा तहसील के अंतर्गत आने वाले ऐतिहासिक गाँव डूंगराना में देश के महान अमर शहीद-ए-आज़म सरदार भगत सिंह जी के अदम्य साहस, राष्ट्रप्रेम और उनके क्रांतिकारी विचारों को समर्पित 'शहीद भगत सिंह चौक एवं प्रतिमा' की स्थापना की गई है। इस गौरवशाली स्थल पर स्थापित शहीद भगत सिंह जी की प्रतिमा की स्थापना पुष्पा कुमारी (सुपुत्री श्रीमती सावित्री देवी दारा सिंह भांभी) के द्वारा करवाई गई। इस प्रेरणादायी स्थल का भव्य अनावरण समारोह दिनांक 22 फरवरी 2026 को अत्यंत हर्षोल्लास, देशभक्ति और उत्सव के माहौल में संपन्न हुआ। इस अनावरण समारोह के मुख्य अतिथि तेजस (सुपुत्र श्रीमती सोना रमेश कुमार भांभी) रहे, जिनके कर-कमलों द्वारा यह गरिमामयी लोकार्पण हुआ। इस पूरे आयोजन के प्रेरक श्री जयवीर देवीलाल मूंड (अध्यक्ष, भगत सिंह युवा मण्डल, डूंगराना) रहे। इस ऐतिहासिक अवसर पर क्षेत्र के गणमान्य सामाजिक कार्यकर्ताओं, युवा संगठनों और बड़ी संख्या में उपस्थित ग्रामवासियों ने पुष्प अर्पित कर अपनी श्रद्धांजलि दी। यह चौक न केवल डूंगराना गाँव की शान बढ़ाता है, बल्कि आने वाली युवा पीढ़ी को देश के महान सेनानी भगत सिंह के बलिदान और राष्ट्रप्रेम के उच्च आदर्शों से निरंतर प्रेरित करता रहेगा।"
+                desc: "भादरा तहसील के अंतर्गत आने वाले गाँव डूंगराना में देश के महान अमर शहीद-ए-आज़म सरदार भगत सिंह जी के अदम्य साहस, राष्ट्रप्रेम और उनके क्रांतिकारी विचारों को समर्पित 'शहीद भगत सिंह चौक एवम् सार्वजनिक सभा स्थल' की स्थापना की गई है। इस गौरवशाली स्थल पर स्थापित शहीद भगत सिंह जी की प्रतिमा की स्थापना पुष्पा कुमारी (सुपुत्री श्रीमती सावित्री देवी दारा सिंह भांभी) के द्वारा करवाई गई। इस प्रेरणादायी स्थल का भव्य अनावरण समारोह दिनांक 22 फरवरी 2026 को अत्यंत हर्षोल्लास, देशभक्ति और उत्सव के माहौल में संपन्न हुआ। इस अनावरण समारोह के मुख्य अतिथि तेजस (सुपुत्र श्रीमती सोना रमेश कुमार भांभी) रहे, जिनके कर-कमलों द्वारा यह गरिमामयी लोकार्पण हुआ। इस पूरे आयोजन के प्रेरक श्री जयवीर देवीलाल मूंड (अध्यक्ष, भगत सिंह युवा मण्डल, डूंगराना) रहे। इस ऐतिहासिक अवसर पर क्षेत्र के गणमान्य सामाजिक कार्यकर्ताओं, युवा संगठनों और बड़ी संख्या में उपस्थित ग्रामवासियों ने पुष्प अर्पित कर अपनी श्रद्धांजलि दी। यह चौक न केवल डूंगराना गाँव की शान बढ़ाता है, बल्कि आने वाली युवा पीढ़ी को देश के महान सेनानी भगत सिंह के बलिदान और राष्ट्रप्रेम के उच्च आदर्शों से निरंतर प्रेरित करता रहेगा।"
             }
         };
 
@@ -382,7 +388,14 @@
             if(data) {
                 document.getElementById('detailTitle').innerText = data.title;
                 document.getElementById('detailLoc').innerHTML = `<i class="fa-solid fa-location-dot" style="color: var(--brand-gold);"></i> ${data.location}`;
-                document.getElementById('detailImg').src = data.img;
+                
+                // छवियों को सेट करना (यदि दूसरी तस्वीर मौजूद है तो उसे भी नीचे दिखाएं)
+                let imagesHTML = `<img id="detailImg" class="detail-img-large" src="${data.img}" alt="स्मारक विवरण तस्वीर">`;
+                if(data.img2 && data.img2.trim() !== "") {
+                    imagesHTML += `<img class="detail-img-secondary" src="${data.img2}" alt="स्मारक समारोह तस्वीर">`;
+                }
+                document.getElementById('detailImagesContainer').innerHTML = imagesHTML;
+
                 document.getElementById('detailDesc').innerText = data.desc;
 
                 const mapContainer = document.getElementById('detailMapContainer');
