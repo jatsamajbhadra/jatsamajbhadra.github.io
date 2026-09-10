@@ -89,7 +89,7 @@
         .sidebar-link { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 16px; border-radius: 8px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.02); }
         .sidebar-link:hover, .sidebar-link.active { background-color: var(--brand-green); color: var(--brand-gold); transform: translateX(-3px); box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
 
-        /* 🏛️ 3. VIP मास्टर नेविगेशन बार (अन्य पेजों की तरह सही क्रम में) */
+        /* 🏛️ 3. VIP मास्टर नेविगेशन बार */
         .master-nav-container { max-width: 850px; margin: 0 auto 20px auto; padding: 0 15px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
@@ -98,9 +98,13 @@
         .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); transform: translateY(1px); border: 1px solid rgba(0,0,0,0.3); }
         .more-menu-container { position: relative; flex-shrink: 0; display: none; }
         .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; cursor: pointer; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; }
+        
+        /* 📱 'अन्य' (More) ड्रॉप-डाउन मेनू के अंदर जाने वाले बटन्स का सॉलिड कलर फिक्स */
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
         .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
-        .more-menu .nav-btn { background: #f8fafc; color: var(--brand-dark-green); border: 1px solid #e2e8f0; width: 100%; justify-content: flex-start; padding: 10px 15px; font-size: 13.5px; }
+        .more-menu .nav-btn { background: #0e4425 !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; width: 100% !important; justify-content: flex-start !important; padding: 10px 15px !important; font-size: 13.5px !important; font-weight: 700 !important; border-radius: 8px !important; box-shadow: none !important; }
+        .more-menu .nav-btn:hover { color: var(--brand-gold) !important; background: #11532e !important; }
+        .more-menu .nav-btn.active { background: #0a331c !important; color: var(--brand-gold) !important; }
 
         /* ✨ 4. 'आज का दिन' लाइव बॉक्स */
         .today-highlight-wrapper { max-width: 850px; margin: 0 auto 15px auto; padding: 0 15px; width: 100%; }
