@@ -70,7 +70,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        /* 🖼️ 2. आपका नया प्रीमियम ग्राफ़िक बैनर */
+        /* 🖼️ 2. आपका नया प्रीमियम ग्राफ़िक बैनर */
         .premium-banner-img {
             width: 100%;
             max-width: 850px;
@@ -80,7 +80,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
-        /* 📱 3. स्लाइडिंग साइडबार मेनू (GitHub लोकल लिंक्स के साथ) */
+        /* 📱 3. स्लाइडिंग साइडबार मेनू (सही क्रम में जाट स्मारक के साथ) */
         .sidebar-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background-color: var(--brand-dark-green); box-shadow: -5px 0 25px rgba(0,0,0,0.4); z-index: 10000; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 70px 20px 20px 20px; border-left: 3px solid var(--brand-gold); }
         .sidebar-menu.open { right: 0; }
         .sidebar-close-btn { position: absolute; top: 15px; right: 20px; color: var(--brand-gold); font-size: 32px; cursor: pointer; font-weight: bold; line-height: 1; }
@@ -88,18 +88,23 @@
         .sidebar-link { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 16px; border-radius: 8px; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.02); }
         .sidebar-link:hover, .sidebar-link.active { background-color: var(--brand-green); color: var(--brand-gold); transform: translateX(-3px); box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
 
-        /* 🏛️ 4. VIP मास्टर नेविगेशन बार (GitHub लिंक्स) */
+        /* 🏛️ 4. VIP मास्टर नेविगेशन बार (अन्य सभी पेजों के समान सही क्रम के साथ) */
         .master-nav-container { max-width: 850px; margin: 0 auto 20px auto; padding: 0 15px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
         .nav-btn { display: inline-flex; align-items: center; gap: 6px; background: #0e4425; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.03); box-shadow: 3px 3px 6px rgba(0,0,0,0.35), -2px -2px 5px rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
         .nav-btn:hover { color: var(--brand-gold); box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -2px -2px 6px rgba(255,255,255,0.1); transform: translateY(-1px); }
         .nav-btn.active { background: #0a331c; color: var(--brand-gold); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.6), inset -2px -2px 4px rgba(255,255,255,0.05); border: 1px solid rgba(0,0,0,0.3); }
+        
         .more-menu-container { position: relative; flex-shrink: 0; display: none; }
         .more-btn { background: var(--brand-gold) !important; color: var(--brand-dark-green) !important; cursor: pointer; box-shadow: 3px 3px 6px rgba(0,0,0,0.3), -2px -2px 5px rgba(255,255,255,0.3) !important; }
+        
+        /* 📱 'अन्य' (More) ड्रॉप-डाउन मेनू के अंदर जाने वाले बटन्स का सॉलिड कलर फिक्स */
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
         .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
-        .more-menu .nav-btn { background: #f8fafc; color: var(--brand-dark-green); border: 1px solid #e2e8f0; width: 100%; justify-content: flex-start; padding: 10px 15px; font-size: 13.5px; }
+        .more-menu .nav-btn { background: #0e4425 !important; color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; width: 100% !important; justify-content: flex-start !important; padding: 10px 15px !important; font-size: 13.5px !important; font-weight: 700 !important; border-radius: 8px !important; box-shadow: none !important; }
+        .more-menu .nav-btn:hover { color: var(--brand-gold) !important; background: #11532e !important; }
+        .more-menu .nav-btn.active { background: #0a331c !important; color: var(--brand-gold) !important; }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 🗂️ 5. मुख्य लेआउट ग्रिड (संपर्क सूत्र और फॉर्म) */
@@ -206,35 +211,36 @@
     <div class="vip-golden-line"></div>
     <img src="image/Contact-us-banner.png" class="premium-banner-img" alt="Contact Us Banner">
 
-    <!-- 📱 स्लाइडिंग साइडबार मेनू (लोकल गिटहब लिंक्स के साथ) -->
+    <!-- 📱 स्लाइडिंग साइडबार मेनू (सही क्रम में जाट स्मारक के साथ) -->
     <div class="sidebar-menu" id="sidebarMenu">
         <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
         <div class="sidebar-links">
             <a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i> होम</a>
             <a href="rjyf.html" class="sidebar-link"><i class="fa-solid fa-users-gear"></i> RJYF</a>
-            <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> 📅 कैलेंडर</a>
-            <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
             <a href="meetings.html" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+            <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
+            <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+            <a href="jat-smarak.html" class="sidebar-link"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
             <a href="contact.html" class="sidebar-link active"><i class="fa-solid fa-address-book"></i> Contact Us</a>
         </div>
     </div>
 
-    <!-- 🏛️ VIP मास्टर नेविगेशन बार (लोकल गिटहब लिंक्स) -->
+    <!-- 🏛️ VIP मास्टर नेविगेशन बार (अन्य सभी पेजों के समान सही क्रम के साथ) -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
                 <a href="index.html" class="nav-btn"><i class="fa-solid fa-house"></i> होम</a>
                 <a href="rjyf.html" class="nav-btn"><i class="fa-solid fa-users-gear"></i> RJYF</a>
+                <a href="meetings.html" class="nav-btn"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
+                <a href="news-events.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> News & Events</a>
+                <a href="calendar-2026.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+                <a href="jat-smarak.html" class="nav-btn"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
                 <a href="contact.html" class="nav-btn active"><i class="fa-solid fa-address-book"></i> Contact Us</a>
             </div>
-            <!-- 'अन्य' ड्रॉपडाउन सिर्फ अतिरिक्त बटनों को संभालेगा -->
+            <!-- 'अन्य' ड्रॉपडाउन कंटेनर (ओवरफ्लो सुरक्षा) -->
             <div class="more-menu-container" id="more-menu-container">
                 <button class="nav-btn more-btn" onclick="toggleMoreMenu(event)">अन्य <i class="fa-solid fa-caret-down"></i></button>
-                <div class="more-menu" id="more-menu">
-                    <a href="calendar-2026.html" class="nav-btn"><i class="fa-solid fa-calendar-days"></i> 📅 कैलेंडर</a>
-                    <a href="news-events.html" class="nav-btn"><i class="fa-solid fa-newspaper"></i> News</a>
-                    <a href="meetings.html" class="nav-btn"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
-                </div>
+                <div class="more-menu" id="more-menu"></div>
             </div>
         </nav>
     </div>
@@ -242,7 +248,7 @@
     <!-- 🗂️ मुख्य लेआउट ग्रिड -->
     <div class="contact-layout-grid">
         
-        <!-- बायाँ भाग: संपर्क सूत्र (होवर लिफ्ट इफ़ेक्ट के साथ) -->
+        <!-- बायाँ भाग: संपर्क सूत्र -->
         <div class="contact-master-card">
             <h2 class="contact-main-heading">
                 <i class="fa-solid fa-address-book"></i> हमसे संपर्क करें
@@ -331,7 +337,7 @@
         </div>
     </div>
 
-    <!-- 📱 सोशल मीडिया लिंक (360° रोटेशन इफ़ेक्ट के साथ) -->
+    <!-- 📱 सोशल मीडिया लिंक (360° रोटेशन इफ़ेक्ट के साथ) -->
     <div class="social-section">
         <p class="social-text">संस्थान के आधिकारिक सोशल मीडिया अकाउंट से जुड़ें</p>
         <div class="social-links">
@@ -344,18 +350,19 @@
 
     <!-- 🏢 फुल-विड्थ फुटर -->
     <div class="footer-section">
-        <p class="footer-copyright">&copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित。</p>
+        <p class="footer-copyright">&copy; 2026 जाट समाज संस्थान भादरा। सर्वाधिकार सुरक्षित।</p>
         <p class="footer-attribution">
             Designed & Developed by : <a href="https://www.instagram.com/pc_beniwal" target="_blank" rel="noopener noreferrer">PC Beniwal</a>
         </p>
     </div>
-        <!-- 🚀 डायनेमिक जावास्क्रिप्ट इंजन -->
+        
+    <!-- 🚀 डायनेमिक जावास्क्रिप्ट इंजन -->
     <script>
         // --- 1. साइडबार मेनू लॉजिक ---
         function toggleSidebar() { document.getElementById('sidebarMenu').classList.toggle('open'); }
         function closeSidebar() { document.getElementById('sidebarMenu').classList.remove('open'); }
 
-        // --- 2. मास्टर नेविगेशन ड्रॉपडाउन ('अन्य' बटन) ---
+        // --- 2. मास्टर नेविगेशन ड्रॉपडाउन ('अन्य' बटन और ओवरफ्लो सुरक्षा) ---
         const primaryMenu = document.getElementById('primary-menu');
         const moreMenuContainer = document.getElementById('more-menu-container');
         const moreMenu = document.getElementById('more-menu');
@@ -366,24 +373,26 @@
         }
         
         document.addEventListener('click', function(event) {
-            if (!moreMenuContainer.contains(event.target)) {
+            if (moreMenuContainer && !moreMenuContainer.contains(event.target)) {
                 moreMenu.classList.remove('show');
             }
         });
 
         // नेविगेशन रिस्पॉन्सिव इंजन
         function adaptNav() {
+            if (!primaryMenu || !moreMenu || !moreMenuContainer) return;
             while(moreMenu.firstChild) primaryMenu.appendChild(moreMenu.firstChild);
             moreMenuContainer.style.display = 'none';
-            if (primaryMenu.scrollWidth > primaryMenu.clientWidth) {
+            let isOverflow = primaryMenu.scrollWidth > primaryMenu.clientWidth;
+            if (isOverflow) {
                 moreMenuContainer.style.display = 'block';
-                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 3) {
+                while (primaryMenu.scrollWidth > primaryMenu.clientWidth && primaryMenu.children.length > 1) {
                     moreMenu.insertBefore(primaryMenu.lastElementChild, moreMenu.firstChild);
                 }
             }
         }
         window.addEventListener('resize', adaptNav);
-        window.addEventListener('DOMContentLoaded', adaptNav);
+        window.addEventListener('load', adaptNav);
 
         // --- 3. 3D स्मार्ट टोस्ट (सफलता संदेश) का एडवांस लॉजिक ---
         let toastActive = false;
@@ -397,17 +406,14 @@
             overlay.classList.add('show');
             toastActive = true;
             
-            // बैक बटन को चकमा देने के लिए नकली हिस्ट्री स्टेट जोड़ना
             window.history.pushState({toastOpen: true}, '');
             
             clearTimeout(toastTimer);
-            // 5 सेकंड बाद अपने आप बंद करने का कमांड (जो बैक बटन वाला काम ही करेगा)
             toastTimer = setTimeout(() => {
                 if(toastActive) { window.history.back(); }
             }, 5000);
         }
 
-        // मोबाइल का बैक बटन (Back Button) दबाने पर सिर्फ पॉप-अप बंद होगा, पेज नहीं हटेगा
         window.addEventListener('popstate', () => {
             if(toastActive) {
                 document.getElementById('toastSnackbar').classList.remove('show');
@@ -417,7 +423,6 @@
             }
         });
 
-        // स्क्रीन पर कहीं भी क्लिक (Anywhere Click) करने से पॉप-अप गायब
         document.getElementById('toastOverlay').addEventListener('click', () => {
             if(toastActive) { window.history.back(); }
         });
@@ -432,11 +437,9 @@
             const btn = document.getElementById('submitBtn');
             const originalBtnText = btn.innerHTML;
             
-            // बटन लोडिंग स्टेट
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> संदेश भेजा जा रहा है...';
             btn.disabled = true;
 
-            // फॉर्म डेटा
             const templateParams = {
                 from_name: document.getElementById('userName').value,
                 from_address: document.getElementById('userAddress').value,
@@ -445,17 +448,15 @@
                 message: document.getElementById('userMessage').value
             };
 
-            // संदेश भेजना
             emailjs.send('service_d6cxwwh', 'template_99es7vd', templateParams)
                 .then(function() {
                     document.getElementById('vipContactForm').reset(); 
-                    showSuccessToast(); // 3D पॉप-अप कॉल करना
+                    showSuccessToast(); 
                 }, function(error) {
                     alert("✕ संदेश भेजने में त्रुटि हुई। कृपया दोबारा प्रयास करें या सीधा कॉल करें।");
                     console.log('FAILED...', error);
                 })
                 .finally(function() {
-                    // बटन को वापस सामान्य करना
                     btn.innerHTML = originalBtnText;
                     btn.disabled = false;
                 });
