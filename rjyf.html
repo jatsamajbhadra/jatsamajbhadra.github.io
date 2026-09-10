@@ -25,7 +25,6 @@
     <meta property="og:url" content="https://jatsamajbhadra.github.io/rjyf.html">
     <meta property="og:title" content="RJYF - राइजिंग जाट यूथ फाउंडेशन | पंजीकरण">
     <meta property="og:description" content="राइजिंग जाट यूथ फाउंडेशन (RJYF) - समाज सेवा, शिक्षा और नेतृत्व के लिए समर्पित युवा विंग। यहाँ क्लिक करके अपना पंजीकरण पूरा करें।">
-    <!-- 🌟 यहाँ आपके नए RJYF विशेष लोगो का असली इंटरनेट पाथ सेट किया गया है -->
     <meta property="og:image" content="https://jatsamajbhadra.github.io/image/rjyf_logo.png">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
@@ -49,7 +48,7 @@
         /* 🌟 टॉप हेडर बार और शाइनिंग बॉर्डर (होम पेज सिंक) */
         .top-header-bar { background-color: var(--brand-dark-green); width: 100%; position: relative; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, #d4af37, #fff7c2, #d4af37) 1; }
         .top-header-content { max-width: 1140px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+        .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .hamburger-menu-btn { background: none; border: none; color: var(--brand-gold); font-size: 22px; cursor: pointer; transition: transform 0.2s ease; display: flex; align-items: center; justify-content: center; }
         .hamburger-menu-btn:hover { transform: scale(1.1); }
 
@@ -75,7 +74,7 @@
         .page-banner-container { background-color: var(--brand-dark-green); width: 100%; display: block; text-align: center; margin-bottom: 20px; margin-top: 0 !important; }
         .page-banner-container img { width: 100%; max-width: 1140px; height: auto; display: block; margin: 0 auto; }
 
-        /* 🏛️ सुरक्षित ओरिजिनल नेविगेशन बार (लोकल गिटहब लिंक्स) */
+        /* 🏛️ सुरक्षित ओरिजिनल नेविगेशन बार */
         .master-nav-container { max-width: 1140px; margin: 0 auto 15px auto; padding: 0 20px; width: 100%; }
         .master-navbar { background: linear-gradient(135deg, var(--brand-dark-green), var(--brand-green)); border-bottom: 4px solid var(--brand-gold); padding: 10px 14px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 10px; position: relative; }
         .primary-menu { display: flex; gap: 12px; overflow: hidden; white-space: nowrap; flex-grow: 1; }
@@ -88,7 +87,7 @@
         .more-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 12px; background: #ffffff; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 10px; z-index: 1000; flex-direction: column; gap: 8px; border: 2px solid var(--brand-gold); min-width: 200px; }
         .more-menu.show { display: flex; animation: fadeInDown 0.3s ease forwards; }
 
-        /* 🗂️ 3-in-1 असली टैब नेविगेशन बार (सफ़ेद) */
+        /* 🗂️ 3-in-1 असली टैब नेविगेशन बार (सफ़ेद) */
         .tabs-container { max-width: 100%; width: 1140px; margin: 5px auto 15px auto; padding: 0 20px; }
         .tabs-nav { display: flex; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
         .tab-btn { flex: 1; padding: 15px 15px; border: none; background: none; font-size: 14.5px; font-weight: 700; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; }
@@ -176,9 +175,9 @@
     <!-- 🌟 टॉप हेडर बार + हैमबर्गर मेनू + न्यूज़ टिकर (होम पेज सिंक) -->
     <div class="top-header-bar">
         <div class="top-header-content">
-            <div class="top-logo-text">
+            <a href="index.html" class="top-logo-text">
                 <i class="fa-solid fa-building-columns" style="color: var(--brand-gold);"></i> जाट समाज संस्थान भादरा
-            </div>
+            </a>
             <button class="hamburger-menu-btn" onclick="toggleSidebar()" aria-label="मुख्य मेनू">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -193,7 +192,7 @@
         </div>
     </div>
 
-    <!-- 📱 स्लाइडिंग साइडबार मेनू -->
+    <!-- 📱 स्लाइडिंग साइडबार मेनू (यहाँ 'जाट स्मारक' का लिंक जोड़ दिया गया है) -->
     <div class="sidebar-menu" id="sidebarMenu">
         <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
         <div class="sidebar-links">
@@ -202,6 +201,7 @@
             <a href="meetings.html" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
             <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
             <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+            <a href="jat-smarak.html" class="sidebar-link"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
             <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-address-book"></i> Contact Us</a>
         </div>
     </div>
@@ -211,7 +211,7 @@
         <img src="image/rjyf_banner.png" alt="राइजिंग जाट यूथ फाउंडेशन बैनर - जाट समाज संस्थान भादरा">
     </div>
 
-    <!-- 🏛️ सुरक्षित ओरिजिनल नेविगेशन बार (लोकल गिटहब लिंक्स के साथ) -->
+    <!-- 🏛️ सुरक्षित ओरिजिनल नेविगेशन बार (होम पेज के क्रम और डिज़ाइन के अनुसार 'जाट स्मारक' बटन के साथ) -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
@@ -230,6 +230,9 @@
                 <a href="calendar-2026.html" class="nav-btn">
                     <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
                 </a>
+                <a href="jat-smarak.html" class="nav-btn">
+                    <i class="fa-solid fa-landmark"></i> जाट स्मारक
+                </a>
                 <a href="contact.html" class="nav-btn">
                     <i class="fa-solid fa-address-book"></i> Contact Us
                 </a>
@@ -242,7 +245,7 @@
         </nav>
     </div>
 
-    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी) -->
+    <!-- 🗂️ 3-in-1 टैब सब-नेविगेशन बार (सफ़ेद पट्टी) -->
     <div class="tabs-container">
         <nav class="tabs-nav">
             <button class="tab-btn active" id="btn-rjyf" onclick="openTab('main-rjyf', 'btn-rjyf')">
@@ -322,7 +325,7 @@
                 </div>
             </div>
 
-            <!-- 📸 सुधार: नया QR कोड इमेज पाथ -->
+            <!-- 📸 QR कोड इमेज पाथ -->
             <div class="qr-container">
                 <p style="font-size: 14px; font-weight: bold; margin-bottom: 10px; color: var(--text-main);">Scan QR Code For Registration</p>
                 <img src="image/Google -form-qr.jpg" alt="Scan QR Code" class="qr-img">
@@ -371,13 +374,13 @@
         </div>
     </div>
 
-    <!-- 🚀 जावास्क्रिप्ट मास्टर फंक्शन (टैब्स, मेनू और लाइव टिकर) -->
+    <!-- 🚀 जावास्क्रिप्ट मास्टर फंक्शन -->
     <script>
         // 1. मोबाइल साइडबार फंक्शन
         function toggleSidebar() { document.getElementById('sidebarMenu').classList.toggle('open'); }
         function closeSidebar() { document.getElementById('sidebarMenu').classList.remove('open'); }
 
-        // 2. 3-in-1 टैब स्विचिंग फंक्शन (बिना किसी बदलाव के सुरक्षित)
+        // 2. 3-in-1 टैब स्विचिंग फंक्शन
         function openTab(tabId, btnId) {
             var panels = document.getElementsByClassName('tab-panel');
             for (var i = 0; i < panels.length; i++) { panels[i].classList.remove('active'); }
@@ -409,7 +412,7 @@
             if (!moreMenuContainer.contains(event.target)) { moreMenu.classList.remove('show'); }
         });
 
-        // 4. लाइव न्यूज़ टिकर इंजन (मुख्य होम पेज के समान)
+        // 4. लाइव न्यूज़ टिकर इंजन
         async function loadLiveNews() {
             let combinedNews = [];
             
