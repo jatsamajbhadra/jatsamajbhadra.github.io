@@ -46,7 +46,7 @@
         /* 🌟 टॉप हेडर बार और शाइनिंग बॉर्डर */
         .top-header-bar { background-color: var(--brand-dark-green); width: 100%; position: relative; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, #d4af37, #fff7c2, #d4af37) 1; }
         .top-header-content { max-width: 1140px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+        .top-logo-text { color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .hamburger-menu-btn { background: none; border: none; color: var(--brand-gold); font-size: 22px; cursor: pointer; transition: transform 0.2s ease; display: flex; align-items: center; justify-content: center; }
         .hamburger-menu-btn:hover { transform: scale(1.1); }
 
@@ -142,10 +142,9 @@
         .footer-section { background: #0b3a20; color: #ffffff; padding: 20px; border-top: 4px solid var(--brand-gold); margin-top: 35px; width: 100%; }
         .footer-bottom { text-align: center; }
 
-        /* 📱 मोबाइल रिस्पॉन्सिव इंजन (अब होम और RJYF की तरह नेविगेशन पट्टी यहाँ भी लाइव रहेगी) */
+        /* 📱 मोबाइल रिस्पॉन्सिव इंजन */
         @media (max-width: 650px) {
             .main-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; }
-            /* ✨ सुधार: मोबाइल पर हाइड करने के बजाय इसे RJYF की तरह ही रिस्पॉन्सिव अलाइन किया */
             .master-nav-container { padding: 0 8px; margin-top: 5px; margin-bottom: 10px; display: block !important; }
             .master-navbar { padding: 8px 10px; border-radius: 10px; }
             .nav-btn { padding: 6px 10px; font-size: 11.5px; border-radius: 6px; }
@@ -165,9 +164,9 @@
     <!-- 🌟 टॉप हेडर बार + हैमबर्गर मेनू + न्यूज़ टिकर -->
     <div class="top-header-bar">
         <div class="top-header-content">
-            <div class="top-logo-text">
+            <a href="index.html" class="top-logo-text">
                 <i class="fa-solid fa-building-columns" style="color: var(--brand-gold);"></i> जाट समाज संस्थान भादरा
-            </div>
+            </a>
             <button class="hamburger-menu-btn" onclick="toggleSidebar()" aria-label="मुख्य मेनू">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -182,7 +181,7 @@
         </div>
     </div>
 
-    <!-- 📱 स्लाइडिंग साइडबार मेनू -->
+    <!-- 📱 स्लाइडिंग साइडबार मेनू (यहाँ 'जाट स्मारक' का लिंक जोड़ दिया गया है) -->
     <div class="sidebar-menu" id="sidebarMenu">
         <span class="sidebar-close-btn" onclick="closeSidebar()">&times;</span>
         <div class="sidebar-links">
@@ -191,6 +190,7 @@
             <a href="meetings.html" class="sidebar-link active"><i class="fa-solid fa-calendar-check"></i> बैठक सूचना</a>
             <a href="news-events.html" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> News & Events</a>
             <a href="calendar-2026.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> जाट कैलेंडर</a>
+            <a href="jat-smarak.html" class="sidebar-link"><i class="fa-solid fa-landmark"></i> जाट स्मारक</a>
             <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-address-book"></i> Contact Us</a>
         </div>
     </div>
@@ -200,7 +200,7 @@
         <img src="image/meeting_banner.png" alt="आधिकारिक बैठक सूचना बोर्ड - जाट समाज संस्थान भादरा">
     </div>
 
-    <!-- 🏛️ VIP मास्टर नेविगेशन बार (अब मोबाइल और डेस्कटॉप दोनों पर सिंक रहेगी) -->
+    <!-- 🏛️ VIP मास्टर नेविगेशन बार (यहाँ 'जाट स्मारक' का बटन बिल्कुल सही क्रम में जोड़ा गया है) -->
     <div class="master-nav-container">
         <nav class="master-navbar" id="master-navbar">
             <div class="primary-menu" id="primary-menu">
@@ -218,6 +218,9 @@
                 </a>
                 <a href="calendar-2026.html" class="nav-btn">
                     <i class="fa-solid fa-calendar-days"></i> 📅 जाट कैलेंडर
+                </a>
+                <a href="jat-smarak.html" class="nav-btn">
+                    <i class="fa-solid fa-landmark"></i> जाट स्मारक
                 </a>
                 <a href="contact.html" class="nav-btn">
                     <i class="fa-solid fa-address-book"></i> Contact Us
@@ -326,7 +329,6 @@
             detailView.style.display = 'none';
             listView.style.display = 'block';
             if(pageBanner) pageBanner.style.display = 'block';
-            // ✨ सुधार: बैक आने पर मोबाइल और डेस्कटॉप दोनों पर मास्टर नेव पट्टी दिखाई देगी
             if(masterNavbar) masterNavbar.style.display = 'block';
         });
 
@@ -351,7 +353,7 @@
         window.addEventListener('resize', adaptNav);
         window.addEventListener('load', () => {
             renderListView();
-            adaptNav(); // ✨ मोबाइल पर भी नेव बार अनुकूलन चालू रखा
+            adaptNav();
         });
 
         function toggleMoreMenu(event) { moreMenu.classList.toggle('show'); event.stopPropagation(); }
